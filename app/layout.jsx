@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body
         className={cn(
-          "mx-auto min-h-screen max-w-sm bg-gradient-to-br from-gray-800 to-gray-950 pt-8 sm:max-w-md md:max-w-xl",
+          "mx-auto min-h-screen max-w-sm scale-75 -mt-36 bg-gradient-to-br from-gray-800 to-gray-950 pt-8 sm:max-w-md md:max-w-xl sm:scale-100 sm:mt-0",
           roboto.className,
         )}
       >
