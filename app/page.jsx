@@ -47,17 +47,18 @@ export default async function HomePage() {
       </div>
       <div className="mt-10 text-zinc-400">
         <p className="mb-8 text-lg">
-          I am a Freelance Front-end Developer based on the Philippines, and
-          I&apos;m very passionate and dedicated to my work <ChevronLeftRight />
+          I am a Freelance Front-end Developer based on the Philippines{" "}
+          <ChevronLeftRight />, and I&apos;m very passionate and dedicated to my
+          work <ChevronLeftRight />
           . With experience in HTML, CSS, React.js, Next.js, Tailwind CSS, React
           Native, JavaScript, MongoDB, Firebase, and Git <ChevronLeftRight />.
         </p>
         <p className="mb-8 text-lg">
           I am currently undergoing (Intern) at the Open University of the
-          Philippines, where my role entails being a FullStack Developer
-          responsible for designing and developing websites and platforms,
-          ensuring smooth functionality across various devices and browsers{" "}
-          <ChevronLeftRight />.
+          Philippines <ChevronLeftRight />, where my role entails being a
+          FullStack Developer responsible for designing and developing websites
+          and platforms <ChevronLeftRight />, ensuring smooth functionality
+          across various devices and browsers <ChevronLeftRight />.
         </p>
       </div>
       <div className="flex gap-x-5">
