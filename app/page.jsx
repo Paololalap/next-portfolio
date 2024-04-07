@@ -34,11 +34,11 @@ export default async function HomePage() {
   ];
   return (
     <main>
-      <div className="mt-10 flex gap-x-5">
+      <div className="mt-10 flex gap-x-5 items-center">
         <Avatar className="size-20">
           <AvatarImage src="https://avatars.githubusercontent.com/u/84236606?v=4" />
         </Avatar>
-        <div className="flex flex-col justify-between leading-8">
+        <div className="flex flex-col leading-8">
           <h1 className="text-3xl font-semibold capitalize text-white">
             Paolo <span className="text-[#D62828]">Lalap</span>
           </h1>
