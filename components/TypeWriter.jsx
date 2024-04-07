@@ -29,7 +29,9 @@ const Typewriter = ({ texts }) => {
 
   return (
     <span
-      className={displayText ? "text-[18px] text-gray-400" : "text-transparent"}
+      className={
+        displayText ? "line-clamp-1	text-[18px] text-gray-400" : "text-transparent"
+      }
     >
       {displayText ? displayText : "|"}
     </span>

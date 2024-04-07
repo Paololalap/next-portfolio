@@ -32,11 +32,11 @@ export default function WorkPage() {
           <path d="M5.636 5.636l2.828 2.828" />
           <path d="M15.536 15.536l2.828 2.828" />
         </svg>
-        <div className="text-2xl font-semibold text-zinc-300 sm:text-3xl md:text-4xl">
+        <div className="text-2xl font-semibold text-zinc-300 sm:text-3xl whitespace-nowrap">
           This is still a work in progress
         </div>
       </div>
-      <p className="mx-auto mt-3 w-4/5 text-zinc-500 sm:text-lg md:w-2/3 md:text-xl">
+      <p className="mx-auto mt-3 w-4/5 text-zinc-500 sm:text-lg md:w-2/3">
         In the meantime, please visit my{" "}
         <Link
           target="_blank"

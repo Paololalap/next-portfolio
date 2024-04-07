@@ -1,4 +1,4 @@
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import Link from "next/link";
 import SkillSet from "@/components/SkillSet";
 import Tools from "@/components/Tools";
@@ -25,7 +25,8 @@ function ChevronLeftRight() {
   );
 }
 
-export default function HomePage() {
+export default async function HomePage() {
+  await new Promise((resolve) => setTimeout(resolve, 3000));
   const texts = [
     "Front-end Web Developer",
     "FullStack NextJs Developer",
@@ -33,7 +34,7 @@ export default function HomePage() {
   ];
   return (
     <main>
-      <div className="mt-14 flex items-center gap-x-6 ">
+      <div className="mt-10 flex gap-x-5">
         <Avatar className="size-20">
           <AvatarImage src="https://avatars.githubusercontent.com/u/84236606?v=4" />
         </Avatar>

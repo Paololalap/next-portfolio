@@ -60,7 +60,7 @@ export default function Footer() {
   }, [hasCopiedText, copyToClipboard]);
 
   return (
-    <div className="mb-20 mt-10 w-max text-lg text-zinc-400">
+    <div className="mb-20 mt-10 text-lg text-zinc-400">
       If you want to get in touch, feel free to{" "}
       <button
         className="group relative underline transition-all hover:text-white disabled:no-underline disabled:hover:text-zinc-400 "
@@ -68,7 +68,7 @@ export default function Footer() {
         onClick={() => copyToClipboard(email)}
       >
         email me.
-        <span className="invisible absolute -top-2 left-1/2 z-20 flex -translate-x-1/2 -translate-y-full items-center gap-x-1 whitespace-nowrap rounded-[4px] bg-black px-2 py-1 text-sm text-white opacity-0 transition-opacity delay-700 group-hover:visible group-hover:opacity-80">
+        <span className="invisible absolute -top-2 left-1/2 z-20 hidden -translate-x-1/2 -translate-y-full items-center gap-x-1 whitespace-nowrap rounded-[4px] bg-black px-2 py-1 text-sm text-white opacity-0 transition-opacity delay-700 group-hover:visible group-hover:opacity-80 sm:flex">
           {hasCopiedText ? (
             <>
               <CheckIcon />
