@@ -25,8 +25,7 @@ function ChevronLeftRight() {
   );
 }
 
-export default async function HomePage() {
-  await new Promise((resolve) => setTimeout(resolve, 3000));
+export default function HomePage() {
   const texts = [
     "Front-end Web Developer",
     "FullStack NextJs Developer",
