@@ -1,7 +1,8 @@
 "use client";
+import { cn } from "@/lib/utils";
 import React, { useState, useEffect } from "react";
 
-const Typewriter = ({ texts }) => {
+export default function Typewriter({ texts, className }) {
   const [displayText, setDisplayText] = useState("");
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -29,13 +30,14 @@ const Typewriter = ({ texts }) => {
 
   return (
     <span
-      className={
-        displayText ? "line-clamp-1	text-[18px] text-gray-400" : "text-transparent"
-      }
+      className={cn(
+        displayText
+          ? "line-clamp-1	text-[18px] text-gray-400"
+          : "text-transparent",
+        className,
+      )}
     >
       {displayText ? displayText : "|"}
     </span>
   );
-};
-
-export default Typewriter;
+}
