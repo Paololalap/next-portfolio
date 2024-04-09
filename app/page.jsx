@@ -33,7 +33,7 @@ export default function HomePage() {
   ];
   return (
     <main>
-      <div className="mt-10 flex gap-x-5 items-center">
+      <div className="mt-10 flex items-center gap-x-5">
         <Avatar className="size-20">
           <AvatarImage src="https://avatars.githubusercontent.com/u/84236606?v=4" />
         </Avatar>
