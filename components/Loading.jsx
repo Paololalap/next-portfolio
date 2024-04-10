@@ -8,7 +8,6 @@ const lobster = Lobster({
 });
 
 export default function LoadingPage() {
-  const texts = ["Loading..."];
   return (
     <div
       className={cn(
