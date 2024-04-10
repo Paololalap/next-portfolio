@@ -21,16 +21,15 @@ async function fetchRepos() {
 
 export default async function ProjectsPage() {
   const repos = await fetchRepos();
-  console.log(repos);
   return (
     <main className="mt-14">
       <h2 className="scroll-m-20 pb-2 text-3xl font-semibold tracking-tight text-[#d4d4d8] first:mt-0">
-        Projects
+        <span className="text-[#D62828]">Pro</span>jects
       </h2>
       <ul>
         {repos.map((repo) => (
           <li key={repo.id}>
-            <Card className="mt-5 bg-[#27272b]">
+            <Card className="mt-5 bg-transparent">
               <CardHeader>
                 <CardTitle className="text-[#d4d4d8]">{repo.name}</CardTitle>
               </CardHeader>
