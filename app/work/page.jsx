@@ -15,9 +15,9 @@ export const metadata = {
 export default function WorkPage() {
   return (
     <main className="mt-14 p-0">
-      <h2 className="scroll-m-20 pb-2 text-3xl font-semibold tracking-tight text-[#d4d4d8] first:mt-0">
-        Employment History
-      </h2>
+        <h2 className="scroll-m-20 pb-2 text-3xl font-semibold tracking-tight text-[#d4d4d8] first:mt-0">
+          Employment History
+        </h2>
       <Card className="mt-5 bg-[#27272b]">
         <CardHeader>
           <div className="flex justify-between">
