@@ -3,9 +3,13 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import HoverLine from "./HoverLine";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 export default function Header() {
-  const [hoveredButton, setHoveredButton] = useState("");
+  const pathname = usePathname();
+  const [hoveredButton, setHoveredButton] = useState(
+    pathname === "/" ? "home" : pathname === "/work" ? "work" : "projects",
+  );
   const [showMenu, setShowMenu] = useState(true);
 
   return (
