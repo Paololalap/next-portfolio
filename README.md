@@ -1,7 +1,7 @@
 
 <h2 align="center">
   Portfolio Website<br/>
-  <a href="https://paololalap.vercel.app/" target="_blank">paolo.vercel.app</a>
+  <a href="https://paololalap.vercel.app/" target="_blank">paololalap.vercel.app</a>
 </h2>
 <br/>
 
