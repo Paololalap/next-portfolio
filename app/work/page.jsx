@@ -22,7 +22,60 @@ export default function WorkPage() {
         <CardHeader>
           <div className="flex justify-between">
             <CardDescription className="text-[#a1a1aa]">
-              Laguna, PH
+              Sydney, Australia (WFH)
+            </CardDescription>
+            <CardDescription className="text-[#a1a1aa]">
+              April 2024 - Present
+            </CardDescription>
+          </div>
+          <CardTitle className="w-2/3 text-[#d4d4d8]">
+            FullStack Web Developer <span className="text-[#71717a]">at</span>{" "}
+            Open University
+          </CardTitle>
+        </CardHeader>
+        <CardContent className="text-[#a1a1aa]">
+          <p>
+            Tasked with creating websites to replicate designs in Figma,
+            ensuring that all elements match those in Figma and are also
+            responsive. Additionally, responsible for implementing backend
+            functionality, such as authentication.
+          </p>
+        </CardContent>
+        <CardFooter className="flex flex-wrap gap-y-2">
+          <Badge variant="outline" className="mr-2 text-[#a1a1aa]">
+            NextJs
+          </Badge>
+          <Badge variant="outline" className="mr-2 text-[#a1a1aa]">
+            Tailwind
+          </Badge>
+          <Badge variant="outline" className="mr-2 text-[#a1a1aa]">
+            NodeJs
+          </Badge>
+          <Badge variant="outline" className="mr-2 text-[#a1a1aa]">
+            Github
+          </Badge>
+          <Badge variant="outline" className="mr-2 text-[#a1a1aa]">
+            Git
+          </Badge>
+          <Badge variant="outline" className="mr-2 text-[#a1a1aa]">
+            Firebase
+          </Badge>
+          <Badge variant="outline" className="mr-2 text-[#a1a1aa]">
+            Shadcn
+          </Badge>
+          <Badge variant="outline" className="mr-2 text-[#a1a1aa]">
+            React-hook form
+          </Badge>
+          <Badge variant="outline" className="mr-2 text-[#a1a1aa]">
+            Material UI
+          </Badge>
+        </CardFooter>
+      </Card>
+      <Card className="mt-5 bg-transparent">
+        <CardHeader>
+          <div className="flex justify-between">
+            <CardDescription className="text-[#a1a1aa]">
+              Laguna, Philippines
             </CardDescription>
             <CardDescription className="text-[#a1a1aa]">
               Feb 2024 - Present
