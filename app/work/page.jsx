@@ -7,6 +7,8 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import ChevronLeftRight from "@/components/ChevronLeftRight";
+import { LAGUNA, SYDNEY } from "@/constants";
 
 export const metadata = {
   title: "Work",
@@ -29,46 +31,28 @@ export default function WorkPage() {
             </CardDescription>
           </div>
           <CardTitle className="w-2/3 text-[#d4d4d8]">
-            FullStack Web Developer <span className="text-[#71717a]">at</span>{" "}
-            Open University
+            FullStack Web Developer
           </CardTitle>
         </CardHeader>
         <CardContent className="text-[#a1a1aa]">
           <p>
-            Tasked with creating websites to replicate designs in Figma,
-            ensuring that all elements match those in Figma and are also
-            responsive. Additionally, responsible for implementing backend
-            functionality, such as authentication.
+            Tasked with creating websites to replicate designs in Figma{" "}
+            <ChevronLeftRight /> ensuring that all elements match those in Figma
+            and are also responsive <ChevronLeftRight />. Additionally,
+            responsible for implementing backend functionality{" "}
+            <ChevronLeftRight />, such as authentication <ChevronLeftRight />.
           </p>
         </CardContent>
         <CardFooter className="flex flex-wrap gap-y-2">
-          <Badge variant="outline" className="mr-2 text-[#a1a1aa]">
-            NextJs
-          </Badge>
-          <Badge variant="outline" className="mr-2 text-[#a1a1aa]">
-            Tailwind
-          </Badge>
-          <Badge variant="outline" className="mr-2 text-[#a1a1aa]">
-            NodeJs
-          </Badge>
-          <Badge variant="outline" className="mr-2 text-[#a1a1aa]">
-            Github
-          </Badge>
-          <Badge variant="outline" className="mr-2 text-[#a1a1aa]">
-            Git
-          </Badge>
-          <Badge variant="outline" className="mr-2 text-[#a1a1aa]">
-            Firebase
-          </Badge>
-          <Badge variant="outline" className="mr-2 text-[#a1a1aa]">
-            Shadcn
-          </Badge>
-          <Badge variant="outline" className="mr-2 text-[#a1a1aa]">
-            React-hook form
-          </Badge>
-          <Badge variant="outline" className="mr-2 text-[#a1a1aa]">
-            Material UI
-          </Badge>
+          {SYDNEY.map((list, index) => (
+            <Badge
+              key={index}
+              variant="outline"
+              className="mr-2 text-[#a1a1aa]"
+            >
+              {list}
+            </Badge>
+          ))}
         </CardFooter>
       </Card>
       <Card className="mt-5 bg-transparent">
@@ -88,39 +72,22 @@ export default function WorkPage() {
         </CardHeader>
         <CardContent className="text-[#a1a1aa]">
           <p>
-            Tasked with creating and building websites and platforms, as well as
-            implementing backend features to ensure smooth operation across
-            various devices and popular web browsers.
+            Tasked with creating and building websites and platforms{" "}
+            <ChevronLeftRight />, as well as implementing backend features to
+            ensure smooth operation across various devices and popular web
+            browsers <ChevronLeftRight />.
           </p>
         </CardContent>
         <CardFooter className="flex flex-wrap gap-y-2">
-          <Badge variant="outline" className="mr-2 text-[#a1a1aa]">
-            NextJs
-          </Badge>
-          <Badge variant="outline" className="mr-2 text-[#a1a1aa]">
-            MongoDB
-          </Badge>
-          <Badge variant="outline" className="mr-2 text-[#a1a1aa]">
-            Tailwind
-          </Badge>
-          <Badge variant="outline" className="mr-2 text-[#a1a1aa]">
-            NodeJs
-          </Badge>
-          <Badge variant="outline" className="mr-2 text-[#a1a1aa]">
-            Gitlab
-          </Badge>
-          <Badge variant="outline" className="mr-2 text-[#a1a1aa]">
-            Git
-          </Badge>
-          <Badge variant="outline" className="mr-2 text-[#a1a1aa]">
-            Next-Auth
-          </Badge>
-          <Badge variant="outline" className="mr-2 text-[#a1a1aa]">
-            Shadcn
-          </Badge>
-          <Badge variant="outline" className="mr-2 text-[#a1a1aa]">
-            React-hook form
-          </Badge>
+          {LAGUNA.map((list, index) => (
+            <Badge
+              key={index}
+              variant="outline"
+              className="mr-2 text-[#a1a1aa]"
+            >
+              {list}
+            </Badge>
+          ))}
         </CardFooter>
       </Card>
     </main>
