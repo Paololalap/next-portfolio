@@ -6,6 +6,8 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { ExternalLink } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 
 export const metadata = {
   title: "Projects",
@@ -35,8 +37,27 @@ export default async function ProjectsPage() {
               </CardHeader>
               <CardContent className="text-[#a1a1aa]">
                 {repo.description}
+                <div className="mt-[24px] flex flex-wrap gap-y-2">
+                  {repo.topics.map((topic, index) => (
+                    <Badge
+                      key={index}
+                      variant="outline"
+                      className="mr-2 text-[#a1a1aa] capitalize"
+                    >
+                      {topic}
+                    </Badge>
+                  ))}
+                </div>
               </CardContent>
-              <CardFooter className="flex w-full justify-end">
+              <CardFooter className="flex w-full justify-end gap-x-3">
+                {repo.homepage && (
+                  <Link href={repo.homepage} className="group flex gap-x-1">
+                    <ExternalLink className="text-[#71717a] transition-all group-hover:text-white" />
+                    <span className="text-[#71717a] transition-all group-hover:text-white">
+                      Visit Link
+                    </span>
+                  </Link>
+                )}
                 <Link
                   target="_blank"
                   className="group flex gap-x-1"
