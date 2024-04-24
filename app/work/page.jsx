@@ -62,7 +62,7 @@ export default function WorkPage() {
               Laguna, Philippines
             </CardDescription>
             <CardDescription className="text-[#a1a1aa]">
-              Feb 2024 - Present
+              Feb 2024 - May 2024 (Present)
             </CardDescription>
           </div>
           <CardTitle className="w-2/3 text-[#d4d4d8]">
