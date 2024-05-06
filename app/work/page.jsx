@@ -55,6 +55,7 @@ export default function WorkPage() {
           ))}
         </CardFooter>
       </Card>
+      
       <Card className="mt-5 bg-transparent">
         <CardHeader>
           <div className="flex justify-between">
