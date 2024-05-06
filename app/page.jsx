@@ -2,7 +2,7 @@ import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import SkillSet from "@/components/SkillSet";
 import Tools from "@/components/Tools";
 import LandingFooter from "@/components/footer/Landing";
-import Typewriter from "@/components/Typewriter";
+import Typewriter from "@/components/TypeWriter";
 import ChevronLeftRight from "@/components/ChevronLeftRight";
 import { ROLES } from "@/constants/ROLES";
 import SocialLinks from "@/components/SocialLinks";
