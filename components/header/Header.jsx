@@ -23,6 +23,7 @@ export default function Header() {
             <Button
               variant="link"
               size="sm"
+              aria-label="homepage"
               className="group/button relative h-8 text-sm text-zinc-400 hover:no-underline focus:rounded-full focus:outline-0 focus:ring-0"
               onMouseEnter={() => setHoveredButton("home")}
             >
@@ -36,6 +37,7 @@ export default function Header() {
           <Link href={"/work"} tabIndex={"-1"}>
             <Button
               variant="link"
+              aria-label="work page"
               onMouseEnter={() => setHoveredButton("work")}
               size="sm"
               className="group/button relative h-8 text-sm text-zinc-400 transition-all hover:no-underline focus:rounded-full focus:outline-0 focus:ring-0"
@@ -50,6 +52,7 @@ export default function Header() {
           <Link href={"/projects"} tabIndex={"-1"}>
             <Button
               variant="link"
+              aria-label="projects page"
               onMouseEnter={() => setHoveredButton("projects")}
               size="sm"
               className="group/button relative h-8 text-sm text-zinc-400 transition-all hover:no-underline focus:rounded-full focus:outline-0 focus:ring-0"
@@ -66,6 +69,7 @@ export default function Header() {
         {/* Menu Icon */}
         <Button
           className="bg-transparent p-0 hover:bg-transparent"
+          aria-label="menu"
           onClick={() => setShowMenu(!showMenu)}
         >
           <Menu className="ml-1 size-7 text-white sm:hidden" />
@@ -81,6 +85,7 @@ export default function Header() {
         >
           <Button
             variant="secondary"
+            aria-label="resume"
             size="sm"
             className="group h-8 rounded-full outline outline-2 -outline-offset-1 outline-white transition-all hover:bg-[#f1f5f9] sm:hover:bg-inherit sm:hover:text-white sm:hover:outline sm:hover:outline-2 sm:hover:outline-white"
           >
@@ -96,6 +101,7 @@ export default function Header() {
             <X
               className="fixed left-0 top-0 z-20 ml-10 mt-10 size-9 cursor-pointer text-white sm:hidden"
               onClick={() => setShowMenu((prev) => !prev)}
+              aria-label="exit button"
             />
             <nav className="fixed left-1/2 top-1/2 z-10 grid min-h-screen w-screen -translate-x-1/2 -translate-y-1/2 place-items-center bg-gradient-to-br from-gray-800 to-gray-950 text-center text-lg text-zinc-400 sm:hidden">
               <ul className="space-y-3">

@@ -12,7 +12,10 @@ export default function HomePage() {
     <main>
       <div className="mt-10 flex items-center gap-x-5">
         <Avatar className="size-20">
-          <AvatarImage src="https://avatars.githubusercontent.com/u/84236606?v=4" />
+          <AvatarImage
+            src="https://avatars.githubusercontent.com/u/84236606?v=4"
+            alt="Paolo Lalap"
+          />
         </Avatar>
         <div className="flex flex-col leading-8">
           <h1 className="text-3xl font-semibold capitalize text-white">
