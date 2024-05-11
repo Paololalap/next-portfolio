@@ -1,11 +1,5 @@
-import { Lobster } from "next/font/google";
 import { cn } from "@/lib/utils";
-
-const lobster = Lobster({
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["400"],
-});
+import { lobster } from "@/fonts/fonts";
 
 export default function LoadingPage() {
   return (

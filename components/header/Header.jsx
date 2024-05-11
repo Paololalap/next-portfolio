@@ -16,9 +16,7 @@ export default function Header() {
   return (
     <>
       <header className="flex items-center justify-between rounded-full border border-zinc-400 px-2 py-1 sm:flex-row">
-        {/* For Desktop */}
         <nav className="group relative hidden h-9 items-center justify-center text-base sm:flex">
-          {/* Home */}
           <Link href={"/"} tabIndex={"-1"}>
             <Button
               variant="link"
@@ -33,7 +31,6 @@ export default function Header() {
               </span>
             </Button>
           </Link>
-          {/* Work */}
           <Link href={"/work"} tabIndex={"-1"}>
             <Button
               variant="link"
@@ -66,7 +63,6 @@ export default function Header() {
           <HoverLine activeButton={hoveredButton} />
         </nav>
 
-        {/* Menu Icon */}
         <Button
           className="bg-transparent p-0 hover:bg-transparent"
           aria-label="menu"
@@ -75,7 +71,6 @@ export default function Header() {
           <Menu className="ml-1 size-7 text-white sm:hidden" />
         </Button>
 
-        {/* Resume Button */}
         <Link
           href={
             "https://drive.google.com/file/d/1fTNcxsEKYmU1vpNaa8NocsxBGXverF_G/view?usp=sharing"
@@ -95,7 +90,6 @@ export default function Header() {
         </Link>
       </header>
       <header>
-        {/* Open Menu Mobile */}
         {showMenu || (
           <>
             <X
