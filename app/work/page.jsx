@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import ChevronLeftRight from "@/components/ChevronLeftRight";
-import { LAGUNA, SYDNEY } from "@/constants";
+import { LAGUNA, SYDNEY } from "@/constants/WORK";
 
 export const metadata = {
   title: "Work",

@@ -43,7 +43,7 @@ export default function HomePage() {
       <SocialLinks />
 
       <h2 className="mt-10 text-2xl text-white">
-        Professional <span className="text-[#D62828]">Skillset</span>
+        Professional <span className="text-[#D62828]">Skill set</span>
       </h2>
       <SkillSet />
 
