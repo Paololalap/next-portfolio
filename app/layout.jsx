@@ -3,6 +3,7 @@ import Header from "@/components/header/Header";
 import { cn } from "@/lib/utils";
 import Footer from "@/components/footer/Footer";
 import { roboto } from "@/fonts/fonts";
+import { PreloadResources } from "./preload-resources";
 
 export const metadata = {
   title: {
@@ -16,6 +17,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <PreloadResources />
       <body
         className={cn(
           "mx-auto min-h-screen w-fit bg-gray-900 p-8 sm:max-w-lg sm:bg-gradient-to-br sm:from-gray-800 sm:to-gray-950 sm:pt-8 md:max-w-2xl",
