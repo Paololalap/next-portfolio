@@ -9,13 +9,22 @@ export default function SkillSet() {
         <li key={index}>
           <Tilt
             className={
-              "group rounded-md px-5 ring-1 ring-white transition-all hover:rounded-lg hover:ring-4"
+              "group hidden rounded-md px-5 ring-1 ring-white transition-all hover:rounded-lg hover:ring-4 md:block"
             }
           >
             <svg className={"inline size-full self-center text-white"}>
               {skill.icon}
             </svg>
           </Tilt>
+          <div
+            className={
+              "group rounded-md px-5 ring-1 ring-white transition-all hover:rounded-lg hover:ring-4 md:hidden"
+            }
+          >
+            <svg className={"inline size-full self-center text-white"}>
+              {skill.icon}
+            </svg>
+          </div>
         </li>
       ))}
     </ul>
