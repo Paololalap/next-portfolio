@@ -14,9 +14,9 @@ export default function Header() {
 
   return (
     <>
-      <header className="flex items-center justify-between rounded-full border border-zinc-400 px-2 py-1 sm:flex-row">
-        <nav className="group relative text-base">
-          <ul className="hidden sm:flex">
+      <header className="flex justify-between items-center rounded-full border border-zinc-400 px-2 py-1 sm:flex-row">
+        <nav className="group relative hidden items-center text-base sm:flex">
+          <ul className="flex">
             <li>
               <Link href={"/"} tabIndex={"-1"}>
                 <Button
