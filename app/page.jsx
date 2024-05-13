@@ -17,7 +17,7 @@ export default function HomePage() {
             alt="Paolo Lalap"
             className="rounded-full"
             fill
-            sizes="100vw"
+            sizes="(min-width: 380px) 80px, calc(11.67vw + 38px)"
           />
         </div>
         <div className="flex flex-col leading-8">
