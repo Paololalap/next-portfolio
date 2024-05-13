@@ -1,4 +1,3 @@
-import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import SkillSet from "@/components/SkillSet";
 import Tools from "@/components/Tools";
 import LandingFooter from "@/components/footer/Landing";
@@ -6,17 +5,21 @@ import Typewriter from "@/components/TypeWriter";
 import ChevronLeftRight from "@/components/ChevronLeftRight";
 import { ROLES } from "@/constants/ROLES";
 import SocialLinks from "@/components/SocialLinks";
+import Image from "next/image";
 
 export default function HomePage() {
   return (
     <main>
       <div className="mt-10 flex items-center gap-x-5">
-        <Avatar className="size-20">
-          <AvatarImage
-            src="https://avatars.githubusercontent.com/u/84236606?v=4"
+        <div className="relative size-20">
+          <Image
+            src={"https://avatars.githubusercontent.com/u/84236606?v=4"}
             alt="Paolo Lalap"
+            className="rounded-full"
+            fill
+            sizes="100vw"
           />
-        </Avatar>
+        </div>
         <div className="flex flex-col leading-8">
           <h1 className="text-3xl font-semibold capitalize text-white">
             Paolo <span className="text-[#D62828]">Lalap</span>

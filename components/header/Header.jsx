@@ -15,73 +15,80 @@ export default function Header() {
   return (
     <>
       <header className="flex items-center justify-between rounded-full border border-zinc-400 px-2 py-1 sm:flex-row">
-        <nav className="group relative hidden h-9 items-center justify-center text-base sm:flex">
-          <ul>
-            <Link href={"/"} tabIndex={"-1"}>
-              <Button
-                variant="link"
-                size="sm"
-                aria-label="homepage"
-                className="group/button relative h-8 text-sm text-zinc-400 hover:no-underline focus:rounded-full focus:outline-0 focus:ring-0"
-                onMouseEnter={() => setHoveredButton("home")}
-              >
-                <svg
-                  className={
-                    "mr-1 size-5 transition-all duration-500 group-hover/button:text-white"
-                  }
+        <nav className="group relative text-base">
+          <ul className="hidden sm:flex">
+            <li>
+              <Link href={"/"} tabIndex={"-1"}>
+                <Button
+                  variant="link"
+                  size="sm"
+                  aria-label="homepage"
+                  className="group/button relative h-8 text-sm text-zinc-400 hover:no-underline focus:rounded-full focus:outline-0 focus:ring-0"
+                  onMouseEnter={() => setHoveredButton("home")}
                 >
-                  <use href={`./icons/header-sprite.svg#tabler/home-outline`} />
-                </svg>
-                <span className="transition-all duration-500 group-hover/button:text-white">
-                  Home
-                </span>
-              </Button>
-            </Link>
-            <Link href={"/work"} tabIndex={"-1"}>
-              <Button
-                variant="link"
-                aria-label="work page"
-                onMouseEnter={() => setHoveredButton("work")}
-                size="sm"
-                className="group/button relative h-8 text-sm text-zinc-400 transition-all hover:no-underline focus:rounded-full focus:outline-0 focus:ring-0"
-              >
-                <svg
-                  className={
-                    "mr-1 size-5 transition-all duration-500 group-hover/button:text-white"
-                  }
+                  <svg
+                    className={
+                      "mr-1 size-5 transition-all duration-500 group-hover/button:text-white"
+                    }
+                  >
+                    <use
+                      href={`./icons/header-sprite.svg#tabler/home-outline`}
+                    />
+                  </svg>
+                  <span className="transition-all duration-500 group-hover/button:text-white">
+                    Home
+                  </span>
+                </Button>
+              </Link>
+            </li>
+            <li>
+              <Link href={"/work"} tabIndex={"-1"}>
+                <Button
+                  variant="link"
+                  aria-label="work page"
+                  onMouseEnter={() => setHoveredButton("work")}
+                  size="sm"
+                  className="group/button relative h-8 text-sm text-zinc-400 transition-all hover:no-underline focus:rounded-full focus:outline-0 focus:ring-0"
                 >
-                  <use
-                    href={`./icons/header-sprite.svg#tabler/briefcase-2-outline`}
-                  />
-                </svg>{" "}
-                <span className="transition-all duration-500 group-hover/button:text-white">
-                  Work
-                </span>
-              </Button>
-            </Link>
-
-            <Link href={"/projects"} tabIndex={"-1"}>
-              <Button
-                variant="link"
-                aria-label="projects page"
-                onMouseEnter={() => setHoveredButton("projects")}
-                size="sm"
-                className="group/button relative h-8 text-sm text-zinc-400 transition-all hover:no-underline focus:rounded-full focus:outline-0 focus:ring-0"
-              >
-                <svg
-                  className={
-                    "mr-1 size-5 transition-all duration-500 group-hover/button:text-white"
-                  }
+                  <svg
+                    className={
+                      "mr-1 size-5 transition-all duration-500 group-hover/button:text-white"
+                    }
+                  >
+                    <use
+                      href={`./icons/header-sprite.svg#tabler/briefcase-2-outline`}
+                    />
+                  </svg>{" "}
+                  <span className="transition-all duration-500 group-hover/button:text-white">
+                    Work
+                  </span>
+                </Button>
+              </Link>
+            </li>
+            <li>
+              <Link href={"/projects"} tabIndex={"-1"}>
+                <Button
+                  variant="link"
+                  aria-label="projects page"
+                  onMouseEnter={() => setHoveredButton("projects")}
+                  size="sm"
+                  className="group/button relative h-8 text-sm text-zinc-400 transition-all hover:no-underline focus:rounded-full focus:outline-0 focus:ring-0"
                 >
-                  <use
-                    href={`./icons/header-sprite.svg#tabler/folder-outline`}
-                  />
-                </svg>{" "}
-                <span className="transition-all duration-500 group-hover/button:text-white">
-                  Projects
-                </span>
-              </Button>
-            </Link>
+                  <svg
+                    className={
+                      "mr-1 size-5 transition-all duration-500 group-hover/button:text-white"
+                    }
+                  >
+                    <use
+                      href={`./icons/header-sprite.svg#tabler/folder-outline`}
+                    />
+                  </svg>{" "}
+                  <span className="transition-all duration-500 group-hover/button:text-white">
+                    Projects
+                  </span>
+                </Button>
+              </Link>
+            </li>
           </ul>
           <HoverLine activeButton={hoveredButton} />
         </nav>
