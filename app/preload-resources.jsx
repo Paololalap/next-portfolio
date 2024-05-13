@@ -1,11 +1,15 @@
 "use client";
-
 import ReactDOM from "react-dom";
 
-export function PreloadResources() {
-  ReactDOM.preload("/icons/sprite.svg", {
-    as: "image",
-  });
+const resources = [
+  "/icons/homepage-sprite.svg",
+  "/icons/header-sprite.svg",
+  "/icons/projects-page-sprite.svg",
+];
 
+export function PreloadResources() {
+  resources.forEach((resource) => {
+    ReactDOM.preload(resource, { as: "image" });
+  });
   return null;
 }

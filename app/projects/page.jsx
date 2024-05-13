@@ -6,7 +6,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { ExternalLink, Github } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 export const metadata = {
@@ -36,24 +35,29 @@ export default async function ProjectsPage() {
                 <CardTitle className="text-[#d4d4d8]">{repo.name}</CardTitle>
               </CardHeader>
               <CardContent className="text-[#a1a1aa]">
-                {repo.description}
+                {repo.description || <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam eligendi accusantium expedita odit porro maiores numquam quos. Nam aperiam debitis eos a cupiditate neque ducimus ipsa cum. Quisquam, eius expedita.25</p>}
               </CardContent>
               <CardFooter className="flex w-full items-start">
-                <div className="flex flex-wrap gap-y-2">
+                <ul className="flex flex-wrap gap-y-2">
                   {repo.topics.map((topic, index) => (
-                    <Badge
-                      key={index}
-                      variant="outline"
-                      className="mr-2 capitalize text-[#a1a1aa]"
-                    >
-                      {topic}
-                    </Badge>
+                    <li key={index}>
+                      <Badge
+                        variant="outline"
+                        className="mr-2 capitalize text-[#a1a1aa]"
+                      >
+                        {topic}
+                      </Badge>
+                    </li>
                   ))}
-                </div>
+                </ul>
                 <div className="flex flex-1 items-center justify-end gap-x-2">
                   {repo.homepage && (
                     <Link href={repo.homepage} className="group flex gap-x-1">
-                      <ExternalLink className="text-[#71717a] transition-all group-hover:text-white" />
+                      <svg className="text-[#71717a] transition-all size-6 group-hover:text-white">
+                        <use
+                          href={`./icons/projects-page-sprite.svg#tabler/external-link-outline`}
+                        />
+                      </svg>
                       <span className="whitespace-nowrap text-[#71717a] transition-all group-hover:text-white">
                         Visit Link
                       </span>
@@ -64,7 +68,11 @@ export default async function ProjectsPage() {
                     className="group flex gap-x-1"
                     href={`https://github.com/Paololalap/${repo.name}`}
                   >
-                    <Github className="text-[#71717a] transition-all group-hover:text-white" />
+                    <svg className="text-[#71717a] transition-all size-6 group-hover:text-white">
+                      <use
+                        href={`./icons/projects-page-sprite.svg#tabler/brand-github-outline`}
+                      />
+                    </svg>
                     <span className="whitespace-nowrap text-[#71717a] transition-all group-hover:text-white">
                       Visit Github
                     </span>

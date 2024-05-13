@@ -1,7 +1,6 @@
 "use client";
 import { useCopyToClipboard } from "@uidotdev/usehooks";
 import { useEffect } from "react";
-import { Copy, CopyCheck } from "lucide-react";
 
 export default function LandingFooter() {
   const [copiedText, copyToClipboard] = useCopyToClipboard();
@@ -29,12 +28,19 @@ export default function LandingFooter() {
         <span className="invisible absolute -top-2 left-1/2 z-20 hidden -translate-x-1/2 -translate-y-full items-center gap-x-1 whitespace-nowrap rounded-[4px] bg-black px-2 py-1 text-sm text-white opacity-0 transition-opacity delay-700 group-hover:visible group-hover:opacity-80 sm:flex">
           {hasCopiedText ? (
             <>
-              <CopyCheck className="mr-1 size-5" />
+              <svg className={"mr-1 inline size-4 self-center text-white"}>
+                <use
+                  href={`./icons/homepage-sprite.svg#lucide/copy-check`}
+                />
+              </svg>
               Copied!
             </>
           ) : (
             <>
-              <Copy className="mr-1 size-5" /> Copy to clipboard  
+              <svg className={"mr-1 inline size-4 self-center text-white"}>
+                <use href={`./icons/homepage-sprite.svg#lucide/copy`} />
+              </svg>
+              Copy to clipboard
             </>
           )}
         </span>

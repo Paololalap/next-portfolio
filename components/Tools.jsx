@@ -4,17 +4,25 @@ import { TOOLS } from "@/constants/TOOLS";
 
 export default function Tools() {
   return (
-    <div className="mt-5 grid size-full grid-cols-3 gap-4 md:grid-cols-4">
+    <ul className="mt-5 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
       {TOOLS.map((tool) => (
-        <Tilt
-          key={tool.id}
-          className={
-            "group w-full rounded-md border p-5 transition-all hover:rounded-lg hover:border-4"
-          }
-        >
-          {tool.icon}
-        </Tilt>
+        <li key={tool.id}>
+          <Tilt
+            className={
+              "group hidden rounded-md px-5 ring-1 ring-white transition-all hover:rounded-lg hover:ring-4 md:block"
+            }
+          >
+            {tool.icon}
+          </Tilt>
+          <div
+            className={
+              "group block rounded-md px-5 ring-1 ring-white transition-all hover:rounded-lg hover:ring-4 md:hidden"
+            }
+          >
+            {tool.icon}
+          </div>
+        </li>
       ))}
-    </div>
+    </ul>
   );
 }
