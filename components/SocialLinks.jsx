@@ -11,7 +11,13 @@ export default function SocialLinks() {
             target="_blank"
             className="group space-x-1 text-zinc-400 transition-all after:ml-3 hover:text-white"
           >
-            {link.icon}
+            <svg
+              className={
+                "inline size-6 self-center text-zinc-400 transition-all group-hover:text-white"
+              }
+            >
+              {link.icon}
+            </svg>
             <span className="border-b-2 border-zinc-400 text-zinc-400 transition-all group-hover:border-white group-hover:text-white">
               {link.text}
             </span>

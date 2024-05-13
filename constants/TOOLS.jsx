@@ -1,34 +1,22 @@
 export const TOOLS = [
   {
-    id: 1,
     icon: (
-      <svg className={"inline size-full self-center text-white"}>
-        <use href={`./icons/homepage-sprite.svg#tabler/brand-vscode-outline`} />
-      </svg>
+      <use href={`./icons/homepage-sprite.svg#tabler/brand-vscode-outline`} />
     ),
   },
   {
-    id: 2,
     icon: (
-      <svg className={"inline size-full self-center text-white"}>
-        <use href={`./icons/homepage-sprite.svg#tabler/brand-vercel-outline`} />
-      </svg>
+      <use href={`./icons/homepage-sprite.svg#tabler/brand-vercel-outline`} />
     ),
   },
   {
-    id: 3,
     icon: (
-      <svg className={"inline size-full self-center text-white"}>
-        <use href={`./icons/homepage-sprite.svg#tabler/brand-gitlab-outline`} />
-      </svg>
+      <use href={`./icons/homepage-sprite.svg#tabler/brand-gitlab-outline`} />
     ),
   },
   {
-    id: 4,
     icon: (
-      <svg className={"inline size-full self-center text-white"}>
-        <use href={`./icons/homepage-sprite.svg#tabler/brand-tabler-outline`} />
-      </svg>
+      <use href={`./icons/homepage-sprite.svg#tabler/brand-tabler-outline`} />
     ),
   },
 ];
