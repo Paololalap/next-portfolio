@@ -13,7 +13,7 @@ export default function HomePage() {
       <div className="mt-10 flex items-center gap-x-5">
         <div className="relative size-20">
           <Image
-            src={"https://avatars.githubusercontent.com/u/84236606?v=4"}
+            src="https://avatars.githubusercontent.com/u/84236606?v=4"
             alt="Paolo Lalap"
             className="rounded-full"
             priority

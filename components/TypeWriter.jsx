@@ -23,7 +23,7 @@ export default function Typewriter({ texts, className }) {
       ) {
         // All characters displayed, switch to reverse mode
         setTimeout(() => {
-        setReverseMode(true);
+          setReverseMode(true);
           setCurrentIndex((prevIndex) => prevIndex - 1);
         }, 1000);
       } else if (reverseMode && currentIndex >= 0) {
