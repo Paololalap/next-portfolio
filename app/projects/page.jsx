@@ -35,7 +35,7 @@ export default async function ProjectsPage() {
                 <CardTitle className="text-[#d4d4d8]">{repo.name}</CardTitle>
               </CardHeader>
               <CardContent className="text-[#a1a1aa]">
-                {repo.description || <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam eligendi accusantium expedita odit porro maiores numquam quos. Nam aperiam debitis eos a cupiditate neque ducimus ipsa cum. Quisquam, eius expedita.25</p>}
+                {repo.description || <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam eligendi accusantium expedita odit porro maiores numquam quos. Nam aperiam debitis eos a cupiditate neque ducimus ipsa cum. Quisquam, eius expedita.</p>}
               </CardContent>
               <CardFooter className="flex w-full items-start">
                 <ul className="flex flex-wrap gap-y-2 w-2/3">
