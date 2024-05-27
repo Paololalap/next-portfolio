@@ -1,8 +1,8 @@
-import "@/styles/globals.css";
-import Header from "@/components/header/Header";
-import { cn } from "@/lib/utils";
 import Footer from "@/components/footer/Footer";
+import Header from "@/components/header/Header";
 import { roboto } from "@/fonts/fonts";
+import { cn } from "@/lib/utils";
+import "@/styles/globals.css";
 import { PreloadResources } from "./preload-resources";
 
 export const metadata = {

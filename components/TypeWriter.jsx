@@ -1,6 +1,7 @@
 "use client";
+
 import { cn } from "@/lib/utils";
-import React, { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function Typewriter({ texts, className }) {
   const [displayText, setDisplayText] = useState("");

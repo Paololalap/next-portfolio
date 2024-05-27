@@ -1,5 +1,5 @@
-import { cn } from "@/lib/utils";
 import { lobster } from "@/fonts/fonts";
+import { cn } from "@/lib/utils";
 
 export default function LoadingPage() {
   return (

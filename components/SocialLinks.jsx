@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { SOCIAL_LINKS } from "@/constants/SOCIAL_LINKS";
+import Link from "next/link";
 
 export default function SocialLinks() {
   return (

@@ -1,10 +1,10 @@
-import SkillSet from "@/components/SkillSet";
-import Tools from "@/components/Tools";
-import LandingFooter from "@/components/footer/Landing";
-import Typewriter from "@/components/TypeWriter";
 import ChevronLeftRight from "@/components/ChevronLeftRight";
-import { ROLES } from "@/constants/ROLES";
+import SkillSet from "@/components/SkillSet";
 import SocialLinks from "@/components/SocialLinks";
+import Tools from "@/components/Tools";
+import Typewriter from "@/components/TypeWriter";
+import LandingFooter from "@/components/footer/Landing";
+import { ROLES } from "@/constants/ROLES";
 import Image from "next/image";
 
 export default function HomePage() {

@@ -1,4 +1,4 @@
-import { Roboto, Lobster } from "next/font/google";
+import { Lobster, Roboto } from "next/font/google";
 
 export const roboto = Roboto({
   subsets: ["latin"],

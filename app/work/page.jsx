@@ -1,3 +1,5 @@
+import ChevronLeftRight from "@/components/ChevronLeftRight";
+import { Badge } from "@/components/ui/badge";
 import {
   Card,
   CardContent,
@@ -6,8 +8,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import ChevronLeftRight from "@/components/ChevronLeftRight";
 import { LAGUNA, SYDNEY } from "@/constants/WORK";
 
 export const metadata = {
