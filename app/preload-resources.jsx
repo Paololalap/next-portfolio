@@ -1,15 +1,10 @@
 "use client";
 
+import { RESOURCES } from "@/constants/RESOURCES.js";
 import ReactDOM from "react-dom";
 
-const resources = [
-  "/icons/homepage-sprite.svg",
-  "/icons/header-sprite.svg",
-  "/icons/projects-page-sprite.svg",
-];
-
 export function PreloadResources() {
-  resources.forEach((resource) => {
+  RESOURCES.forEach((resource) => {
     ReactDOM.preload(resource, { as: "image" });
   });
   return null;
