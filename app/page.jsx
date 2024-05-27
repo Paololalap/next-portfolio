@@ -16,6 +16,7 @@ export default function HomePage() {
             src={"https://avatars.githubusercontent.com/u/84236606?v=4"}
             alt="Paolo Lalap"
             className="rounded-full"
+            priority
             fill
             sizes="(min-width: 380px) 80px, calc(11.67vw + 38px)"
           />
