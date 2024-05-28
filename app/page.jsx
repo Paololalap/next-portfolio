@@ -11,7 +11,7 @@ export default function HomePage() {
   return (
     <main className="mx-auto mt-8 max-w-2xl">
       <div className="mt-10 flex items-center gap-x-5">
-        <div className="relative size-20">
+        <div className="relative min-h-20 min-w-20">
           <Image
             src="https://avatars.githubusercontent.com/u/84236606?v=4"
             alt="Paolo Lalap"
@@ -21,7 +21,7 @@ export default function HomePage() {
             sizes="(min-width: 380px) 80px, calc(11.67vw + 38px)"
           />
         </div>
-        <div className="flex flex-col leading-8">
+        <div className="flex flex-col leading-8 w-full">
           <h1 className="text-3xl font-semibold capitalize text-white">
             Paolo <span className="text-[#D62828]">Lalap</span>
           </h1>
