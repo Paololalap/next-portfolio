@@ -14,7 +14,7 @@ export default function Header() {
   const [showMenu, setShowMenu] = useState(true);
 
   return (
-    <header className="max-w-2xl mx-auto mt-8">
+    <header className="mx-auto mt-8 max-w-2xl">
       <div className="flex items-center justify-between rounded-full border border-zinc-400 px-2 py-1 sm:flex-row">
         <nav className="group relative hidden items-center text-base sm:flex">
           <ul className="flex">
@@ -102,7 +102,7 @@ export default function Header() {
 
         <Link
           href={
-            "https://drive.google.com/file/d/1fTNcxsEKYmU1vpNaa8NocsxBGXverF_G/view?usp=sharing"
+            "https://drive.google.com/file/d/1Y0kBNwx54JOkEsnlTTD7fE6lsauZxyz2/view"
           }
           tabIndex={"-1"}
           target="_blank"
