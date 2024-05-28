@@ -16,7 +16,7 @@ export const metadata = {
 
 export default function WorkPage() {
   return (
-    <main className="mt-14 p-0">
+    <main className="mx-auto mt-14 max-w-2xl">
       <h2 className="scroll-m-20 pb-2 text-3xl font-semibold tracking-tight text-[#d4d4d8] first:mt-0">
         Employment <span className="text-[#D62828]">History</span>
       </h2>
@@ -55,7 +55,7 @@ export default function WorkPage() {
           ))}
         </CardFooter>
       </Card>
-      
+
       <Card className="mt-5 bg-transparent">
         <CardHeader>
           <div className="flex justify-between">

@@ -9,7 +9,7 @@ import Image from "next/image";
 
 export default function HomePage() {
   return (
-    <main>
+    <main className="mx-auto mt-8 max-w-2xl">
       <div className="mt-10 flex items-center gap-x-5">
         <div className="relative size-20">
           <Image

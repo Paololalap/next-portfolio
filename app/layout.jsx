@@ -20,8 +20,8 @@ export default function RootLayout({ children }) {
       <PreloadResources />
       <body
         className={cn(
-          "mx-auto min-h-screen w-fit bg-gray-900 p-8 sm:max-w-lg sm:bg-gradient-to-br sm:from-gray-800 sm:to-gray-950 sm:pt-8 md:max-w-2xl",
           roboto.className,
+          "min-h-screen w-screen min-w-fit overflow-x-hidden bg-gray-900 px-8 sm:bg-gradient-to-br sm:from-gray-800 sm:to-gray-950 md:p-0",
         )}
       >
         <Header />

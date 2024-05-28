@@ -14,8 +14,8 @@ export default function Header() {
   const [showMenu, setShowMenu] = useState(true);
 
   return (
-    <>
-      <header className="flex justify-between items-center rounded-full border border-zinc-400 px-2 py-1 sm:flex-row">
+    <header className="max-w-2xl mx-auto mt-8">
+      <div className="flex items-center justify-between rounded-full border border-zinc-400 px-2 py-1 sm:flex-row">
         <nav className="group relative hidden items-center text-base sm:flex">
           <ul className="flex">
             <li>
@@ -32,9 +32,7 @@ export default function Header() {
                       "mr-1 size-5 transition-all duration-500 group-hover/button:text-white"
                     }
                   >
-                    <use
-                      href={`./icons/sprite.svg#tabler/home-outline`}
-                    />
+                    <use href={`./icons/sprite.svg#tabler/home-outline`} />
                   </svg>
                   <span className="transition-all duration-500 group-hover/button:text-white">
                     Home
@@ -80,9 +78,7 @@ export default function Header() {
                       "mr-1 size-5 transition-all duration-500 group-hover/button:text-white"
                     }
                   >
-                    <use
-                      href={`./icons/sprite.svg#tabler/folder-outline`}
-                    />
+                    <use href={`./icons/sprite.svg#tabler/folder-outline`} />
                   </svg>{" "}
                   <span className="transition-all duration-500 group-hover/button:text-white">
                     Projects
@@ -123,8 +119,8 @@ export default function Header() {
             Resume
           </Button>
         </Link>
-      </header>
-      <header>
+      </div>
+      <div>
         {showMenu || (
           <>
             <svg
@@ -161,7 +157,7 @@ export default function Header() {
             </nav>
           </>
         )}
-      </header>
-    </>
+      </div>
+    </header>
   );
 }

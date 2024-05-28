@@ -23,7 +23,7 @@ async function fetchRepos() {
 export default async function ProjectsPage() {
   const repos = await fetchRepos();
   return (
-    <main className="mt-14">
+    <main className="mx-auto mt-14 max-w-2xl">
       <h2 className="scroll-m-20 pb-2 text-3xl font-semibold tracking-tight text-[#d4d4d8] first:mt-0">
         <span className="text-[#D62828]">Pro</span>jects
       </h2>
@@ -35,10 +35,17 @@ export default async function ProjectsPage() {
                 <CardTitle className="text-[#d4d4d8]">{repo.name}</CardTitle>
               </CardHeader>
               <CardContent className="text-[#a1a1aa]">
-                {repo.description || <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam eligendi accusantium expedita odit porro maiores numquam quos. Nam aperiam debitis eos a cupiditate neque ducimus ipsa cum. Quisquam, eius expedita.</p>}
+                {repo.description || (
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Quibusdam eligendi accusantium expedita odit porro maiores
+                    numquam quos. Nam aperiam debitis eos a cupiditate neque
+                    ducimus ipsa cum. Quisquam, eius expedita.
+                  </p>
+                )}
               </CardContent>
               <CardFooter className="flex w-full items-start">
-                <ul className="flex flex-wrap gap-y-2 w-2/3">
+                <ul className="flex w-2/3 flex-wrap gap-y-2">
                   {repo.topics.map((topic, index) => (
                     <li key={index}>
                       <Badge
@@ -53,7 +60,7 @@ export default async function ProjectsPage() {
                 <div className="flex flex-1 items-center justify-end gap-x-2">
                   {repo.homepage && (
                     <Link href={repo.homepage} className="group flex gap-x-1">
-                      <svg className="text-[#71717a] transition-all size-6 group-hover:text-white">
+                      <svg className="size-6 text-[#71717a] transition-all group-hover:text-white">
                         <use
                           href={`./icons/projects-page-sprite.svg#tabler/external-link-outline`}
                         />
@@ -68,7 +75,7 @@ export default async function ProjectsPage() {
                     className="group flex gap-x-1"
                     href={`https://github.com/Paololalap/${repo.name}`}
                   >
-                    <svg className="text-[#71717a] transition-all size-6 group-hover:text-white">
+                    <svg className="size-6 text-[#71717a] transition-all group-hover:text-white">
                       <use
                         href={`./icons/projects-page-sprite.svg#tabler/brand-github-outline`}
                       />
