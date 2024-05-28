@@ -31,7 +31,7 @@ export default function LandingFooter() {
             <>
               <svg className={"mr-1 inline size-4 self-center text-white"}>
                 <use
-                  href={`./icons/homepage-sprite.svg#lucide/copy-check`}
+                  href={`./icons/sprite.svg#lucide/copy-check`}
                 />
               </svg>
               Copied!
@@ -39,7 +39,7 @@ export default function LandingFooter() {
           ) : (
             <>
               <svg className={"mr-1 inline size-4 self-center text-white"}>
-                <use href={`./icons/homepage-sprite.svg#lucide/copy`} />
+                <use href={`./icons/sprite.svg#lucide/copy`} />
               </svg>
               Copy to clipboard
             </>

@@ -33,7 +33,7 @@ export default function Header() {
                     }
                   >
                     <use
-                      href={`./icons/header-sprite.svg#tabler/home-outline`}
+                      href={`./icons/sprite.svg#tabler/home-outline`}
                     />
                   </svg>
                   <span className="transition-all duration-500 group-hover/button:text-white">
@@ -57,7 +57,7 @@ export default function Header() {
                     }
                   >
                     <use
-                      href={`./icons/header-sprite.svg#tabler/briefcase-2-outline`}
+                      href={`./icons/sprite.svg#tabler/briefcase-2-outline`}
                     />
                   </svg>{" "}
                   <span className="transition-all duration-500 group-hover/button:text-white">
@@ -81,7 +81,7 @@ export default function Header() {
                     }
                   >
                     <use
-                      href={`./icons/header-sprite.svg#tabler/folder-outline`}
+                      href={`./icons/sprite.svg#tabler/folder-outline`}
                     />
                   </svg>{" "}
                   <span className="transition-all duration-500 group-hover/button:text-white">
@@ -100,7 +100,7 @@ export default function Header() {
           onClick={() => setShowMenu(!showMenu)}
         >
           <svg className="ml-1 size-7 text-white sm:hidden">
-            <use href={`./icons/header-sprite.svg#tabler/menu-2-outline`} />
+            <use href={`./icons/sprite.svg#tabler/menu-2-outline`} />
           </svg>
         </Button>
 
@@ -118,7 +118,7 @@ export default function Header() {
             className="group h-8 rounded-full outline outline-2 -outline-offset-1 outline-white transition-all hover:bg-[#f1f5f9] sm:hover:bg-inherit sm:hover:text-white sm:hover:outline sm:hover:outline-2 sm:hover:outline-white"
           >
             <svg className="mr-1 size-5">
-              <use href={`./icons/header-sprite.svg#tabler/file-outline`} />
+              <use href={`./icons/sprite.svg#tabler/file-outline`} />
             </svg>
             Resume
           </Button>
@@ -132,7 +132,7 @@ export default function Header() {
               onClick={() => setShowMenu((prev) => !prev)}
               aria-label="exit button"
             >
-              <use href={`./icons/header-sprite.svg#tabler/x-outline`} />
+              <use href={`./icons/sprite.svg#tabler/x-outline`} />
             </svg>
             <nav className="fixed left-1/2 top-1/2 z-10 grid min-h-screen w-screen -translate-x-1/2 -translate-y-1/2 place-items-center bg-gradient-to-br from-gray-800 to-gray-950 text-center text-lg text-zinc-400 sm:hidden">
               <ul className="space-y-3">
