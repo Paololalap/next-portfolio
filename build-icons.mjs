@@ -110,17 +110,3 @@ async function writeIfChanged(filepath, newContent) {
   await fsExtra.writeFile(filepath, newContent, "utf8");
   return true;
 }
-
-const deleteFiles = async () => {
-  for (const file of files) {
-    const filePath = path.join(inputDir, file);
-    try {
-      await fsExtra.unlink(filePath);
-      console.log(`Deleted ${file}`);
-    } catch (err) {
-      console.error(`Error deleting ${file}: ${err.message}`);
-    }
-  }
-};
-
-await deleteFiles();
