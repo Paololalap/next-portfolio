@@ -62,7 +62,7 @@ export default async function ProjectsPage() {
                     <Link href={repo.homepage} className="group flex gap-x-1">
                       <svg className="size-6 text-[#71717a] transition-all group-hover:text-white">
                         <use
-                          href={`./icons/projects-page-sprite.svg#tabler/external-link-outline`}
+                          href={`./icons/sprite.svg#tabler/external-link-outline`}
                         />
                       </svg>
                       <span className="whitespace-nowrap text-[#71717a] transition-all group-hover:text-white">
@@ -77,7 +77,7 @@ export default async function ProjectsPage() {
                   >
                     <svg className="size-6 text-[#71717a] transition-all group-hover:text-white">
                       <use
-                        href={`./icons/projects-page-sprite.svg#tabler/brand-github-outline`}
+                        href={`./icons/sprite.svg#tabler/brand-github-outline`}
                       />
                     </svg>
                     <span className="whitespace-nowrap text-[#71717a] transition-all group-hover:text-white">
