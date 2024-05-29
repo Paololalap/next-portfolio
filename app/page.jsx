@@ -6,6 +6,7 @@ import Typewriter from "@/components/TypeWriter";
 import LandingFooter from "@/components/footer/Landing";
 import { ROLES } from "@/constants/ROLES";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function HomePage() {
   return (
@@ -21,7 +22,7 @@ export default function HomePage() {
             sizes="(min-width: 380px) 80px, calc(11.67vw + 38px)"
           />
         </div>
-        <div className="flex flex-col leading-8 w-full">
+        <div className="flex w-full flex-col leading-8">
           <h1 className="text-3xl font-semibold capitalize text-white">
             Paolo <span className="text-[#D62828]">Lalap</span>
           </h1>
@@ -30,18 +31,33 @@ export default function HomePage() {
       </div>
       <div className="mt-10 text-zinc-400">
         <p className="mb-8 text-lg">
-          I am a Freelance Front-end Developer based on the Philippines{" "}
-          <ChevronLeftRight />, and I&apos;m very passionate and dedicated to my
-          work <ChevronLeftRight />
+          I am a Freelancer based in the Philippines <ChevronLeftRight />, and
+          I&apos;m very passionate and dedicated to my work <ChevronLeftRight />
           . With experience in HTML, CSS, React.js, Next.js, Tailwind CSS, React
           Native, JavaScript, MongoDB, Firebase, and Git <ChevronLeftRight />.
         </p>
         <p className="mb-8 text-lg">
-          I am currently undergoing (Intern) at the Open University of the
-          Philippines <ChevronLeftRight />, where my role entails being a
-          FullStack Developer responsible for designing and developing websites
-          and platforms <ChevronLeftRight />, ensuring smooth functionality
-          across various devices and browsers <ChevronLeftRight />.
+          This is my self-coded personal portfolio which features some of my
+          Github projects <ChevronLeftRight />, my resume, and my technical
+          skills <ChevronLeftRight />. Created this using Next.js, React,
+          Tailwind, Shadcn-ui, and Vercel <ChevronLeftRight />. This was
+          inspired by{" "}
+          <Link
+            href="https://kamranahmed.info"
+            target="_blank"
+            className="border-b-2 border-zinc-400 transition-colors hover:border-white hover:text-white"
+          >
+            Kamram Ahmed&apos;s
+          </Link>{" "}
+          personal website the founder of{" "}
+          <Link
+            href="https://roadmap.sh"
+            target="_blank"
+            className="border-b-2 border-zinc-400 transition-colors hover:border-white hover:text-white"
+          >
+            roadmap.sh
+          </Link>{" "}
+          <ChevronLeftRight />.
         </p>
       </div>
       <SocialLinks />
