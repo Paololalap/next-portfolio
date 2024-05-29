@@ -24,10 +24,10 @@ export default function WorkPage() {
         <CardHeader>
           <div className="flex justify-between">
             <CardDescription className="text-[#a1a1aa]">
-              Sydney, Australia (WFH)
+              Sydney, Australia (Remote)
             </CardDescription>
             <CardDescription className="text-[#a1a1aa]">
-              April 2024 - Present
+              (Project Based)
             </CardDescription>
           </div>
           <CardTitle className="w-2/3 text-[#d4d4d8]">
@@ -60,10 +60,10 @@ export default function WorkPage() {
         <CardHeader>
           <div className="flex justify-between">
             <CardDescription className="text-[#a1a1aa]">
-              Laguna, Philippines
+              Laguna, Philippines (Onsite)
             </CardDescription>
             <CardDescription className="text-[#a1a1aa]">
-              Feb 2024 - May 2024 (Present)
+              Feb 2024 - May 2024
             </CardDescription>
           </div>
           <CardTitle className="w-2/3 text-[#d4d4d8]">
