@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import HoverLine from "../HoverLine";
+import HoverLine from "@/components/HoverLine";
 
 export default function Header() {
   const pathname = usePathname();
