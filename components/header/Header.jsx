@@ -90,7 +90,7 @@ export default function Header() {
 
         <Link
           href={
-            "https://drive.google.com/file/d/1Y0kBNwx54JOkEsnlTTD7fE6lsauZxyz2/view"
+            "https://docs.google.com/document/d/1s-nFidFVqCkBegfErJIRxrgxBYPIETfrEwpMAqsEGoc/edit"
           }
           tabIndex={"-1"}
           target="_blank"
