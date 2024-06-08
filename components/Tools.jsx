@@ -1,6 +1,6 @@
 "use client";
 
-import { TOOLS } from "@/constants/TOOLS";
+import { TOOLS } from "@/constants/TOOLS.js";
 import { Tilt } from "@jdion/tilt-react";
 
 export default function Tools() {

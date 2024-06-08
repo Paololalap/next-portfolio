@@ -1,4 +1,4 @@
-import { SOCIAL_LINKS } from "@/constants/SOCIAL_LINKS";
+import { SOCIAL_LINKS } from "@/constants/SOCIAL_LINKS.js";
 import Link from "next/link";
 import { Button } from "./ui/button";
 
@@ -11,7 +11,7 @@ export default function SocialLinks() {
             href={link.href}
             target="_blank"
             tabIndex="-1"
-            className="space-x-1 transition-all group text-zinc-400 after:ml-3 hover:text-white"
+            className="group space-x-1 text-zinc-400 transition-all after:ml-3 hover:text-white"
           >
             <Button
               variant="linkHover1"

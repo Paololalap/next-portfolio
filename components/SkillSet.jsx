@@ -1,6 +1,6 @@
 "use client";
 
-import { SKILLS } from "@/constants/SKILLS";
+import { SKILLS } from "@/constants/SKILLS.js";
 import { Tilt } from "@jdion/tilt-react";
 
 export default function SkillSet() {
