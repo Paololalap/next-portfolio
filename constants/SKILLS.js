@@ -34,11 +34,6 @@ export const SKILLS = [
   },
   {
     icon: (
-      <use href={`./icons/sprite.svg#tabler/brand-figma-outline`} />
-    ),
-  },
-  {
-    icon: (
       <use href={`./icons/sprite.svg#tabler/brand-html5-outline`} />
     ),
   },
@@ -48,6 +43,9 @@ export const SKILLS = [
     ),
   },
   {
-    icon: <use href={`./icons/sprite.svg#tabler/brand-npm-outline`} />,
+    icon: <use href={`./icons/sprite.svg#tabler/brand-javascript-outline`} />,
+  },
+  {
+    icon: <use href={`./icons/sprite.svg#tabler/brand-typescript-outline`} />,
   },
 ];
