@@ -12,6 +12,12 @@
       "directory": "./other/svg/lucide",
       "postinstall": [],
       "transformers": []
+    },
+    {
+      "name": "simple-icons",
+      "directory": "./other/svg/simple-icons",
+      "postinstall": [],
+      "transformers": []
     }
   ]
 }
