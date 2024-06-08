@@ -6,7 +6,6 @@ import Typewriter from "@/components/TypeWriter";
 import LandingFooter from "@/components/footer/Landing";
 import { ROLES } from "@/constants/ROLES";
 import Image from "next/image";
-import Link from "next/link";
 
 export default function HomePage() {
   return (
@@ -40,24 +39,7 @@ export default function HomePage() {
           This is my self-coded personal portfolio which features some of my
           Github projects <ChevronLeftRight />, my resume, and my technical
           skills <ChevronLeftRight />. Created this using Next.js, React,
-          Tailwind, Shadcn-ui, and Vercel <ChevronLeftRight />. This was
-          inspired by{" "}
-          <Link
-            href="https://kamranahmed.info"
-            target="_blank"
-            className="border-b-2 border-zinc-400 transition-colors hover:border-white hover:text-white"
-          >
-            Kamram Ahmed&apos;s
-          </Link>{" "}
-          personal website the founder of{" "}
-          <Link
-            href="https://roadmap.sh"
-            target="_blank"
-            className="border-b-2 border-zinc-400 transition-colors hover:border-white hover:text-white"
-          >
-            roadmap.sh
-          </Link>{" "}
-          <ChevronLeftRight />.
+          Tailwind, Shadcn-ui, and Vercel <ChevronLeftRight />.
         </p>
       </div>
       <SocialLinks />
