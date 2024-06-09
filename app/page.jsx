@@ -1,6 +1,6 @@
 import ChevronLeftRight from "@/components/ChevronLeftRight";
 import SocialLinks from "@/components/SocialLinks";
-import Typewriter from "@/components/Typewriter.jsx";
+import Typewriter from "@/components/TypeWriter";
 import SpringFromLeft from "@/components/motion/SpringFromLeft";
 import IconCloud from "@/components/ui/icon-cloud";
 import { ICON_SLUGS } from "@/constants/ICON_SLUGS";
