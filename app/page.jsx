@@ -2,6 +2,7 @@ import ChevronLeftRight from "@/components/ChevronLeftRight";
 import SocialLinks from "@/components/SocialLinks";
 import Typewriter from "@/components/TypeWriter";
 import SpringFromLeft from "@/components/motion/SpringFromLeft";
+import { Badge } from "@/components/ui/badge";
 import IconCloud from "@/components/ui/icon-cloud";
 import { ICON_SLUGS } from "@/constants/ICON_SLUGS";
 import { ROLES } from "@/constants/ROLES";
@@ -11,7 +12,7 @@ export default function HomePage() {
   return (
     <SpringFromLeft className="max-w-2xl mx-auto mt-8">
       <div className="flex items-center mt-10 gap-x-5">
-        <div className="relative min-h-20 min-w-20">
+        <div className="relative min-h-24 min-w-24">
           <Image
             src="https://avatars.githubusercontent.com/u/84236606?v=4"
             alt="Paolo Lalap"
@@ -26,17 +27,21 @@ export default function HomePage() {
             Paolo <span className="text-[#D62828]">Lalap</span>
           </h1>
           <Typewriter texts={ROLES} />
+          <Badge className="mt-1 text-green-800 capitalize bg-green-100 border-0 w-fit">
+            <div className="mr-2 bg-green-800 rounded-full size-2 animate-pulse"/>
+            Available for Work
+          </Badge>
         </div>
       </div>
 
       <div className="mt-10 text-zinc-400">
+        <h2 className="mb-2 text-2xl text-white">About</h2>
         <p className="mb-8 text-lg">
           I&apos;ve been a front-end developer for 2 years <ChevronLeftRight />,
-          working mainly with Next.js <ChevronLeftRight />, React, JavaScript,
-          and many others <ChevronLeftRight />. Passionate about what I do{" "}
-          <ChevronLeftRight />, I get fully involved in every project{" "}
-          <ChevronLeftRight />, with a particular focus on design{" "}
-          <ChevronLeftRight />.
+          working mainly with Next.js, React, JavaScript, and many others{" "}
+          <ChevronLeftRight />. Passionate about what I do <ChevronLeftRight />,
+          I get fully involved in every project <ChevronLeftRight />, with a
+          particular focus on design <ChevronLeftRight />.
         </p>
         <p className="mb-8 text-lg">
           This is my self-coded personal portfolio which features some of my
