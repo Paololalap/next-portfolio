@@ -15,6 +15,7 @@
     "@uidotdev/usehooks": "^2.4.1",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
+    "framer-motion": "^11.2.10",
     "fs-extra": "^11.2.0",
     "glob": "^10.3.14",
     "next": "14.1.4",
