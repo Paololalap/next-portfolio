@@ -1,3 +1,4 @@
+import SpringFromLeft from "@/components/motion/SpringFromLeft";
 import { Badge } from "@/components/ui/badge";
 import {
   Card,
@@ -23,7 +24,7 @@ async function fetchRepos() {
 export default async function ProjectsPage() {
   const repos = await fetchRepos();
   return (
-    <main className="mx-auto mt-14 max-w-2xl">
+    <SpringFromLeft className="max-w-2xl mx-auto mt-14">
       <h2 className="scroll-m-20 pb-2 text-3xl font-semibold tracking-tight text-[#d4d4d8] first:mt-0">
         <span className="text-[#D62828]">Pro</span>jects
       </h2>
@@ -44,8 +45,8 @@ export default async function ProjectsPage() {
                   </p>
                 )}
               </CardContent>
-              <CardFooter className="flex w-full items-start">
-                <ul className="flex w-2/3 flex-wrap gap-y-2">
+              <CardFooter className="flex items-start w-full">
+                <ul className="flex flex-wrap w-2/3 gap-y-2">
                   {repo.topics.map((topic, index) => (
                     <li key={index}>
                       <Badge
@@ -57,9 +58,9 @@ export default async function ProjectsPage() {
                     </li>
                   ))}
                 </ul>
-                <div className="flex flex-1 items-center justify-end gap-x-2">
+                <div className="flex items-center justify-end flex-1 gap-x-2">
                   {repo.homepage && (
-                    <Link href={repo.homepage} className="group flex gap-x-1">
+                    <Link href={repo.homepage} className="flex group gap-x-1">
                       <svg className="size-6 text-[#71717a] transition-all group-hover:text-white">
                         <use
                           href={`./icons/sprite.svg#tabler/external-link-outline`}
@@ -72,7 +73,7 @@ export default async function ProjectsPage() {
                   )}
                   <Link
                     target="_blank"
-                    className="group flex gap-x-1"
+                    className="flex group gap-x-1"
                     href={`https://github.com/Paololalap/${repo.name}`}
                   >
                     <svg className="size-6 text-[#71717a] transition-all group-hover:text-white">
@@ -90,6 +91,6 @@ export default async function ProjectsPage() {
           </li>
         ))}
       </ul>
-    </main>
+    </SpringFromLeft>
   );
 }

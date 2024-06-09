@@ -1,15 +1,15 @@
 import ChevronLeftRight from "@/components/ChevronLeftRight";
-import SkillSet from "@/components/SkillSet";
 import SocialLinks from "@/components/SocialLinks";
-import Tools from "@/components/Tools";
-import Typewriter from "@/components/TypeWriter";
-import LandingFooter from "@/components/footer/Landing";
+import Typewriter from "@/components/Typewriter";
+import SpringFromLeft from "@/components/motion/SpringFromLeft";
+import IconCloud from "@/components/ui/icon-cloud";
+import { ICON_SLUGS } from "@/constants/ICON_SLUGS";
 import { ROLES } from "@/constants/ROLES";
 import Image from "next/image";
 
 export default function HomePage() {
   return (
-    <main className="mx-auto mt-8 max-w-2xl">
+    <SpringFromLeft className="mx-auto mt-8 max-w-2xl">
       <div className="mt-10 flex items-center gap-x-5">
         <div className="relative min-h-20 min-w-20">
           <Image
@@ -28,6 +28,7 @@ export default function HomePage() {
           <Typewriter texts={ROLES} />
         </div>
       </div>
+
       <div className="mt-10 text-zinc-400">
         <p className="mb-8 text-lg">
           I am a Freelancer based in the Philippines <ChevronLeftRight />, and
@@ -43,17 +44,13 @@ export default function HomePage() {
         </p>
       </div>
       <SocialLinks />
-
       <h2 className="mt-10 text-2xl text-white">
-        Professional <span className="text-[#D62828]">Skill set</span>
+        <span className="text-[#D62828]">Professional</span> Skill set and tools
+        I use
       </h2>
-      <SkillSet />
-
-      <h2 className="mt-10 text-2xl text-white">
-        <span className="text-[#D62828]">Tools</span> I use
-      </h2>
-      <Tools />
-      <LandingFooter />
-    </main>
+      <div className="relative flex h-full w-full items-center justify-center overflow-hidden bg-inherit px-20 pb-20">
+        <IconCloud iconSlugs={ICON_SLUGS} />
+      </div>
+    </SpringFromLeft>
   );
 }

@@ -1,4 +1,5 @@
 import ChevronLeftRight from "@/components/ChevronLeftRight";
+import SpringFromLeft from "@/components/motion/SpringFromLeft";
 import { Badge } from "@/components/ui/badge";
 import {
   Card,
@@ -16,7 +17,7 @@ export const metadata = {
 
 export default function WorkPage() {
   return (
-    <main className="mx-auto mt-14 max-w-2xl">
+    <SpringFromLeft className="max-w-2xl mx-auto mt-14">
       <h2 className="scroll-m-20 pb-2 text-3xl font-semibold tracking-tight text-[#d4d4d8] first:mt-0">
         Employment <span className="text-[#D62828]">History</span>
       </h2>
@@ -91,6 +92,6 @@ export default function WorkPage() {
           ))}
         </CardFooter>
       </Card>
-    </main>
+    </SpringFromLeft>
   );
 }
