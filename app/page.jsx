@@ -1,6 +1,6 @@
 import ChevronLeftRight from "@/components/ChevronLeftRight";
 import SocialLinks from "@/components/SocialLinks";
-import Typewriter from "@/components/Typewriter";
+import Typewriter from "@/components/Typewriter.jsx";
 import SpringFromLeft from "@/components/motion/SpringFromLeft";
 import IconCloud from "@/components/ui/icon-cloud";
 import { ICON_SLUGS } from "@/constants/ICON_SLUGS";
@@ -34,7 +34,8 @@ export default function HomePage() {
           I am a Freelancer based in the Philippines <ChevronLeftRight />, and
           I&apos;m very passionate and dedicated to my work <ChevronLeftRight />
           . Expertise in HTML, CSS, React.js, Next.js, Tailwind CSS, React
-          Native, JavaScript, Framer Motion, MongoDB, Firebase, and Git <ChevronLeftRight />.
+          Native, JavaScript, Framer Motion, MongoDB, Firebase, and Git{" "}
+          <ChevronLeftRight />.
         </p>
         <p className="mb-8 text-lg">
           This is my self-coded personal portfolio which features some of my
