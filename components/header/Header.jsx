@@ -121,7 +121,7 @@ export default function Header() {
             <Button
               variant="gooeyLeft"
               className="h-8 rounded-full bg-inherit px-3"
-              ariaLabel="Resume"
+              aria-label="Resume"
             >
               <svg className="mr-1 size-5">
                 <use href={`./icons/sprite.svg#tabler/file-outline`} />
