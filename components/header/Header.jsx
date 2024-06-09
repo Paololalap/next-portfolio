@@ -1,12 +1,12 @@
 "use client";
 
 import HoverLine from "@/components/HoverLine";
+import SpringFromLeft from "@/components/motion/SpringFromTop";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import SpringFromLeft from "../motion/SpringFromTop";
 
 export default function Header() {
   const pathname = usePathname();
