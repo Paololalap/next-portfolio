@@ -31,10 +31,11 @@ export default function HomePage() {
 
       <div className="mt-10 text-zinc-400">
         <p className="mb-8 text-lg">
-          I am a Freelancer based in the Philippines <ChevronLeftRight />, and
-          I&apos;m very passionate and dedicated to my work <ChevronLeftRight />
-          . Expertise in HTML, CSS, React.js, Next.js, Tailwind CSS, React
-          Native, JavaScript, Framer Motion, MongoDB, Firebase, and Git{" "}
+          I&apos;ve been a front-end developer for 2 years <ChevronLeftRight />,
+          working mainly with Next.js <ChevronLeftRight />, React, JavaScript,
+          and many others <ChevronLeftRight />. Passionate about what I do{" "}
+          <ChevronLeftRight />, I get fully involved in every project{" "}
+          <ChevronLeftRight />, with a particular focus on design{" "}
           <ChevronLeftRight />.
         </p>
         <p className="mb-8 text-lg">
