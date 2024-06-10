@@ -1,10 +1,10 @@
 import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
+import { BackgroundBeams } from "@/components/ui/background-beams";
 import { roboto } from "@/fonts/fonts";
 import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
 import { PreloadResources } from "./preload-resources";
-import { BackgroundBeams } from "@/components/ui/background-beams";
 
 export const metadata = {
   title: {
@@ -21,8 +21,8 @@ export default function RootLayout({ children }) {
       <PreloadResources />
       <body
         className={cn(
-          roboto.className,
-          "min-h-screen w-screen min-w-fit overflow-x-hidden px-8 md:p-0",
+          roboto.variable,
+          "font-roboto min-h-screen w-screen min-w-fit overflow-x-hidden px-8 md:p-0",
         )}
       >
         <BackgroundBeams />
