@@ -3,10 +3,11 @@
 import HoverLine from "@/components/HoverLine";
 import FadeDown from "@/components/motion/FadeDown";
 import { Button } from "@/components/ui/button";
+import { Switch } from "@/components/ui/switch";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Header() {
   const pathname = usePathname();
@@ -14,11 +15,18 @@ export default function Header() {
     pathname === "/" ? "home" : pathname === "/work" ? "work" : "projects",
   );
   const [showMenu, setShowMenu] = useState(true);
+  const [toggleAnimation, setToggleAnimation] = useState(
+    localStorage.getItem("toggleAnimation") === "true",
+  );
+
+  useEffect(() => {
+    localStorage.setItem("toggleAnimation", toggleAnimation.toString());
+  }, [toggleAnimation]);
 
   return (
     <header className="mx-auto mt-8 max-w-2xl">
-      <FadeDown>
-        <div className="flex items-center justify-between rounded-full border border-border px-2 py-1 sm:flex-row sm:py-2">
+      <FadeDown className="flex items-center gap-x-2">
+        <div className="flex flex-1 items-center justify-between rounded-full border border-border px-2 py-1 sm:flex-row sm:py-2">
           <nav className="group relative hidden items-center text-base sm:flex">
             <ul className="flex">
               <li>
@@ -130,6 +138,10 @@ export default function Header() {
             </Button>
           </Link>
         </div>
+        <Switch
+          checked={toggleAnimation}
+          onCheckedChange={setToggleAnimation}
+        />
       </FadeDown>
       {showMenu || (
         <>
