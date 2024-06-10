@@ -10,13 +10,12 @@ import IconCloud from "@/components/ui/icon-cloud";
 import { ICON_SLUGS } from "@/constants/ICON_SLUGS";
 import { ROLES } from "@/constants/ROLES";
 import Image from "next/image";
+import { Suspense } from "react";
 
 export default function HomePage() {
   return (
-    <MotionContainer
-      className="max-w-2xl mx-auto mt-8"
-    >
-      <MotionItem className="flex items-center mt-10 gap-x-5">
+    <MotionContainer className="mx-auto mt-8 max-w-2xl">
+      <MotionItem className="mt-10 flex items-center gap-x-5">
         <div className="relative min-h-24 min-w-24">
           <Image
             src="https://avatars.githubusercontent.com/u/84236606?v=4"
@@ -27,13 +26,13 @@ export default function HomePage() {
             sizes="(min-width: 380px) 80px, calc(11.67vw + 38px)"
           />
         </div>
-        <div className="flex flex-col w-full leading-8">
-          <h1 className="text-3xl font-semibold text-white capitalize">
+        <div className="flex w-full flex-col leading-8">
+          <h1 className="text-3xl font-semibold capitalize text-white">
             Paolo <span className="text-[#D62828]">Lalap</span>
           </h1>
           <Typewriter texts={ROLES} />
-          <Badge className="mt-1 text-green-800 capitalize bg-green-100 border-0 w-fit">
-            <div className="mr-2 bg-green-800 rounded-full size-2 animate-pulse" />
+          <Badge className="mt-1 w-fit border-0 bg-green-100 capitalize text-green-800">
+            <div className="mr-2 size-2 animate-pulse rounded-full bg-green-800" />
             Available for Work
           </Badge>
         </div>
@@ -62,8 +61,10 @@ export default function HomePage() {
           <span className="text-[#D62828]">Professional</span> Skill set and
           tools I use
         </h2>
-        <div className="relative flex items-center justify-center w-full h-full overflow-hidden bg-inherit md:px-20 md:pb-20">
-          <IconCloud iconSlugs={ICON_SLUGS} />
+        <div className="relative flex h-full w-full items-center justify-center overflow-hidden bg-inherit md:px-20 md:pb-20">
+          <Suspense fallback={null}>
+            <IconCloud iconSlugs={ICON_SLUGS} />
+          </Suspense>
         </div>
       </MotionItem3>
     </MotionContainer>
