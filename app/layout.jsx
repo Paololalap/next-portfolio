@@ -11,7 +11,7 @@ export const metadata = {
     absolute: "Paolo Lalap",
   },
   description:
-    "Portfolio website of Paolo Lalap, a Freelance Front-end Developer from the Philippines, with experience in HTML, CSS, React.js, Next.js, Tailwind CSS, Shadcn UI, React Native, JavaScript, MongoDB, Firebase, and Git.",
+    "This is the portfolio website of Paolo Lalap, a Front-end Developer based in the Philippines, with experience in HTML, CSS, React, Next.js, Tailwind CSS, Shadcn UI, Framer Motion, React Native, JavaScript, MongoDB, Firebase, and Git.",
 };
 
 export default function RootLayout({ children }) {
