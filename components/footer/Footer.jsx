@@ -6,7 +6,7 @@ export default function Footer() {
     currentDate.getFullYear();
 
   return (
-    <footer className="mx-auto mt-10 max-w-2xl text-xs text-zinc-400">
+    <footer className="mx-auto mt-10 max-w-2xl text-xs text-muted-foreground">
       Updated at {monthYear}
     </footer>
   );

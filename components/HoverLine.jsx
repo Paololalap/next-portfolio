@@ -17,7 +17,7 @@ export default function HoverLine({ className, activeButton }) {
   return (
     <span
       className={cn(
-        "left- absolute top-7 w-[30%] -translate-x-1/2 border-b-2 transition-all duration-500 group-hover:border-white",
+        "absolute top-7 w-[30%] -translate-x-1/2 border-b-2 border-muted-foreground transition-all duration-500 group-hover:border-foreground",
         className,
         getPosition(),
       )}

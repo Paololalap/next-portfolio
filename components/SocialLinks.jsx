@@ -1,6 +1,6 @@
+import { Button } from "@/components/ui/button";
 import { SOCIAL_LINKS } from "@/constants/SOCIAL_LINKS.js";
 import Link from "next/link";
-import { Button } from "./ui/button";
 
 export default function SocialLinks() {
   return (
@@ -11,16 +11,16 @@ export default function SocialLinks() {
             href={link.href}
             target="_blank"
             tabIndex="-1"
-            className="group space-x-1 text-zinc-400 transition-all after:ml-3 hover:text-white"
+            className="group space-x-1 text-muted-foreground transition-all after:ml-3 hover:text-primary"
           >
             <Button
               variant="linkHover1"
-              className="p-0 text-base text-zinc-400 group-hover:text-white"
+              className="p-0 text-base text-muted-foreground group-hover:text-primary"
               aria-label={link.text}
             >
               <svg
                 className={
-                  "inline size-6 self-center text-zinc-400 transition-all group-hover:text-white"
+                  "inline size-6 self-center text-muted-foreground transition-all group-hover:text-primary"
                 }
               >
                 {link.icon}

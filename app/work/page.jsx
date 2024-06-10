@@ -22,26 +22,26 @@ export default function WorkPage() {
   return (
     <MotionContainer className="mx-auto mt-14 max-w-2xl">
       <MotionItem>
-        <h2 className="scroll-m-20 pb-2 text-3xl font-semibold tracking-tight text-[#d4d4d8] first:mt-0">
-          Employment <span className="text-[#D62828]">History</span>
+        <h2 className="scroll-m-20 pb-2 text-3xl font-semibold tracking-tight text-foreground first:mt-0">
+          Employment <span className="text-muted-foreground">History</span>
         </h2>
       </MotionItem>
       <MotionItem2>
         <Card className="mt-5 bg-transparent">
           <CardHeader>
             <div className="flex justify-between">
-              <CardDescription className="text-[#a1a1aa]">
+              <CardDescription className="text-muted-foreground">
                 Sydney, Australia (Remote)
               </CardDescription>
-              <CardDescription className="text-[#a1a1aa]">
+              <CardDescription className="text-muted-foreground">
                 (Project Based)
               </CardDescription>
             </div>
-            <CardTitle className="w-2/3 text-[#d4d4d8]">
+            <CardTitle className="w-2/3 text-foreground">
               FullStack Web Developer
             </CardTitle>
           </CardHeader>
-          <CardContent className="text-[#a1a1aa]">
+          <CardContent className="text-muted-foreground">
             <p>
               Tasked with creating websites to replicate designs in Figma{" "}
               <ChevronLeftRight /> ensuring that all elements match those in
@@ -55,7 +55,7 @@ export default function WorkPage() {
               <Badge
                 key={index}
                 variant="outline"
-                className="mr-2 text-[#a1a1aa]"
+                className="mr-2 text-muted-foreground"
               >
                 {list}
               </Badge>
@@ -68,19 +68,19 @@ export default function WorkPage() {
         <Card className="mt-5 bg-transparent">
           <CardHeader>
             <div className="flex justify-between">
-              <CardDescription className="text-[#a1a1aa]">
+              <CardDescription className="text-muted-foreground">
                 Laguna, Philippines (Onsite)
               </CardDescription>
-              <CardDescription className="text-[#a1a1aa]">
+              <CardDescription className="text-muted-foreground">
                 Feb 2024 - May 2024
               </CardDescription>
             </div>
-            <CardTitle className="w-2/3 text-[#d4d4d8]">
+            <CardTitle className="w-2/3 text-foreground">
               FullStack Web Developer Intern{" "}
-              <span className="text-[#71717a]">at</span> Open University
+              <span className="text-muted-foreground">at</span> Open University
             </CardTitle>
           </CardHeader>
-          <CardContent className="text-[#a1a1aa]">
+          <CardContent className="text-muted-foreground">
             <p>
               Tasked with creating and building websites and platforms{" "}
               <ChevronLeftRight />, as well as implementing backend features to
@@ -93,7 +93,7 @@ export default function WorkPage() {
               <Badge
                 key={index}
                 variant="outline"
-                className="mr-2 text-[#a1a1aa]"
+                className="mr-2 text-muted-foreground"
               >
                 {list}
               </Badge>

@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
       <body
         className={cn(
           roboto.className,
-          "min-h-screen w-screen min-w-fit overflow-x-hidden bg-gray-900 px-8 sm:bg-gradient-to-br sm:from-gray-800 sm:to-gray-950 md:p-0",
+          "min-h-screen w-screen min-w-fit overflow-x-hidden px-8 md:p-0",
         )}
       >
         <Header />

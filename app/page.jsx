@@ -27,19 +27,19 @@ export default function HomePage() {
           />
         </div>
         <div className="flex w-full flex-col leading-8">
-          <h1 className="text-3xl font-semibold capitalize text-white">
-            Paolo <span className="text-[#D62828]">Lalap</span>
+          <h1 className="text-3xl font-semibold capitalize text-foreground">
+            Paolo <span className="text-muted-foreground">Lalap</span>
           </h1>
           <Typewriter texts={ROLES} />
-          <Badge className="mt-1 w-fit border-0 bg-green-100 capitalize text-green-800">
-            <div className="mr-2 size-2 animate-pulse rounded-full bg-green-800" />
+          <Badge className="mt-1 w-fit border-0 capitalize text-primary-foreground">
+            <div className="mr-2 size-2 animate-pulse rounded-full bg-secondary" />
             Available for Work
           </Badge>
         </div>
       </MotionItem>
 
-      <MotionItem2 className="mt-10 text-zinc-400">
-        <h2 className="mb-2 text-2xl text-white">About</h2>
+      <MotionItem2 className="mt-10 text-muted-foreground">
+        <h2 className="mb-2 text-2xl text-foreground">About</h2>
         <p className="mb-8 text-lg">
           I&apos;ve been a front-end developer for 2 years <ChevronLeftRight />,
           working mainly with Next.js, React, JavaScript, and many others{" "}
@@ -57,9 +57,9 @@ export default function HomePage() {
       </MotionItem2>
 
       <MotionItem3>
-        <h2 className="mt-10 text-2xl text-white">
-          <span className="text-[#D62828]">Professional</span> Skill set and
-          tools I use
+        <h2 className="mt-10 text-2xl text-foreground">
+          <span className="text-muted-foreground">Professional</span> Skill set
+          and tools I use
         </h2>
         <div className="relative flex h-full w-full items-center justify-center overflow-hidden bg-inherit md:px-20 md:pb-20">
           <Suspense fallback={null}>

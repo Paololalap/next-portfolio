@@ -47,7 +47,7 @@ export default function Typewriter({ texts, className }) {
     <span
       className={cn(
         displayText
-          ? "line-clamp-1 text-[18px] text-gray-400 transition-all"
+          ? "line-clamp-1 text-[18px] text-muted-foreground transition-all"
           : "text-transparent",
         className,
       )}
