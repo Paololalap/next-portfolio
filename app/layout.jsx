@@ -4,6 +4,7 @@ import { roboto } from "@/fonts/fonts";
 import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
 import { PreloadResources } from "./preload-resources";
+import { BackgroundBeams } from "@/components/ui/background-beams";
 
 export const metadata = {
   title: {
@@ -24,6 +25,7 @@ export default function RootLayout({ children }) {
           "min-h-screen w-screen min-w-fit overflow-x-hidden px-8 md:p-0",
         )}
       >
+        <BackgroundBeams />
         <Header />
         {children}
         <Footer />
