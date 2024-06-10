@@ -1,7 +1,7 @@
 "use client";
 
 import HoverLine from "@/components/HoverLine";
-import SpringFromLeft from "@/components/motion/SpringFromTop";
+import FadeDown from "@/components/motion/FadeDown";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
@@ -16,8 +16,8 @@ export default function Header() {
   const [showMenu, setShowMenu] = useState(true);
 
   return (
-    <SpringFromLeft>
-      <header className="mx-auto mt-8 max-w-2xl">
+    <header className="mx-auto mt-8 max-w-2xl">
+      <FadeDown>
         <div className="flex items-center justify-between rounded-full border border-zinc-400 px-2 py-1 sm:flex-row sm:py-2">
           <nav className="group relative hidden items-center text-base sm:flex">
             <ul className="flex">
@@ -130,43 +130,43 @@ export default function Header() {
             </Button>
           </Link>
         </div>
-        {showMenu || (
-          <>
-            <svg
-              className="fixed left-0 top-0 z-20 ml-10 mt-10 size-9 cursor-pointer text-white sm:hidden"
-              onClick={() => setShowMenu((prev) => !prev)}
-              aria-label="exit button"
-            >
-              <use href={`./icons/sprite.svg#tabler/x-outline`} />
-            </svg>
-            <nav className="fixed left-1/2 top-1/2 z-10 grid min-h-screen w-screen -translate-x-1/2 -translate-y-1/2 place-items-center bg-gradient-to-br from-gray-800 to-gray-950 text-center text-lg text-zinc-400 sm:hidden">
-              <ul className="space-y-3">
-                <li>
-                  <Link href={"/"} onClick={() => setShowMenu((prev) => !prev)}>
-                    Home
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href={"/work"}
-                    onClick={() => setShowMenu((prev) => !prev)}
-                  >
-                    Work
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href={"/projects"}
-                    onClick={() => setShowMenu((prev) => !prev)}
-                  >
-                    Projects
-                  </Link>
-                </li>
-              </ul>
-            </nav>
-          </>
-        )}
-      </header>
-    </SpringFromLeft>
+      </FadeDown>
+      {showMenu || (
+        <>
+          <svg
+            className="fixed left-0 top-0 z-20 ml-10 mt-10 size-9 cursor-pointer text-white sm:hidden"
+            onClick={() => setShowMenu((prev) => !prev)}
+            aria-label="exit button"
+          >
+            <use href={`./icons/sprite.svg#tabler/x-outline`} />
+          </svg>
+          <nav className="fixed left-1/2 top-1/2 z-10 grid min-h-screen w-screen -translate-x-1/2 -translate-y-1/2 place-items-center bg-gradient-to-br from-gray-800 to-gray-950 text-center text-lg text-zinc-400 sm:hidden">
+            <ul className="space-y-3">
+              <li>
+                <Link href={"/"} onClick={() => setShowMenu((prev) => !prev)}>
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={"/work"}
+                  onClick={() => setShowMenu((prev) => !prev)}
+                >
+                  Work
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={"/projects"}
+                  onClick={() => setShowMenu((prev) => !prev)}
+                >
+                  Projects
+                </Link>
+              </li>
+            </ul>
+          </nav>
+        </>
+      )}
+    </header>
   );
 }
