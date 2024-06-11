@@ -1,5 +1,6 @@
 "use client";
 
+import useStore from "@/app/_store";
 import HoverLine from "@/components/HoverLine";
 import FadeDown from "@/components/motion/FadeDown";
 import { Button } from "@/components/ui/button";
@@ -30,38 +31,28 @@ export default function Header() {
     pathname === "/" ? "home" : pathname === "/work" ? "work" : "projects",
   );
   const [showMenu, setShowMenu] = useState(true);
-  const [toggleAnimation, setToggleAnimation] = useState(true);
+  const { toggleAnimation, setToggleAnimation } = useStore();
   const [isClient, setIsClient] = useState(false);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   useEffect(() => {
     setIsClient(true);
-    const savedToggleAnimation = localStorage.getItem("toggleAnimation");
-    if (savedToggleAnimation !== null) {
-      setToggleAnimation(savedToggleAnimation === "true");
-    }
   }, []);
 
-  useEffect(() => {
-    if (isClient) {
-      localStorage.setItem("toggleAnimation", toggleAnimation.toString());
-    }
-  }, [toggleAnimation, isClient]);
-
   if (!isClient) {
-    return null; // or a loading spinner, or a static version of the header
+    return null;
   }
 
   return (
-    <header className="mx-auto mt-8 max-w-2xl">
+    <header className="max-w-2xl mx-auto mt-8">
       <FadeDown className="flex items-center gap-x-2">
-        <div className="flex flex-1 items-center justify-between rounded-full border border-border px-2 py-1 sm:flex-row sm:py-2">
-          <nav className="group relative hidden items-center text-base sm:flex">
+        <div className="flex items-center justify-between flex-1 px-2 py-1 border rounded-full border-border sm:flex-row sm:py-2">
+          <nav className="relative items-center hidden text-base group sm:flex">
             <ul className="flex">
               <li>
                 <Link
                   href={"/"}
-                  className="group/button relative inline-flex h-8 items-center px-3 text-sm text-foreground hover:no-underline focus:rounded-full focus:outline-0 focus:ring-0"
+                  className="relative inline-flex items-center h-8 px-3 text-sm group/button text-muted-foreground hover:no-underline focus:rounded-full focus:outline-0 focus:ring-0"
                   onMouseEnter={() => setHoveredButton("home")}
                 >
                   <svg
@@ -87,7 +78,7 @@ export default function Header() {
                   href={"/work"}
                   tabIndex={"-1"}
                   onMouseEnter={() => setHoveredButton("work")}
-                  className="group/button relative inline-flex h-8 items-center px-3 text-sm text-muted-foreground hover:no-underline focus:rounded-full focus:outline-0 focus:ring-0"
+                  className="relative inline-flex items-center h-8 px-3 text-sm group/button text-muted-foreground hover:no-underline focus:rounded-full focus:outline-0 focus:ring-0"
                 >
                   <svg
                     className={cn(
@@ -114,7 +105,7 @@ export default function Header() {
                   href={"/projects"}
                   tabIndex={"-1"}
                   onMouseEnter={() => setHoveredButton("projects")}
-                  className="group/button relative inline-flex h-8 items-center px-3 text-sm text-muted-foreground hover:no-underline focus:rounded-full focus:outline-0 focus:ring-0"
+                  className="relative inline-flex items-center h-8 px-3 text-sm group/button text-muted-foreground hover:no-underline focus:rounded-full focus:outline-0 focus:ring-0"
                 >
                   <svg
                     className={cn(
@@ -139,7 +130,7 @@ export default function Header() {
           </nav>
 
           <Button
-            className="bg-transparent p-0 hover:bg-transparent sm:hidden"
+            className="p-0 bg-transparent hover:bg-transparent sm:hidden"
             aria-label="menu"
             onClick={() => setShowMenu(!showMenu)}
           >
@@ -157,7 +148,7 @@ export default function Header() {
           >
             <Button
               variant="ringHover"
-              className="h-8 rounded-full px-3"
+              className="h-8 px-3 rounded-full"
               aria-label="Resume"
             >
               <svg className="mr-1 size-5">
@@ -197,10 +188,8 @@ export default function Header() {
               <Button
                 onClick={() => {
                   setIsDialogOpen(false);
-                  setTimeout(() => {
-                    setToggleAnimation((prev) => !prev);
-                    window.location.reload();
-                  }, 50);
+                  setToggleAnimation(!toggleAnimation);
+                  window.location.reload();
                 }}
               >
                 Restart
@@ -212,13 +201,13 @@ export default function Header() {
       {showMenu || (
         <>
           <svg
-            className="fixed left-0 top-0 z-20 ml-10 mt-10 size-9 cursor-pointer text-foreground sm:hidden"
+            className="fixed top-0 left-0 z-20 mt-10 ml-10 cursor-pointer size-9 text-foreground sm:hidden"
             onClick={() => setShowMenu((prev) => !prev)}
             aria-label="exit button"
           >
             <use href={`./icons/sprite.svg#tabler/x-outline`} />
           </svg>
-          <nav className="fixed left-1/2 top-1/2 z-10 grid min-h-screen w-screen -translate-x-1/2 -translate-y-1/2 place-items-center bg-background text-center text-lg text-muted-foreground sm:hidden">
+          <nav className="fixed z-10 grid w-screen min-h-screen text-lg text-center -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2 place-items-center bg-background text-muted-foreground sm:hidden">
             <ul className="space-y-3">
               <li>
                 <Link href={"/"} onClick={() => setShowMenu((prev) => !prev)}>

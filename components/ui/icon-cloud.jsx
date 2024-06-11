@@ -1,5 +1,6 @@
 "use client";
 
+import useStore from "@/app/_store";
 import { useEffect, useMemo, useState } from "react";
 import { Cloud, fetchSimpleIcons, renderSimpleIcon } from "react-icon-cloud";
 
@@ -25,25 +26,8 @@ export const renderCustomIcon = (icon, theme) => {
 
 export default function IconCloud({ iconSlugs }) {
   const [data, setData] = useState(null);
-  const [toggleAnimation, setToggleAnimation] = useState(
-    typeof window !== "undefined" &&
-      localStorage.getItem("toggleAnimation") === "true",
-  );
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const handleStorageChange = () => {
-        setToggleAnimation(localStorage.getItem("toggleAnimation") === "true");
-      };
-
-      window.addEventListener("storage", handleStorageChange);
-
-      return () => {
-        window.removeEventListener("storage", handleStorageChange);
-      };
-    }
-  }, []);
-
+  const { toggleAnimation, setToggleAnimation } = useStore();
+  
   const cloudProps = {
     containerProps: {
       style: {
