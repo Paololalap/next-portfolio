@@ -3,33 +3,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { Cloud, fetchSimpleIcons, renderSimpleIcon } from "react-icon-cloud";
 
-export const cloudProps = {
-  containerProps: {
-    style: {
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      width: "100%",
-      paddingTop: 40,
-    },
-  },
-  options: {
-    reverse: true,
-    depth: 1,
-    wheelZoom: false,
-    imageScale: 2,
-    activeCursor: "default",
-    tooltip: "native",
-    initial: [0.1, -0.1],
-    clickToFront: 500,
-    tooltipDelay: 0,
-    outlineColour: "#0000",
-    maxSpeed: 0.02,
-    minSpeed: 0.02,
-    /* dragControl: true, */
-  },
-};
-
 export const renderCustomIcon = (icon, theme) => {
   const bgHex = theme === "light" ? "#f3f2ef" : "#080510";
   const fallbackHex = theme === "light" ? "#6e6e73" : "#ffffff";
@@ -52,6 +25,51 @@ export const renderCustomIcon = (icon, theme) => {
 
 export default function IconCloud({ iconSlugs }) {
   const [data, setData] = useState(null);
+  const [toggleAnimation, setToggleAnimation] = useState(
+    typeof window !== "undefined" &&
+      localStorage.getItem("toggleAnimation") === "true",
+  );
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const handleStorageChange = () => {
+        setToggleAnimation(localStorage.getItem("toggleAnimation") === "true");
+      };
+
+      window.addEventListener("storage", handleStorageChange);
+
+      return () => {
+        window.removeEventListener("storage", handleStorageChange);
+      };
+    }
+  }, []);
+
+  const cloudProps = {
+    containerProps: {
+      style: {
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        width: "100%",
+        paddingTop: 40,
+      },
+    },
+    options: {
+      reverse: true,
+      depth: 1,
+      wheelZoom: false,
+      imageScale: 2,
+      activeCursor: "default",
+      tooltip: "native",
+      initial: [0.1, -0.1],
+      clickToFront: toggleAnimation ? 500 : 125,
+      tooltipDelay: 0,
+      outlineColour: "#0000",
+      maxSpeed: toggleAnimation ? 0.02 : 0,
+      minSpeed: toggleAnimation ? 0.02 : 0,
+      /* dragControl: true, */
+    },
+  };
 
   useEffect(() => {
     fetchSimpleIcons({ slugs: iconSlugs }).then(setData);

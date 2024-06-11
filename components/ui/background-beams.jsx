@@ -2,9 +2,28 @@
 
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
-import { memo } from "react";
+import { memo, useEffect, useState } from "react";
 
 export const BackgroundBeams = memo(({ className }) => {
+  const [toggleAnimation, setToggleAnimation] = useState(
+    typeof window !== "undefined" &&
+      localStorage.getItem("toggleAnimation") === "true",
+  );
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const handleStorageChange = () => {
+        setToggleAnimation(localStorage.getItem("toggleAnimation") === "true");
+      };
+
+      window.addEventListener("storage", handleStorageChange);
+
+      return () => {
+        window.removeEventListener("storage", handleStorageChange);
+      };
+    }
+  }, []);
+
   const paths = [
     "M-380 -189C-380 -189 -312 216 152 343C616 470 684 875 684 875",
     "M-373 -197C-373 -197 -305 208 159 335C623 462 691 867 691 867",
@@ -57,10 +76,11 @@ export const BackgroundBeams = memo(({ className }) => {
     "M-44 -573C-44 -573 24 -168 488 -41C952 86 1020 491 1020 491",
     "M-37 -581C-37 -581 31 -176 495 -49C959 78 1027 483 1027 483",
   ];
+
   return (
     <div
       className={cn(
-        "absolute inset-0 flex h-full w-full items-center justify-center [mask-repeat:no-repeat] [mask-size:40px]",
+        "absolute inset-0 hidden h-full w-full items-center justify-center [mask-repeat:no-repeat] [mask-size:40px] sm:flex",
         className,
       )}
     >
@@ -105,12 +125,14 @@ export const BackgroundBeams = memo(({ className }) => {
                 y1: ["0%", "100%"],
                 y2: ["0%", `${93 + Math.random() * 8}%`],
               }}
-              transition={{
-                duration: Math.random() * 10 + 10,
-                ease: "easeInOut",
-                repeat: Infinity,
-                delay: Math.random() * 10,
-              }}
+              transition={
+                toggleAnimation && {
+                  duration: Math.random() * 10 + 10,
+                  ease: "easeInOut",
+                  repeat: Infinity,
+                  delay: Math.random() * 10,
+                }
+              }
             >
               <stop stopColor="#18CCFC" stopOpacity="0"></stop>
               <stop stopColor="#18CCFC"></stop>
