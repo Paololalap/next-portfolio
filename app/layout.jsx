@@ -5,6 +5,7 @@ import { roboto } from "@/fonts/fonts";
 import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
 import { PreloadResources } from "./preload-resources";
+import { Suspense } from "react";
 
 export const metadata = {
   title: {
@@ -26,9 +27,11 @@ export default function RootLayout({ children }) {
         )}
       >
         <BackgroundBeams />
-        <Header />
-        {children}
-        <Footer />
+        <Suspense fallback={null}>
+          <Header />
+          {children}
+          <Footer />
+        </Suspense>
       </body>
     </html>
   );
