@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
       <body
         className={cn(
           roboto.variable,
-          "font-roboto min-h-screen w-screen min-w-fit overflow-x-hidden px-8 md:p-0",
+          "min-h-screen w-screen min-w-fit overflow-x-hidden px-8 font-roboto md:p-0",
         )}
       >
         <BackgroundBeams />
