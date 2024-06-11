@@ -3,7 +3,22 @@
 import HoverLine from "@/components/HoverLine";
 import FadeDown from "@/components/motion/FadeDown";
 import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import { Switch } from "@/components/ui/switch";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -15,13 +30,27 @@ export default function Header() {
     pathname === "/" ? "home" : pathname === "/work" ? "work" : "projects",
   );
   const [showMenu, setShowMenu] = useState(true);
-  const [toggleAnimation, setToggleAnimation] = useState(
-    localStorage.getItem("toggleAnimation") === "true",
-  );
+  const [toggleAnimation, setToggleAnimation] = useState(true);
+  const [isClient, setIsClient] = useState(false);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   useEffect(() => {
-    localStorage.setItem("toggleAnimation", toggleAnimation.toString());
-  }, [toggleAnimation]);
+    setIsClient(true);
+    const savedToggleAnimation = localStorage.getItem("toggleAnimation");
+    if (savedToggleAnimation !== null) {
+      setToggleAnimation(savedToggleAnimation === "true");
+    }
+  }, []);
+
+  useEffect(() => {
+    if (isClient) {
+      localStorage.setItem("toggleAnimation", toggleAnimation.toString());
+    }
+  }, [toggleAnimation, isClient]);
+
+  if (!isClient) {
+    return null; // or a loading spinner, or a static version of the header
+  }
 
   return (
     <header className="mx-auto mt-8 max-w-2xl">
@@ -138,10 +167,47 @@ export default function Header() {
             </Button>
           </Link>
         </div>
-        <Switch
-          checked={toggleAnimation}
-          onCheckedChange={setToggleAnimation}
-        />
+        <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+          <DialogTrigger className="hidden sm:block">
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger>
+                  <Switch checked={toggleAnimation} />
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>
+                    {toggleAnimation ? "Reduce Animation" : "Enable Animation"}
+                  </p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+          </DialogTrigger>
+          <DialogContent>
+            <DialogHeader>
+              <DialogTitle className="text-xl">
+                {toggleAnimation ? "Reduce Animation?" : "Enable Animation?"}
+              </DialogTitle>
+              <DialogDescription className="text-base">
+                {toggleAnimation
+                  ? "This action will disable animations, resulting in improved performance, and will require a browser restart to take effect."
+                  : "This action will enable animations, resulting in decreased performance, and will require a browser restart to take effect."}
+              </DialogDescription>
+            </DialogHeader>
+            <DialogFooter>
+              <Button
+                onClick={() => {
+                  setIsDialogOpen(false);
+                  setTimeout(() => {
+                    setToggleAnimation((prev) => !prev);
+                    window.location.reload();
+                  }, 50);
+                }}
+              >
+                Restart
+              </Button>
+            </DialogFooter>
+          </DialogContent>
+        </Dialog>
       </FadeDown>
       {showMenu || (
         <>
