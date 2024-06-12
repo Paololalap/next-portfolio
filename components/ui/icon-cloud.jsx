@@ -1,6 +1,7 @@
 "use client";
 
 import useStore from "@/app/_store";
+import useMediaQuery from "@/hooks/useMediaQuery";
 import { useEffect, useMemo, useState } from "react";
 import { Cloud, fetchSimpleIcons, renderSimpleIcon } from "react-icon-cloud";
 
@@ -26,8 +27,9 @@ export const renderCustomIcon = (icon, theme) => {
 
 export default function IconCloud({ iconSlugs }) {
   const [data, setData] = useState(null);
-  const { toggleAnimation, setToggleAnimation } = useStore();
-  
+  const { toggleAnimation } = useStore();
+  const isDesktop = useMediaQuery("(min-width: 768px)");
+
   const cloudProps = {
     containerProps: {
       style: {
@@ -46,11 +48,11 @@ export default function IconCloud({ iconSlugs }) {
       activeCursor: "default",
       tooltip: "native",
       initial: [0.1, -0.1],
-      clickToFront: toggleAnimation ? 500 : 125,
+      clickToFront: isDesktop && toggleAnimation ? 500 : 125,
       tooltipDelay: 0,
       outlineColour: "#0000",
-      maxSpeed: toggleAnimation ? 0.02 : 0,
-      minSpeed: toggleAnimation ? 0.02 : 0,
+      maxSpeed: isDesktop && toggleAnimation ? 0.02 : 0,
+      minSpeed: isDesktop && toggleAnimation ? 0.02 : 0,
       /* dragControl: true, */
     },
   };
