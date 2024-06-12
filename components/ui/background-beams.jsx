@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { memo } from "react";
 
 export const BackgroundBeams = memo(({ className }) => {
-  const { toggleAnimation, setToggleAnimation } = useStore();
+  const { toggleAnimation } = useStore();
 
   const paths = [
     "M-380 -189C-380 -189 -312 216 152 343C616 470 684 875 684 875",

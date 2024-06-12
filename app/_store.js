@@ -1,20 +1,22 @@
 import { create } from "zustand";
+import Cookies from 'js-cookie';
 
-const useStore = create((set) => ({
-  toggleAnimation: getInitialValue(),
-  setToggleAnimation: (value) => {
-    set({ toggleAnimation: value });
-    localStorage.setItem("toggleAnimation", value);
-  },
-}));
-
-function getInitialValue() {
-  const storedValue = localStorage.getItem("toggleAnimation");
-  if (storedValue === null) {
-    localStorage.setItem("toggleAnimation", "true");
+// TODO:
+function getInitialValueFromCookies() {
+  const value = Cookies.get('toggleAnimation');
+  if (value === undefined) {
+    Cookies.set('toggleAnimation', 'true');
     return true;
   }
-  return storedValue === "true";
+  return value === 'true';
 }
+
+const useStore = create((set) => ({
+  toggleAnimation: /* getInitialValueFromCookies() */ true,
+  setToggleAnimation: (value) => {
+    Cookies.set('toggleAnimation', value.toString());
+    set({ toggleAnimation: value });
+  },
+}));
 
 export default useStore;
