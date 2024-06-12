@@ -71,11 +71,16 @@ module.exports = {
           from: { backgroundPosition: "200% 0" },
           to: { backgroundPosition: "-200% 0" },
         },
+        diamondLoader: {
+          "0%, 10%": { transform: "translate(-64px, -64px) rotate(-45deg)" },
+          "90%, 100%": { transform: "translate(0px, 0px) rotate(-45deg)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         shine: "shine 8s ease-in-out infinite",
+        diamondLoader: "diamondLoader 2s linear infinite",
       },
     },
   },
