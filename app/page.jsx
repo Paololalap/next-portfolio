@@ -1,6 +1,7 @@
 import ChevronLeftRight from "@/components/ChevronLeftRight";
 import SocialLinks from "@/components/SocialLinks";
 import Typewriter from "@/components/TypeWriter";
+import Pulse from "@/components/badge/Pulse";
 import MotionContainer from "@/components/motion/fade-right/MotionContainer";
 import MotionItem from "@/components/motion/fade-right/MotionItem";
 import MotionItem2 from "@/components/motion/fade-right/MotionItem2";
@@ -31,9 +32,9 @@ export default function HomePage() {
             Paolo <span className="text-muted-foreground">Lalap</span>
           </h1>
           <Typewriter texts={ROLES} />
-          <Badge className="mt-1 w-fit border-0 capitalize text-primary-foreground">
-            <div className="mr-2 size-2 animate-pulse rounded-full bg-secondary" />
-            Available for Work
+          <Badge className="mt-1 size-fit justify-self-end border-0 capitalize text-primary-foreground">
+            <Pulse />
+            Available For Work
           </Badge>
         </div>
       </MotionItem>
@@ -51,7 +52,8 @@ export default function HomePage() {
           This is my self-coded personal portfolio which features some of my
           Github projects <ChevronLeftRight />, my resume, and my technical
           skills <ChevronLeftRight />. Created this using Next.js, React,
-          Tailwind, Shadcn-ui, and Vercel <ChevronLeftRight />.
+          Tailwind, Shadcn-ui, Framer Motion, Node.js, and Vercel{" "}
+          <ChevronLeftRight />.
         </p>
         <SocialLinks />
       </MotionItem2>
