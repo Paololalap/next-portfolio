@@ -2,10 +2,7 @@ import ChevronLeftRight from "@/components/ChevronLeftRight";
 import SocialLinks from "@/components/SocialLinks";
 import Typewriter from "@/components/TypeWriter";
 import Pulse from "@/components/badge/Pulse";
-import MotionContainer from "@/components/motion/fade-right/MotionContainer";
-import MotionItem from "@/components/motion/fade-right/MotionItem";
-import MotionItem2 from "@/components/motion/fade-right/MotionItem2";
-import MotionItem3 from "@/components/motion/fade-right/MotionItem3";
+import FadeRight from "@/components/motion/FadeRight";
 import { Badge } from "@/components/ui/badge";
 import IconCloud from "@/components/ui/icon-cloud";
 import { ICON_SLUGS } from "@/constants/ICON_SLUGS";
@@ -15,8 +12,8 @@ import { Suspense } from "react";
 
 export default function HomePage() {
   return (
-    <MotionContainer className="mx-auto mt-8 max-w-2xl">
-      <MotionItem className="mt-10 flex items-center gap-x-5">
+    <main className="max-w-2xl mx-auto mt-8">
+      <FadeRight className="flex items-center mt-10 gap-x-5" index={"0"}>
         <div className="relative min-h-24 min-w-24">
           <Image
             src="https://avatars.githubusercontent.com/u/84236606?v=4"
@@ -27,19 +24,19 @@ export default function HomePage() {
             sizes="(min-width: 380px) 80px, calc(11.67vw + 38px)"
           />
         </div>
-        <div className="flex w-full flex-col leading-8">
+        <div className="flex flex-col w-full leading-8">
           <h1 className="text-3xl font-semibold capitalize text-foreground">
             Paolo <span className="text-muted-foreground">Lalap</span>
           </h1>
           <Typewriter texts={ROLES} />
-          <Badge className="mt-1 size-fit justify-self-end border-0 capitalize text-primary-foreground">
+          <Badge className="mt-1 capitalize border-0 size-fit justify-self-end text-primary-foreground">
             <Pulse />
             Available For Work
           </Badge>
         </div>
-      </MotionItem>
+      </FadeRight>
 
-      <MotionItem2 className="mt-10 text-muted-foreground">
+      <FadeRight className="mt-10 text-muted-foreground" index={"1"}>
         <h2 className="mb-2 text-2xl text-foreground">About</h2>
         <p className="mb-8 text-lg">
           I&apos;ve been a front-end developer for 2 years <ChevronLeftRight />,
@@ -56,19 +53,19 @@ export default function HomePage() {
           <ChevronLeftRight />.
         </p>
         <SocialLinks />
-      </MotionItem2>
+      </FadeRight>
 
-      <MotionItem3>
+      <FadeRight index={"2"}>
         <h2 className="mt-10 text-2xl text-foreground">
           <span className="text-muted-foreground">Professional</span> Skill set
           and tools I use
         </h2>
-        <div className="relative flex h-full w-full items-center justify-center overflow-hidden bg-inherit md:px-20 md:pb-20">
+        <div className="relative flex items-center justify-center w-full h-full overflow-hidden bg-inherit md:px-20 md:pb-20">
           <Suspense fallback={null}>
             <IconCloud iconSlugs={ICON_SLUGS} />
           </Suspense>
         </div>
-      </MotionItem3>
-    </MotionContainer>
+      </FadeRight>
+    </main>
   );
 }

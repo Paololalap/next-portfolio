@@ -1,8 +1,5 @@
 import ChevronLeftRight from "@/components/ChevronLeftRight";
-import MotionContainer from "@/components/motion/fade-right/MotionContainer";
-import MotionItem from "@/components/motion/fade-right/MotionItem";
-import MotionItem2 from "@/components/motion/fade-right/MotionItem2";
-import MotionItem3 from "@/components/motion/fade-right/MotionItem3";
+import FadeRight from "@/components/motion/FadeRight";
 import { Badge } from "@/components/ui/badge";
 import {
   Card,
@@ -20,14 +17,14 @@ export const metadata = {
 
 export default function WorkPage() {
   return (
-    <MotionContainer className="mx-auto mt-14 max-w-2xl">
-      <MotionItem>
-        <h2 className="scroll-m-20 pb-2 text-3xl font-semibold tracking-tight text-foreground first:mt-0">
+    <main className="max-w-2xl mx-auto mt-14">
+      <FadeRight index={0}>
+        <h2 className="pb-2 text-3xl font-semibold tracking-tight scroll-m-20 text-foreground first:mt-0">
           Employment <span className="text-muted-foreground">History</span>
         </h2>
-      </MotionItem>
-      <MotionItem2>
-        <Card className="mt-5 bg-transparent">
+      </FadeRight>
+      <FadeRight index={1}>
+        <Card className="mt-5">
           <CardHeader>
             <div className="flex justify-between">
               <CardDescription className="text-muted-foreground">
@@ -62,10 +59,10 @@ export default function WorkPage() {
             ))}
           </CardFooter>
         </Card>
-      </MotionItem2>
+      </FadeRight>
 
-      <MotionItem3>
-        <Card className="mt-5 bg-transparent">
+      <FadeRight index={2}>
+        <Card className="mt-5">
           <CardHeader>
             <div className="flex justify-between">
               <CardDescription className="text-muted-foreground">
@@ -100,7 +97,7 @@ export default function WorkPage() {
             ))}
           </CardFooter>
         </Card>
-      </MotionItem3>
-    </MotionContainer>
+      </FadeRight>
+    </main>
   );
 }
