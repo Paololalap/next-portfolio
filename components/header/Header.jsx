@@ -1,6 +1,5 @@
 "use client";
 
-import useStore from "@/app/_store";
 import HoverLine from "@/components/HoverLine";
 import FadeDown from "@/components/motion/FadeDown";
 import { Button } from "@/components/ui/button";
@@ -21,6 +20,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
+import useStore from "@/stores/reduceMotion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";

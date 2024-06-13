@@ -1,6 +1,6 @@
 "use client";
 
-import useStore from "@/app/_store";
+import useStore from "@/stores/reduceMotion";
 import { motion } from "framer-motion";
 
 export default function FadeDown({ children, className }) {

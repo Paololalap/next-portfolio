@@ -1,7 +1,7 @@
 "use client";
 
-import useStore from "@/app/_store";
 import { cn } from "@/lib/utils";
+import useStore from "@/stores/reduceMotion";
 import { motion } from "framer-motion";
 import { memo } from "react";
 

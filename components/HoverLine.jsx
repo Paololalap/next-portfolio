@@ -1,7 +1,7 @@
 "use client";
 
-import useStore from "@/app/_store.js";
 import { cn } from "@/lib/utils";
+import useStore from "@/stores/reduceMotion.js";
 
 export default function HoverLine({ className, activeButton }) {
   const { toggleAnimation } = useStore();

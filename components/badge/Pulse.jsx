@@ -1,11 +1,11 @@
-'use client'
+"use client";
 
-import useStore from "@/app/_store";
 import { cn } from "@/lib/utils";
+import useStore from "@/stores/reduceMotion";
 
 export default function Pulse() {
-    const { toggleAnimation } = useStore();
-    
+  const { toggleAnimation } = useStore();
+
   return (
     <div
       className={cn(
