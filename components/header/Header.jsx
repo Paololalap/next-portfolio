@@ -32,27 +32,27 @@ export default function Header() {
   );
   const [showMenu, setShowMenu] = useState(true);
   const { toggleAnimation, setToggleAnimation } = useStore();
-  const [isClient, setIsClient] = useState(false);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
     setIsClient(true);
   }, []);
 
-  if (!isClient) {
-    return null;
-  }
+  if (!isClient) return null;
 
   return (
-    <header className="max-w-2xl mx-auto mt-8">
+    <header className="mx-auto mt-8 max-w-2xl">
       <FadeDown className="flex items-center gap-x-2">
-        <div className="flex items-center justify-between flex-1 px-2 py-1 border rounded-full border-border sm:flex-row sm:py-2">
-          <nav className="relative items-center hidden text-base group sm:flex">
+        <div className="flex flex-1 items-center justify-between rounded-full border border-border px-2 py-1 sm:flex-row sm:py-2">
+          <nav className="group relative hidden items-center text-base sm:flex">
             <ul className="flex">
               <li>
                 <Link
                   href={"/"}
-                  className="relative inline-flex items-center h-8 px-3 text-sm group/button text-muted-foreground hover:no-underline focus:rounded-full focus:outline-0 focus:ring-0"
+                  className={cn(
+                    "group/button relative inline-flex h-8 items-center px-3 text-sm text-muted-foreground hover:no-underline focus:rounded-full focus:outline-0 focus:ring-0",
+                  )}
                   onMouseEnter={() => setHoveredButton("home")}
                 >
                   <svg
@@ -71,6 +71,13 @@ export default function Header() {
                   >
                     Home
                   </span>
+                  {pathname === "/" && !toggleAnimation && (
+                    <span
+                      className={cn(
+                        "absolute left-1/2 top-7 h-[2px] w-[80%] -translate-x-1/2 bg-primary",
+                      )}
+                    ></span>
+                  )}
                 </Link>
               </li>
               <li>
@@ -78,7 +85,9 @@ export default function Header() {
                   href={"/work"}
                   tabIndex={"-1"}
                   onMouseEnter={() => setHoveredButton("work")}
-                  className="relative inline-flex items-center h-8 px-3 text-sm group/button text-muted-foreground hover:no-underline focus:rounded-full focus:outline-0 focus:ring-0"
+                  className={cn(
+                    "group/button relative inline-flex h-8 items-center px-3 text-sm text-muted-foreground hover:no-underline focus:rounded-full focus:outline-0 focus:ring-0",
+                  )}
                 >
                   <svg
                     className={cn(
@@ -98,6 +107,13 @@ export default function Header() {
                   >
                     Work
                   </span>
+                  {pathname === "/work" && !toggleAnimation && (
+                    <span
+                      className={cn(
+                        "absolute left-1/2 top-7 h-[2px] w-[80%] -translate-x-1/2 bg-primary",
+                      )}
+                    ></span>
+                  )}
                 </Link>
               </li>
               <li>
@@ -105,7 +121,9 @@ export default function Header() {
                   href={"/projects"}
                   tabIndex={"-1"}
                   onMouseEnter={() => setHoveredButton("projects")}
-                  className="relative inline-flex items-center h-8 px-3 text-sm group/button text-muted-foreground hover:no-underline focus:rounded-full focus:outline-0 focus:ring-0"
+                  className={cn(
+                    "group/button relative inline-flex h-8 items-center px-3 text-sm text-muted-foreground hover:no-underline focus:rounded-full focus:outline-0 focus:ring-0",
+                  )}
                 >
                   <svg
                     className={cn(
@@ -123,6 +141,13 @@ export default function Header() {
                   >
                     Projects
                   </span>
+                  {pathname === "/projects" && !toggleAnimation && (
+                    <span
+                      className={cn(
+                        "absolute left-1/2 top-7 h-[2px] w-[80%] -translate-x-1/2 bg-primary",
+                      )}
+                    ></span>
+                  )}
                 </Link>
               </li>
             </ul>
@@ -130,7 +155,7 @@ export default function Header() {
           </nav>
 
           <Button
-            className="p-0 bg-transparent hover:bg-transparent sm:hidden"
+            className="bg-transparent p-0 hover:bg-transparent sm:hidden"
             aria-label="menu"
             onClick={() => setShowMenu(!showMenu)}
           >
@@ -148,7 +173,7 @@ export default function Header() {
           >
             <Button
               variant="ringHover"
-              className="h-8 px-3 rounded-full"
+              className="h-8 rounded-full px-3"
               aria-label="Resume"
             >
               <svg className="mr-1 size-5">
@@ -165,7 +190,7 @@ export default function Header() {
                 <TooltipTrigger>
                   <Switch checked={toggleAnimation} />
                 </TooltipTrigger>
-                <TooltipContent>
+                <TooltipContent sideOffset={10}>
                   <p>
                     {toggleAnimation ? "Reduce Animation" : "Enable Animation"}
                   </p>
@@ -180,8 +205,8 @@ export default function Header() {
               </DialogTitle>
               <DialogDescription className="text-base">
                 {toggleAnimation
-                  ? "This action will disable animations, resulting in improved performance, and will require a browser restart to take effect."
-                  : "This action will enable animations, resulting in decreased performance, and will require a browser restart to take effect."}
+                  ? "This will disable animations, improving performance."
+                  : "This will enable animations, which may affect performance."}
               </DialogDescription>
             </DialogHeader>
             <DialogFooter>
@@ -189,10 +214,9 @@ export default function Header() {
                 onClick={() => {
                   setIsDialogOpen(false);
                   setToggleAnimation(!toggleAnimation);
-                  window.location.reload();
                 }}
               >
-                Restart
+                {toggleAnimation ? "Disable" : "Enable"}
               </Button>
             </DialogFooter>
           </DialogContent>
@@ -201,13 +225,13 @@ export default function Header() {
       {showMenu || (
         <>
           <svg
-            className="fixed top-0 left-0 z-20 mt-10 ml-10 cursor-pointer size-9 text-foreground sm:hidden"
+            className="fixed left-0 top-0 z-20 ml-10 mt-10 size-9 cursor-pointer text-foreground sm:hidden"
             onClick={() => setShowMenu((prev) => !prev)}
             aria-label="exit button"
           >
             <use href={`./icons/sprite.svg#tabler/x-outline`} />
           </svg>
-          <nav className="fixed z-10 grid w-screen min-h-screen text-lg text-center -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2 place-items-center bg-background text-muted-foreground sm:hidden">
+          <nav className="fixed left-1/2 top-1/2 z-10 grid min-h-screen w-screen -translate-x-1/2 -translate-y-1/2 place-items-center bg-background text-center text-lg text-muted-foreground sm:hidden">
             <ul className="space-y-3">
               <li>
                 <Link href={"/"} onClick={() => setShowMenu((prev) => !prev)}>
