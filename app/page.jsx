@@ -12,8 +12,8 @@ import { Suspense } from "react";
 
 export default function HomePage() {
   return (
-    <main className="max-w-2xl mx-auto mt-8">
-      <FadeRight className="flex items-center mt-10 gap-x-5" index={"0"}>
+    <main className="mx-auto mt-8 max-w-2xl px-8">
+      <FadeRight className="mt-10 flex items-center gap-x-5" index={"0"}>
         <div className="relative min-h-24 min-w-24">
           <Image
             src="https://avatars.githubusercontent.com/u/84236606?v=4"
@@ -24,12 +24,12 @@ export default function HomePage() {
             sizes="(min-width: 380px) 80px, calc(11.67vw + 38px)"
           />
         </div>
-        <div className="flex flex-col w-full leading-8">
+        <div className="flex w-full flex-col leading-8">
           <h1 className="text-3xl font-semibold capitalize text-foreground">
             Paolo <span className="text-muted-foreground">Lalap</span>
           </h1>
           <Typewriter texts={ROLES} />
-          <Badge className="mt-1 capitalize border-0 size-fit justify-self-end text-primary-foreground">
+          <Badge className="mt-1 size-fit justify-self-end border-0 capitalize text-primary-foreground">
             <Pulse />
             Available For Work
           </Badge>
@@ -60,7 +60,7 @@ export default function HomePage() {
           <span className="text-muted-foreground">Professional</span> Skill set
           and tools I use
         </h2>
-        <div className="relative flex items-center justify-center w-full h-full overflow-hidden bg-inherit md:px-20 md:pb-20">
+        <div className="relative flex h-full w-full items-center justify-center overflow-hidden bg-inherit md:px-20 md:pb-20">
           <Suspense fallback={null}>
             <IconCloud iconSlugs={ICON_SLUGS} />
           </Suspense>
