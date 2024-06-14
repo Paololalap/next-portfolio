@@ -141,11 +141,18 @@ export default function Header() {
           </Link>
         </div>
         <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-          <DialogTrigger className="hidden sm:block" tabIndex="-1">
+          <DialogTrigger
+            className="hidden sm:block"
+            tabIndex="-1"
+            aria-label="Dialog Trigger"
+          >
             <TooltipProvider>
               <Tooltip>
-                <TooltipTrigger tabIndex="-1">
-                  <Switch checked={toggleAnimation} />
+                <TooltipTrigger tabIndex="-1" aria-label="Tooltip Trigger">
+                  <Switch
+                    checked={toggleAnimation}
+                    aria-label="Animation Trigger"
+                  />
                 </TooltipTrigger>
                 <TooltipContent sideOffset={10}>
                   <p>
