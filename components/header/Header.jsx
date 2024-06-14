@@ -20,6 +20,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { HEADER_LINKS } from "@/constants/HEADER_LINKS";
 import useMediaQuery from "@/hooks/useMediaQuery";
 import { cn } from "@/lib/utils";
 import useStore from "@/stores/toggleAnimation";
@@ -46,114 +47,49 @@ export default function Header() {
   if (!isClient) return null;
 
   return (
-    <header className="mx-auto mt-8 max-w-2xl px-8">
+    <header className="max-w-2xl px-8 mx-auto mt-8">
       <FadeDown className="flex items-center gap-x-2">
-        <div className="flex flex-1 items-center justify-between rounded-full border border-border px-2 py-1 sm:flex-row sm:py-2">
-          <nav className="group relative hidden items-center text-base sm:flex">
+        <div className="flex items-center justify-between flex-1 px-2 py-1 border rounded-full border-border sm:flex-row sm:py-2">
+          <nav className="relative items-center hidden text-base group sm:flex">
             <ul className="flex">
-              <li>
-                <Link
-                  href={"/"}
-                  className={cn(
-                    "group/button relative inline-flex h-8 items-center px-3 text-sm text-muted-foreground hover:no-underline focus:rounded-full focus:outline-0 focus:ring-0",
-                  )}
-                  onMouseEnter={() => setHoveredButton("home")}
-                >
-                  <svg
+              {HEADER_LINKS.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    onMouseEnter={() =>
+                      setHoveredButton(item.label.toLowerCase())
+                    }
                     className={cn(
-                      "mr-1 size-5 transition-all duration-500 group-hover/button:text-foreground",
-                      pathname === "/" && "text-foreground",
+                      "group/button relative inline-flex h-8 items-center px-3 text-sm text-muted-foreground hover:no-underline focus:rounded-full focus:outline-0 focus:ring-0",
+                      pathname === item.href && "text-foreground",
                     )}
                   >
-                    <use href={`./icons/sprite.svg#tabler/home-outline`} />
-                  </svg>
-                  <span
-                    className={cn(
-                      "transition-all duration-500 group-hover/button:text-foreground",
-                      pathname === "/" && "text-foreground",
-                    )}
-                  >
-                    Home
-                  </span>
-                  {pathname === "/" && !toggleAnimation && (
+                    <svg
+                      className={cn(
+                        "mr-1 size-5 transition-all duration-500 group-hover/button:text-foreground",
+                        pathname === item.href && "text-foreground",
+                      )}
+                    >
+                      <use href={`./icons/sprite.svg#tabler/${item.icon}`} />
+                    </svg>
                     <span
                       className={cn(
-                        "absolute left-1/2 top-7 h-[2px] w-[80%] -translate-x-1/2 bg-primary",
+                        "transition-all duration-500 group-hover/button:text-foreground",
+                        pathname === item.href && "text-foreground",
                       )}
-                    ></span>
-                  )}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href={"/work"}
-                  tabIndex={"-1"}
-                  onMouseEnter={() => setHoveredButton("work")}
-                  className={cn(
-                    "group/button relative inline-flex h-8 items-center px-3 text-sm text-muted-foreground hover:no-underline focus:rounded-full focus:outline-0 focus:ring-0",
-                  )}
-                >
-                  <svg
-                    className={cn(
-                      "mr-1 size-5 transition-all duration-500 group-hover/button:text-foreground",
-                      pathname === "/work" && "text-foreground",
+                    >
+                      {item.label}
+                    </span>
+                    {pathname === item.href && !toggleAnimation && (
+                      <span
+                        className={cn(
+                          "absolute left-1/2 top-7 h-[2px] w-[80%] -translate-x-1/2 bg-primary",
+                        )}
+                      ></span>
                     )}
-                  >
-                    <use
-                      href={`./icons/sprite.svg#tabler/briefcase-2-outline`}
-                    />
-                  </svg>{" "}
-                  <span
-                    className={cn(
-                      "transition-all duration-500 group-hover/button:text-foreground",
-                      pathname === "/work" && "text-foreground",
-                    )}
-                  >
-                    Work
-                  </span>
-                  {pathname === "/work" && !toggleAnimation && (
-                    <span
-                      className={cn(
-                        "absolute left-1/2 top-7 h-[2px] w-[80%] -translate-x-1/2 bg-primary",
-                      )}
-                    ></span>
-                  )}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href={"/projects"}
-                  tabIndex={"-1"}
-                  onMouseEnter={() => setHoveredButton("projects")}
-                  className={cn(
-                    "group/button relative inline-flex h-8 items-center px-3 text-sm text-muted-foreground hover:no-underline focus:rounded-full focus:outline-0 focus:ring-0",
-                  )}
-                >
-                  <svg
-                    className={cn(
-                      "mr-1 size-5 transition-all duration-500 group-hover/button:text-foreground",
-                      pathname === "/projects" && "text-foreground",
-                    )}
-                  >
-                    <use href={`./icons/sprite.svg#tabler/folder-outline`} />
-                  </svg>{" "}
-                  <span
-                    className={cn(
-                      "transition-all duration-500 group-hover/button:text-foreground",
-                      pathname === "/projects" && "text-foreground",
-                    )}
-                  >
-                    Projects
-                  </span>
-                  {pathname === "/projects" && !toggleAnimation && (
-                    <span
-                      className={cn(
-                        "absolute left-1/2 top-7 h-[2px] w-[80%] -translate-x-1/2 bg-primary",
-                      )}
-                    ></span>
-                  )}
-                </Link>
-              </li>
+                  </Link>
+                </li>
+              ))}
             </ul>
             <HoverLine activeButton={hoveredButton} />
           </nav>
@@ -165,25 +101,17 @@ export default function Header() {
               </svg>
             </SheetTrigger>
             <SheetContent className="grid place-items-center">
-              <ul className="space-y-3 text-center text-lg text-muted-foreground">
-                <li>
-                  <Link href={"/"} onClick={() => setIsSheetOpen(false)}>
-                    Home
-                  </Link>
-                </li>
-                <li>
-                  <Link href={"/work"} onClick={() => setIsSheetOpen(false)}>
-                    Work
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href={"/projects"}
-                    onClick={() => setIsSheetOpen(false)}
-                  >
-                    Projects
-                  </Link>
-                </li>
+              <ul className="space-y-3 text-lg text-center text-muted-foreground">
+                {HEADER_LINKS.map((item) => (
+                  <li key={item.href}>
+                    <Link
+                      href={item.href}
+                      onClick={() => setIsSheetOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </SheetContent>
           </Sheet>
