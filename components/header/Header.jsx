@@ -47,10 +47,10 @@ export default function Header() {
   if (!isClient) return null;
 
   return (
-    <header className="max-w-2xl px-8 mx-auto mt-8">
+    <header className="mx-auto mt-8 max-w-2xl px-8 md:px-0">
       <FadeDown className="flex items-center gap-x-2">
-        <div className="flex items-center justify-between flex-1 px-2 py-1 border rounded-full border-border sm:flex-row sm:py-2">
-          <nav className="relative items-center hidden text-base group sm:flex">
+        <div className="flex flex-1 items-center justify-between rounded-full border border-border px-2 py-1 sm:flex-row sm:py-2">
+          <nav className="group relative hidden items-center text-base sm:flex">
             <ul className="flex">
               {HEADER_LINKS.map((item) => (
                 <li key={item.href}>
@@ -60,7 +60,7 @@ export default function Header() {
                       setHoveredButton(item.label.toLowerCase())
                     }
                     className={cn(
-                      "group/button relative inline-flex h-8 items-center px-3 text-sm text-muted-foreground hover:no-underline focus:rounded-full focus:outline-0 focus:ring-0",
+                      "group/button focus-within:ring-3 relative inline-flex h-8 items-center px-3 text-sm text-muted-foreground focus-within:rounded-full focus-within:outline-0 hover:no-underline",
                       pathname === item.href && "text-foreground",
                     )}
                   >
@@ -101,12 +101,13 @@ export default function Header() {
               </svg>
             </SheetTrigger>
             <SheetContent className="grid place-items-center">
-              <ul className="space-y-3 text-lg text-center text-muted-foreground">
+              <ul className="space-y-3 text-center text-lg text-muted-foreground">
                 {HEADER_LINKS.map((item) => (
                   <li key={item.href}>
                     <Link
                       href={item.href}
                       onClick={() => setIsSheetOpen(false)}
+                      tabIndex="-1"
                     >
                       {item.label}
                     </Link>
@@ -140,10 +141,10 @@ export default function Header() {
           </Link>
         </div>
         <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-          <DialogTrigger className="hidden sm:block">
+          <DialogTrigger className="hidden sm:block" tabIndex="-1">
             <TooltipProvider>
               <Tooltip>
-                <TooltipTrigger>
+                <TooltipTrigger tabIndex="-1">
                   <Switch checked={toggleAnimation} />
                 </TooltipTrigger>
                 <TooltipContent sideOffset={10}>
