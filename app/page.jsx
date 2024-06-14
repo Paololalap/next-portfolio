@@ -12,7 +12,7 @@ import { Suspense } from "react";
 
 export default function HomePage() {
   return (
-    <main className="mx-auto mt-8 max-w-2xl px-8">
+    <main className="mx-auto mt-8 max-w-2xl px-8 md:px-0">
       <FadeRight className="mt-10 flex items-center gap-x-5" index={"0"}>
         <div className="relative min-h-24 min-w-24">
           <Image

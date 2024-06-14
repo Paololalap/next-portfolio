@@ -17,9 +17,9 @@ export const metadata = {
 
 export default function WorkPage() {
   return (
-    <main className="mx-auto mt-14 max-w-2xl px-8">
+    <main className="max-w-2xl mx-auto px-8 md:px-0 mt-14">
       <FadeRight index={0}>
-        <h2 className="scroll-m-20 pb-2 text-3xl font-semibold tracking-tight text-foreground first:mt-0">
+        <h2 className="pb-2 text-3xl font-semibold tracking-tight scroll-m-20 text-foreground first:mt-0">
           Employment <span className="text-muted-foreground">History</span>
         </h2>
       </FadeRight>
