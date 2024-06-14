@@ -2,7 +2,7 @@
 
 import { ROLES } from "@/constants/ROLES";
 import { cn } from "@/lib/utils";
-import useStore from "@/stores/reduceMotion";
+import useStore from "@/stores/toggleAnimation";
 import { useEffect, useState } from "react";
 
 export default function Typewriter({ texts, className }) {

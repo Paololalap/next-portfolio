@@ -1,7 +1,7 @@
 "use client";
 
 import useMediaQuery from "@/hooks/useMediaQuery";
-import useStore from "@/stores/reduceMotion";
+import useStore from "@/stores/toggleAnimation";
 import { useEffect, useMemo, useState } from "react";
 import { Cloud, fetchSimpleIcons, renderSimpleIcon } from "react-icon-cloud";
 

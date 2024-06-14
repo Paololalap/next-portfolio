@@ -2,14 +2,14 @@
 
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import useStore from "@/stores/reduceMotion";
+import useStore from "@/stores/toggleAnimation";
 
-export default function SocialLinksButton({ children, ...props }) {
+export default function SocialLinksButton({ children, className, ...props }) {
   const { toggleAnimation } = useStore();
   return (
     <Button
       {...props}
-      className={cn(!toggleAnimation && "px-0 after:transition-none", "px-0")}
+      className={cn(className, !toggleAnimation && "after:transition-none")}
       variant="linkHover1"
     >
       {children}

@@ -1,6 +1,6 @@
 "use client";
 
-import useStore from "@/stores/reduceMotion";
+import useStore from "@/stores/toggleAnimation";
 import { motion } from "framer-motion";
 
 export default function FadeRight({
