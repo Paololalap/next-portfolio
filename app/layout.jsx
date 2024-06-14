@@ -22,8 +22,9 @@ export default function RootLayout({ children }) {
       <body
         className={cn(
           roboto.variable,
-          "min-h-screen w-screen min-w-fit overflow-x-hidden px-8 font-roboto md:p-0",
+          "min-h-screen min-w-fit overflow-x-hidden px-8 font-roboto md:p-0",
         )}
+        style={{ width: "calc(100vw - 12px)" }}
       >
         <BackgroundBeams />
         <Header />

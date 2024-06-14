@@ -35,3 +35,32 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Styles for the scrollbar */
+::-webkit-scrollbar {
+  width: 12px; /* width of the entire scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-primary-foreground; /* color of the track */
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-muted-foreground rounded-[10px] border-[3px] border-solid border-border;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* color of the scroll thumb when hovered */
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;  /* Safari and Chrome */
+}
+
+
+
