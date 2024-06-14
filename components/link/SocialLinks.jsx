@@ -1,4 +1,5 @@
-'use client'
+"use client";
+
 import { cn } from "@/lib/utils";
 import useStore from "@/stores/toggleAnimation";
 import Link from "next/link";

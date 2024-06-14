@@ -12,10 +12,11 @@ export default function FadeRight({
 }) {
   const { toggleAnimation } = useStore();
 
-  const Comp = motion[tag];
+  const MotionComp = motion[tag];
+  const Comp = tag;
 
   return toggleAnimation ? (
-    <Comp
+    <MotionComp
       className={className}
       variants={{
         initial: { opacity: 0, x: -500 },
@@ -32,7 +33,7 @@ export default function FadeRight({
       {...props}
     >
       {children}
-    </Comp>
+    </MotionComp>
   ) : (
     <Comp className={className} {...props}>
       {children}
