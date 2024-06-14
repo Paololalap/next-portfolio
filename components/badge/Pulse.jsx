@@ -1,17 +1,10 @@
 "use client";
 
-import { cn } from "@/lib/utils";
-import useStore from "@/stores/toggleAnimation";
 
 export default function Pulse() {
-  const { toggleAnimation } = useStore();
-
   return (
     <div
-      className={cn(
-        "mr-2 size-2 rounded-full bg-secondary",
-        toggleAnimation && "animate-pulse",
-      )}
+      className="mr-2 rounded-full size-2 animate-pulse bg-secondary"
     />
   );
 }
