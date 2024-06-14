@@ -19,6 +19,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import useMediaQuery from "@/hooks/useMediaQuery";
 import { cn } from "@/lib/utils";
 import useStore from "@/stores/toggleAnimation";
 import Link from "next/link";
@@ -34,18 +35,20 @@ export default function Header() {
   const { toggleAnimation, setToggleAnimation } = useStore();
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [isClient, setIsClient] = useState(false);
+  const isDesktop = useMediaQuery("(min-width: 768px)");
 
   useEffect(() => {
     setIsClient(true);
-  }, []);
+    isDesktop ? setToggleAnimation(true) : setToggleAnimation(false);
+  }, [isDesktop, setToggleAnimation]);
 
   if (!isClient) return null;
 
   return (
-    <header className="max-w-2xl mx-auto mt-8">
+    <header className="mx-auto mt-8 max-w-2xl">
       <FadeDown className="flex items-center gap-x-2">
-        <div className="flex items-center justify-between flex-1 px-2 py-1 border rounded-full border-border sm:flex-row sm:py-2">
-          <nav className="relative items-center hidden text-base group sm:flex">
+        <div className="flex flex-1 items-center justify-between rounded-full border border-border px-2 py-1 sm:flex-row sm:py-2">
+          <nav className="group relative hidden items-center text-base sm:flex">
             <ul className="flex">
               <li>
                 <Link
@@ -155,7 +158,7 @@ export default function Header() {
           </nav>
 
           <Button
-            className="p-0 bg-transparent hover:bg-transparent sm:hidden"
+            className="bg-transparent p-0 hover:bg-transparent sm:hidden"
             aria-label="menu"
             onClick={() => setShowMenu(!showMenu)}
           >
@@ -174,8 +177,9 @@ export default function Header() {
             <Button
               variant="ringHover"
               className={cn(
-                "h-8 px-3 rounded-full",
-                !toggleAnimation && "hover:ring-0 transition-none hover:bg-primary",
+                "h-8 rounded-full px-3",
+                !toggleAnimation &&
+                  "transition-none hover:bg-primary hover:ring-0",
               )}
               aria-label="Resume"
             >
@@ -228,13 +232,13 @@ export default function Header() {
       {showMenu || (
         <>
           <svg
-            className="fixed top-0 left-0 z-20 mt-10 ml-10 cursor-pointer size-9 text-foreground sm:hidden"
+            className="fixed left-0 top-0 z-20 ml-10 mt-10 size-9 cursor-pointer text-foreground sm:hidden"
             onClick={() => setShowMenu((prev) => !prev)}
             aria-label="exit button"
           >
             <use href={`./icons/sprite.svg#tabler/x-outline`} />
           </svg>
-          <nav className="fixed z-10 grid w-screen min-h-screen text-lg text-center -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2 place-items-center bg-background text-muted-foreground sm:hidden">
+          <nav className="fixed left-1/2 top-1/2 z-10 grid min-h-screen w-screen -translate-x-1/2 -translate-y-1/2 place-items-center bg-background text-center text-lg text-muted-foreground sm:hidden">
             <ul className="space-y-3">
               <li>
                 <Link href={"/"} onClick={() => setShowMenu((prev) => !prev)}>
