@@ -9,95 +9,102 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { LAGUNA, SYDNEY } from "@/constants/WORK";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { WORK_EXPERIENCE } from "@/constants/WORK_EXPERIENCE";
 
-export const metadata = {
-  title: "Work",
-};
+export const metadata = { title: "Work" };
 
 export default function WorkPage() {
   return (
-    <main className="max-w-2xl mx-auto px-8 md:px-0 mt-14">
-      <FadeRight index={0}>
-        <h2 className="pb-2 text-3xl font-semibold tracking-tight scroll-m-20 text-foreground first:mt-0">
+    <main className="mx-auto mt-14 max-w-2xl px-8 md:px-0">
+      <FadeRight index={0} tag="div">
+        <h2 className="scroll-m-20 pb-2 text-3xl font-semibold tracking-tight text-foreground first:mt-0">
           Employment <span className="text-muted-foreground">History</span>
         </h2>
+        <p className="mt-5">
+          I have been fortunate to work with some amazing teams. I have worked
+          with startups and also with large enterprises. Here is a brief
+          overview of my employment history.
+        </p>
       </FadeRight>
-      <FadeRight index={1}>
-        <Card className="mt-5">
-          <CardHeader>
-            <div className="flex justify-between">
-              <CardDescription className="text-muted-foreground">
-                Sydney, Australia (Remote)
-              </CardDescription>
-              <CardDescription className="text-muted-foreground">
-                (Project Based)
-              </CardDescription>
-            </div>
-            <CardTitle className="w-2/3 text-foreground">
-              FullStack Web Developer
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="text-muted-foreground">
-            <p>
-              Tasked with creating websites to replicate designs in Figma{" "}
-              <ChevronLeftRight /> ensuring that all elements match those in
-              Figma and are also responsive <ChevronLeftRight />. Additionally,
-              responsible for implementing backend functionality{" "}
-              <ChevronLeftRight />, such as authentication <ChevronLeftRight />.
-            </p>
-          </CardContent>
-          <CardFooter className="flex flex-wrap gap-y-2">
-            {SYDNEY.map((list, index) => (
-              <Badge
-                key={index}
-                variant="outline"
-                className="mr-2 text-muted-foreground"
-              >
-                {list}
-              </Badge>
-            ))}
-          </CardFooter>
-        </Card>
-      </FadeRight>
-
-      <FadeRight index={2}>
-        <Card className="mt-5">
-          <CardHeader>
-            <div className="flex justify-between">
-              <CardDescription className="text-muted-foreground">
-                Laguna, Philippines (Onsite)
-              </CardDescription>
-              <CardDescription className="text-muted-foreground">
-                Feb 2024 - May 2024
-              </CardDescription>
-            </div>
-            <CardTitle className="w-2/3 text-foreground">
-              FullStack Web Developer Intern{" "}
-              <span className="text-muted-foreground">at</span> Open University
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="text-muted-foreground">
-            <p>
-              Tasked with creating and building websites and platforms{" "}
-              <ChevronLeftRight />, as well as implementing backend features to
-              ensure smooth operation across various devices and popular web
-              browsers <ChevronLeftRight />.
-            </p>
-          </CardContent>
-          <CardFooter className="flex flex-wrap gap-y-2">
-            {LAGUNA.map((list, index) => (
-              <Badge
-                key={index}
-                variant="outline"
-                className="mr-2 text-muted-foreground"
-              >
-                {list}
-              </Badge>
-            ))}
-          </CardFooter>
-        </Card>
-      </FadeRight>
+      {WORK_EXPERIENCE.map((experience, index) => (
+        <FadeRight key={index} index={index + 1} tag="div">
+          <Card className="mt-5">
+            <CardHeader>
+              <div className="flex justify-between">
+                <CardDescription className="text-muted-foreground">
+                  {experience.location}
+                </CardDescription>
+                <CardDescription className="whitespace-nowrap text-muted-foreground">
+                  {experience.duration}
+                </CardDescription>
+              </div>
+              <CardTitle className="flex items-start justify-between text-foreground md:items-center">
+                <div className="w-2/3">
+                  {experience.title}{" "}
+                  {experience.company && (
+                    <span className="text-muted-foreground">
+                      {experience.company}
+                    </span>
+                  )}
+                </div>
+                {experience.help && (
+                  <Dialog>
+                    <DialogTrigger>
+                      <Badge className="whitespace-nowrap md:hover:bg-primary/90">
+                        {experience.help}
+                      </Badge>
+                    </DialogTrigger>
+                    <DialogContent className="max-w-sm md:max-w-lg">
+                      <DialogHeader>
+                        <DialogTitle className="text-2xl">
+                          {experience.help}
+                        </DialogTitle>
+                        <DialogDescription className="text-base">
+                          {experience.helpDescription}
+                        </DialogDescription>
+                      </DialogHeader>
+                    </DialogContent>
+                  </Dialog>
+                )}
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="text-muted-foreground">
+              <p>
+                {experience.description
+                  .split("<ChevronLeftRight />")
+                  .map((text, i) => (
+                    <span key={i}>
+                      {text}
+                      {i <
+                        experience.description.split("<ChevronLeftRight />")
+                          .length -
+                          1 && <ChevronLeftRight />}
+                    </span>
+                  ))}
+              </p>
+            </CardContent>
+            <CardFooter className="flex flex-wrap gap-y-2">
+              {experience.skills?.map((skill, skillIndex) => (
+                <Badge
+                  key={skillIndex}
+                  variant="outline"
+                  className="mr-2 text-muted-foreground"
+                >
+                  {skill}
+                </Badge>
+              ))}
+            </CardFooter>
+          </Card>
+        </FadeRight>
+      ))}
     </main>
   );
 }
