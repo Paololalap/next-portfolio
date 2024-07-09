@@ -25,4 +25,5 @@ export const ICON_SLUGS = [
   "nodedotjs",
   "googlegemini",
   "wordpress",
+  "astro",
 ];

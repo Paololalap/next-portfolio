@@ -19,6 +19,6 @@ export const SYDNEY = [
   "NodeJs",
   "React-hook-form",
   "Shadcn",
+  "MongoDB",
   "Tailwind",
 ];
-

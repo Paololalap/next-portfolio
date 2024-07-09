@@ -1,5 +1,5 @@
 export const ROLES = [
   "Front-end Web Developer",
-  "FullStack NextJs Developer",
+  "Data Entry Specialist",
   "Front-end Engineer"
 ];
