@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
       <body
         className={cn(
           roboto.variable,
-          "min-h-screen min-w-fit overflow-x-hidden font-roboto",
+          "min-h-fit min-w-fit overflow-x-hidden font-roboto",
         )}
         style={{ width: "calc(100vw - 12px)" }}
       >
