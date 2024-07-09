@@ -80,13 +80,6 @@ export default function Header() {
                     >
                       {item.label}
                     </span>
-                    {pathname === item.href && !toggleAnimation && (
-                      <span
-                        className={cn(
-                          "absolute left-1/2 top-7 h-[2px] w-[80%] -translate-x-1/2 bg-primary",
-                        )}
-                      ></span>
-                    )}
                   </Link>
                 </li>
               ))}

@@ -1,12 +1,9 @@
 "use client";
 
-import { ROLES } from "@/constants/ROLES";
 import { cn } from "@/lib/utils";
-import useStore from "@/stores/toggleAnimation";
 import { useEffect, useState } from "react";
 
 export default function Typewriter({ texts, className }) {
-  const { toggleAnimation } = useStore();
   const [displayText, setDisplayText] = useState("");
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -46,29 +43,16 @@ export default function Typewriter({ texts, className }) {
     return () => clearTimeout(timer);
   }, [texts, currentIndex, currentTextIndex, reverseMode]);
 
-  if (toggleAnimation) {
-    return (
-      <span
-        className={cn(
-          displayText
-            ? "line-clamp-1 text-[18px] text-muted-foreground transition-all"
-            : "text-transparent",
-          className,
-        )}
-      >
-        {displayText ? displayText : texts[currentTextIndex].charAt(0)}
-      </span>
-    );
-  } else {
-    return (
-      <div
-        className={cn(
-          "line-clamp-1 text-[18px] text-muted-foreground",
-          className,
-        )}
-      >
-        <p>{ROLES[0]}</p>
-      </div>
-    );
-  }
+  return (
+    <span
+      className={cn(
+        displayText
+          ? "line-clamp-1 text-[18px] text-muted-foreground transition-all"
+          : "text-transparent",
+        className,
+      )}
+    >
+      {displayText ? displayText : texts[currentTextIndex].charAt(0)}
+    </span>
+  );
 }
