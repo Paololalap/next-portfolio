@@ -10,11 +10,11 @@ import { ROLES } from "@/constants/ROLES";
 import Image from "next/image";
 import { Suspense } from "react";
 
-export default function HomePage() {
+export default function Homepage() {
   return (
     <main className="mx-auto mt-8 max-w-2xl px-8 md:px-0">
-      <FadeRight className="mt-10 flex items-center gap-x-5" index={"0"}>
-        <div className="relative min-h-24 min-w-24">
+      <FadeRight className="mt-10 flex items-center gap-x-5" index={0}>
+        <figure className="relative min-h-24 min-w-24">
           <Image
             src="https://avatars.githubusercontent.com/u/84236606?v=4"
             alt="Paolo Lalap"
@@ -23,20 +23,20 @@ export default function HomePage() {
             fill
             sizes="(min-width: 380px) 80px, calc(11.67vw + 38px)"
           />
-        </div>
+        </figure>
         <div className="flex w-full flex-col leading-8">
           <h1 className="text-3xl font-semibold capitalize text-foreground">
             Paolo <span className="text-muted-foreground">Lalap</span>
           </h1>
           <Typewriter texts={ROLES} />
-          <Badge className="mt-1 size-fit justify-self-end border-0 capitalize text-primary-foreground">
+          <Badge className="mt-1 size-fit justify-self-end border-0 text-primary-foreground">
             <Pulse />
-            Available For Work
+            Available for work
           </Badge>
         </div>
       </FadeRight>
 
-      <FadeRight className="mt-10 text-muted-foreground" index={"1"}>
+      <FadeRight className="mt-10 text-muted-foreground" index={1}>
         <h2 className="mb-2 text-2xl text-foreground">About</h2>
         <p className="mb-8 text-lg">
           I&apos;ve been a front-end developer for 2 years <ChevronLeftRight />,
@@ -49,13 +49,12 @@ export default function HomePage() {
           This is my self-coded personal portfolio which features some of my
           Github projects <ChevronLeftRight />, my resume, and my technical
           skills <ChevronLeftRight />. Created this using Next.js, React,
-          Tailwind, Shadcn-ui, Framer Motion, Node.js, and Vercel{" "}
-          <ChevronLeftRight />.
+          Tailwind, Shadcn-ui, Framer Motion, and Vercel <ChevronLeftRight />.
         </p>
         <SocialLinks />
       </FadeRight>
 
-      <FadeRight index={"2"}>
+      <FadeRight index={2}>
         <h2 className="mt-10 text-2xl text-foreground">
           <span className="text-muted-foreground">Professional</span> Skill set
           and tools I use
