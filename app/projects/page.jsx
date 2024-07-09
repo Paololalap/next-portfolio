@@ -1,4 +1,6 @@
+import ChevronLeftRight from "@/components/ChevronLeftRight";
 import FadeRight from "@/components/motion/FadeRight";
+import ProjectLink from "@/components/ProjectLink";
 import { Badge } from "@/components/ui/badge";
 import {
   Card,
@@ -7,85 +9,75 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { ADDITIONAL_PROJECTS } from "@/constants/ADDITIONAL_PROJECTS";
+import { PROJECTS } from "@/constants/PROJECTS";
 import Link from "next/link";
 
-export const metadata = {
-  title: "Projects",
-};
+export const metadata = { title: "Projects" };
 
-async function fetchRepos() {
-  const response = await fetch(
-    "https://api.github.com/users/Paololalap/repos?sort=updated&direction=desc",
-    { cache: "no-store" },
-  );
-  const repos = await response.json();
-  return repos;
-}
-
-export default async function ProjectsPage() {
-  const repos = await fetchRepos();
+export default function ProjectsPage() {
   return (
     <main className="mx-auto mt-14 max-w-2xl px-8 md:px-0">
-      <FadeRight>
+      <FadeRight index={0}>
         <h2 className="scroll-m-20 pb-2 text-3xl font-semibold tracking-tight text-foreground first:mt-0">
           <span className="text-muted-foreground">Pro</span>jects
         </h2>
+        <p className="mt-5">
+          I have worked on a variety of projects; some of them as a hobby, some
+          as a proof of concept and others to solve my own pain points. Here are
+          some of the projects that I have worked on.
+        </p>
       </FadeRight>
       <ul>
-        {repos.map((repo, index) => (
-          <FadeRight key={repo.id} Tag="li" index={index}>
-            <Card className="mt-5 bg-card">
+        {PROJECTS.map((project, index) => (
+          <FadeRight key={project.title} tag="li" index={index + 1}>
+            <Card className="mt-5">
               <CardHeader>
-                <CardTitle className="text-foreground">{repo.name}</CardTitle>
+                <CardTitle className="text-foreground">
+                  {project.title}
+                </CardTitle>
               </CardHeader>
               <CardContent className="text-muted-foreground">
-                {repo.description || (
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Quibusdam eligendi accusantium expedita odit porro maiores
-                    numquam quos. Nam aperiam debitis eos a cupiditate neque
-                    ducimus ipsa cum. Quisquam, eius expedita.
-                  </p>
-                )}
+                <p className="line-clamp-4 hover:line-clamp-none">
+                  {project.description
+                    .split("<ChevronLeftRight />")
+                    .map((text, i) => (
+                      <span key={i}>
+                        {text}
+                        {i <
+                          project.description.split("<ChevronLeftRight />")
+                            .length -
+                            1 && <ChevronLeftRight />}
+                      </span>
+                    ))}
+                </p>
               </CardContent>
-              <CardFooter className="flex w-full items-start">
+              <CardFooter className="flex w-full items-start md:items-center">
                 <ul className="flex w-2/3 flex-wrap gap-y-2">
-                  {repo.topics.map((topic, index) => (
-                    <li key={index}>
+                  {project.technologies.map((tech) => (
+                    <li key={tech}>
                       <Badge
                         variant="outline"
-                        className="mr-2 capitalize text-muted-foreground"
+                        className="mr-2 text-muted-foreground"
                       >
-                        {topic}
+                        {tech}
                       </Badge>
                     </li>
                   ))}
                 </ul>
-                <div className="flex flex-1 flex-col items-end gap-2 md:flex-row md:items-center">
-                  {repo.homepage && (
-                    <Link href={repo.homepage} className="group flex gap-x-1">
-                      <svg className="size-6 text-muted-foreground transition-all group-hover:text-foreground">
-                        <use
-                          href={`./icons/sprite.svg#tabler/external-link-outline`}
-                        />
-                      </svg>
-                      <span className="whitespace-nowrap text-muted-foreground transition-all group-hover:text-foreground">
-                        Visit Link
-                      </span>
-                    </Link>
-                  )}
+                <div className="flex flex-1 flex-col items-end gap-2 md:flex-row md:items-center md:justify-end">
                   <Link
+                    href={project.link}
+                    className="group/link flex gap-x-1"
                     target="_blank"
-                    className="group flex gap-x-1"
-                    href={`https://github.com/Paololalap/${repo.name}`}
                   >
-                    <svg className="size-6 text-muted-foreground transition-all group-hover:text-foreground">
+                    <svg className="size-6 text-muted-foreground transition-all group-hover/link:text-foreground">
                       <use
-                        href={`./icons/sprite.svg#tabler/brand-github-outline`}
+                        href={`./icons/sprite.svg#tabler/external-link-outline`}
                       />
                     </svg>
-                    <span className="whitespace-nowrap text-muted-foreground transition-all group-hover:text-foreground">
-                      Visit Github
+                    <span className="whitespace-nowrap text-muted-foreground transition-all group-hover/link:text-foreground">
+                      Visit Link
                     </span>
                   </Link>
                 </div>
@@ -94,6 +86,25 @@ export default async function ProjectsPage() {
           </FadeRight>
         ))}
       </ul>
+      <FadeRight tag="section">
+        <p className="mt-5">
+          Here are some more projects that I have worked on. You can find the
+          complete list of projects on my{" "}
+          <Link
+            className="underline hover:opacity-90"
+            href="https://github.com/paololalap"
+            target="_blank"
+          >
+            GitHub profile
+          </Link>
+          .
+        </p>
+        <ul className="mt-5 space-y-2">
+          {ADDITIONAL_PROJECTS.map((project, index) => (
+            <ProjectLink key={index} {...project} />
+          ))}
+        </ul>
+      </FadeRight>
     </main>
   );
 }
