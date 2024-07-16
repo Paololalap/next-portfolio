@@ -23,7 +23,7 @@ export default function FadeRight({
         whileInView: (index) => ({
           opacity: 1,
           x: 0,
-          transition: { delay: index >= 3 ? 0 : index * 0.3 },
+          transition: { delay: index * 0.3 },
         }),
       }}
       initial="initial"
