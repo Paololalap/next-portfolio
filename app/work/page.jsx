@@ -29,8 +29,7 @@ export default function WorkPage() {
           Employment <span className="text-muted-foreground">History</span>
         </h2>
         <p className="mt-5">
-          I have been fortunate to work with some amazing teams. I have worked
-          with startups and also with large enterprises. Here is a brief
+          I have been fortunate to work with some amazing teams. Here is a brief
           overview of my employment history.
         </p>
       </FadeRight>
