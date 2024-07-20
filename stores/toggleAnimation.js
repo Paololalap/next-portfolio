@@ -7,4 +7,5 @@ const useStore = create((set) => ({
   },
 }));
 
-export default useStore;
+export { useStore };
+

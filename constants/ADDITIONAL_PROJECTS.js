@@ -1,4 +1,4 @@
-export const ADDITIONAL_PROJECTS = [
+const ADDITIONAL_PROJECTS = [
   {
     href: "https://paololalap-spotify-player.vercel.app",
     title: "react-spotify-player",
@@ -18,3 +18,5 @@ export const ADDITIONAL_PROJECTS = [
       "I created this simple e-commerce website as part of a university activity.",
   },
 ];
+
+export { ADDITIONAL_PROJECTS };

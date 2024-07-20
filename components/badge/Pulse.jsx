@@ -1,9 +1,7 @@
-"use client";
-
-export default function Pulse() {
+const Pulse = () => {
   return (
-    <div
-      className="mr-2 rounded-full size-2 animate-pulse bg-secondary"
-    />
+    <div className="mr-2 size-2 animate-pulse rounded-full bg-secondary" />
   );
-}
+};
+
+export { Pulse };

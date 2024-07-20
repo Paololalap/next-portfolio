@@ -1,6 +1,6 @@
 import { LAGUNA, SYDNEY } from "./WORK";
 
-export const WORK_EXPERIENCE = [
+const WORK_EXPERIENCE = [
   {
     location: "Laguna, Philippines (Onsite)",
     duration: "Jul 2024 - Present",
@@ -38,3 +38,5 @@ export const WORK_EXPERIENCE = [
       "Assembling images, typography, or motion graphics to create a piece of design <ChevronLeftRight />. Creating the graphics primarily for published, printed, or electronic media, such as brochures and advertising <ChevronLeftRight />.",
   },
 ];
+
+export { WORK_EXPERIENCE };

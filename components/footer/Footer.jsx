@@ -1,4 +1,4 @@
-export default function Footer() {
+const Footer = () => {
   const currentDate = new Date();
   const monthYear =
     currentDate.toLocaleString("en-US", { month: "long" }) +
@@ -6,7 +6,7 @@ export default function Footer() {
     currentDate.getFullYear();
 
   return (
-    <footer className="mx-auto mt-10 max-w-2xl text-xs text-muted-foreground px-8 md:p-0">
+    <footer className="mx-auto mt-10 max-w-2xl px-8 text-xs text-muted-foreground md:p-0">
       <p>
         Updated at{" "}
         <time dateTime={currentDate.toISOString().split("T")[0]}>
@@ -15,4 +15,6 @@ export default function Footer() {
       </p>
     </footer>
   );
-}
+};
+
+export { Footer };

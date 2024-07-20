@@ -1,6 +1,6 @@
-import ChevronLeftRight from "@/components/ChevronLeftRight";
-import FadeRight from "@/components/motion/FadeRight";
-import ProjectLink from "@/components/ProjectLink";
+import { ChevronLeftRight } from "@/components/ChevronLeftRight";
+import { FadeRight } from "@/components/motion/FadeRight";
+import { ProjectLink } from "@/components/ProjectLink";
 import { Badge } from "@/components/ui/badge";
 import {
   Card,

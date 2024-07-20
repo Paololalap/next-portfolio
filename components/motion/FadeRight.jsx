@@ -1,15 +1,9 @@
 "use client";
 
-import useStore from "@/stores/toggleAnimation";
+import { useStore } from "@/stores/toggleAnimation";
 import { motion } from "framer-motion";
 
-export default function FadeRight({
-  children,
-  className,
-  tag = "div",
-  index,
-  ...props
-}) {
+const FadeRight = ({ children, className, tag = "div", index, ...props }) => {
   const { toggleAnimation } = useStore();
 
   const MotionComp = motion[tag];
@@ -39,4 +33,6 @@ export default function FadeRight({
       {children}
     </Comp>
   );
-}
+};
+
+export { FadeRight };

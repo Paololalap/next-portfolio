@@ -1,10 +1,10 @@
-import ChevronLeftRight from "@/components/ChevronLeftRight";
-import SocialLinks from "@/components/SocialLinks";
-import Typewriter from "@/components/TypeWriter";
-import Pulse from "@/components/badge/Pulse";
-import FadeRight from "@/components/motion/FadeRight";
+import { ChevronLeftRight } from "@/components/ChevronLeftRight";
+import { SocialLinks } from "@/components/SocialLinks";
+import { Typewriter } from "@/components/TypeWriter";
+import { Pulse } from "@/components/badge/Pulse";
+import { FadeRight } from "@/components/motion/FadeRight";
 import { Badge } from "@/components/ui/badge";
-import IconCloud from "@/components/ui/icon-cloud";
+import { IconCloud } from "@/components/ui/icon-cloud";
 import { ICON_SLUGS } from "@/constants/ICON_SLUGS";
 import { ROLES } from "@/constants/ROLES";
 import Image from "next/image";

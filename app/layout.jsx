@@ -1,5 +1,5 @@
-import Footer from "@/components/footer/Footer";
-import Header from "@/components/header/Header";
+import { Footer } from "@/components/footer/Footer";
+import { Header } from "@/components/header/Header";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { roboto } from "@/fonts/fonts";
 import { cn } from "@/lib/utils";

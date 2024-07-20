@@ -1,4 +1,4 @@
-export const PROJECTS = [
+const PROJECTS = [
   {
     title: "Loved",
     description:
@@ -63,3 +63,5 @@ export const PROJECTS = [
     link: "https://github.com/Paololalap/react-native-smart-aqua",
   },
 ];
+
+export { PROJECTS };

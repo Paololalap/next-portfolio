@@ -1,9 +1,9 @@
 "use client";
 
-import useStore from "@/stores/toggleAnimation";
+import { useStore } from "@/stores/toggleAnimation";
 import { motion } from "framer-motion";
 
-export default function FadeDown({ children, className }) {
+const FadeDown = ({ children, className }) => {
   const { toggleAnimation } = useStore();
 
   return toggleAnimation ? (
@@ -17,4 +17,6 @@ export default function FadeDown({ children, className }) {
   ) : (
     <div className={className}>{children}</div>
   );
-}
+};
+
+export { FadeDown };

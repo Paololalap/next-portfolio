@@ -1,4 +1,4 @@
-export default function ChevronLeftRight() {
+const ChevronLeftRight = () => {
   return (
     <svg
       className={
@@ -8,4 +8,6 @@ export default function ChevronLeftRight() {
       <use href={`./icons/sprite.svg#lucide/chevrons-left-right`} />
     </svg>
   );
-}
+};
+
+export { ChevronLeftRight };

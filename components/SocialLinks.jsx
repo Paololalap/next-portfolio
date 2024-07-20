@@ -1,8 +1,8 @@
-import Button from "@/components/button/SocialLinks";
-import Link from "@/components/link/SocialLinks";
+import { SocialLinksButton as Button } from "@/components/button/SocialLinks";
+import { SocialLinks as Link } from "@/components/link/SocialLinks";
 import { SOCIAL_LINKS } from "@/constants/SOCIAL_LINKS.js";
 
-export default function SocialLinks() {
+const SocialLinks = () => {
   return (
     <ul>
       {SOCIAL_LINKS.map((link, index) => (
@@ -31,4 +31,6 @@ export default function SocialLinks() {
       ))}
     </ul>
   );
-}
+};
+
+export { SocialLinks };

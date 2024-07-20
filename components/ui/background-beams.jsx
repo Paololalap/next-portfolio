@@ -1,11 +1,11 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import useStore from "@/stores/toggleAnimation";
+import { useStore } from "@/stores/toggleAnimation";
 import { motion } from "framer-motion";
 import { memo } from "react";
 
-export const BackgroundBeams = memo(({ className }) => {
+const BackgroundBeams = memo(({ className }) => {
   const { toggleAnimation } = useStore();
 
   const paths = [
@@ -145,3 +145,5 @@ export const BackgroundBeams = memo(({ className }) => {
 });
 
 BackgroundBeams.displayName = "BackgroundBeams";
+
+export { BackgroundBeams };

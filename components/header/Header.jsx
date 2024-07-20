@@ -1,7 +1,7 @@
 "use client";
 
-import HoverLine from "@/components/HoverLine";
-import FadeDown from "@/components/motion/FadeDown";
+import { HoverLine } from "@/components/HoverLine";
+import { FadeDown } from "@/components/motion/FadeDown";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -21,14 +21,14 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { HEADER_LINKS } from "@/constants/HEADER_LINKS";
-import useMediaQuery from "@/hooks/useMediaQuery";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
 import { cn } from "@/lib/utils";
-import useStore from "@/stores/toggleAnimation";
+import { useStore } from "@/stores/toggleAnimation";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
-export default function Header() {
+const Header = () => {
   const pathname = usePathname();
   const [hoveredButton, setHoveredButton] = useState(
     pathname === "/" ? "home" : pathname === "/work" ? "work" : "projects",
@@ -181,4 +181,6 @@ export default function Header() {
       </FadeDown>
     </header>
   );
-}
+};
+
+export { Header };

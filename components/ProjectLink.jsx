@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function ProjectLink({ href, title, description }) {
+const ProjectLink = ({ href, title, description }) => {
   return (
     <li>
       <Link
@@ -22,4 +22,6 @@ export default function ProjectLink({ href, title, description }) {
       </Link>
     </li>
   );
-}
+};
+
+export { ProjectLink };

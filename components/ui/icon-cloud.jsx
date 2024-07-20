@@ -1,11 +1,11 @@
 "use client";
 
-import useMediaQuery from "@/hooks/useMediaQuery";
-import useStore from "@/stores/toggleAnimation";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
+import { useStore } from "@/stores/toggleAnimation";
 import { useEffect, useMemo, useState } from "react";
 import { Cloud, fetchSimpleIcons, renderSimpleIcon } from "react-icon-cloud";
 
-export const renderCustomIcon = (icon, theme) => {
+const renderCustomIcon = (icon, theme) => {
   const bgHex = theme === "light" ? "#f3f2ef" : "#080510";
   const fallbackHex = theme === "light" ? "#6e6e73" : "#ffffff";
   const minContrastRatio = theme === "dark" ? 2 : 1.2;
@@ -25,7 +25,7 @@ export const renderCustomIcon = (icon, theme) => {
   });
 };
 
-export default function IconCloud({ iconSlugs }) {
+const IconCloud = ({ iconSlugs }) => {
   const [data, setData] = useState(null);
   const { toggleAnimation } = useStore();
   const isDesktop = useMediaQuery("(min-width: 768px)");
@@ -74,4 +74,6 @@ export default function IconCloud({ iconSlugs }) {
       <>{renderedIcons}</>
     </Cloud>
   );
-}
+};
+
+export { IconCloud, renderCustomIcon };

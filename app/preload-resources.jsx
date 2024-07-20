@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import ReactDOM from "react-dom";
 
-export function PreloadResources() {
+const PreloadResources = () => {
   useEffect(() => {
     ReactDOM.preload("/icons/sprite.svg", {
       as: "image",
@@ -11,4 +11,6 @@ export function PreloadResources() {
   }, []);
 
   return null;
-}
+};
+
+export { PreloadResources };

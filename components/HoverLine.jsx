@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils";
 
-export default function HoverLine({ className, activeButton }) {
+const HoverLine = ({ className, activeButton }) => {
   const getPosition = () => {
     switch (activeButton) {
       case "home":
@@ -25,4 +25,6 @@ export default function HoverLine({ className, activeButton }) {
       )}
     ></span>
   );
-}
+};
+
+export { HoverLine };

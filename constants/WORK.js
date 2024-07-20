@@ -1,4 +1,4 @@
-export const LAGUNA = [
+const LAGUNA = [
   "Git",
   "Gitlab",
   "MongoDB",
@@ -10,7 +10,7 @@ export const LAGUNA = [
   "Tailwind",
 ];
 
-export const SYDNEY = [
+const SYDNEY = [
   "Firebase",
   "Git",
   "Github",
@@ -22,3 +22,5 @@ export const SYDNEY = [
   "MongoDB",
   "Tailwind",
 ];
+
+export { LAGUNA, SYDNEY };

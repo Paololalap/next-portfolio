@@ -1,4 +1,4 @@
-export const ICON_SLUGS = [
+const ICON_SLUGS = [
   "anthropic",
   "git",
   "firebase",
@@ -27,3 +27,5 @@ export const ICON_SLUGS = [
   "wordpress",
   "astro",
 ];
+
+export { ICON_SLUGS };

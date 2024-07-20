@@ -3,7 +3,7 @@
 import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
 
-export default function Typewriter({ texts, className }) {
+const Typewriter = ({ texts, className }) => {
   const [displayText, setDisplayText] = useState("");
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -55,4 +55,6 @@ export default function Typewriter({ texts, className }) {
       {displayText ? displayText : texts[currentTextIndex].charAt(0)}
     </span>
   );
-}
+};
+
+export { Typewriter };

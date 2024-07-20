@@ -1,10 +1,10 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import useStore from "@/stores/toggleAnimation";
+import { useStore } from "@/stores/toggleAnimation";
 import Link from "next/link";
 
-export default function SocialLinks({ children, className, ...props }) {
+const SocialLinks = ({ children, className, ...props }) => {
   const { toggleAnimation } = useStore();
   return (
     <Link
@@ -14,4 +14,6 @@ export default function SocialLinks({ children, className, ...props }) {
       {children}
     </Link>
   );
-}
+};
+
+export { SocialLinks };
