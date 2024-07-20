@@ -14,10 +14,6 @@ module.exports = {
   prefix: "",
   theme: {
     extend: {
-      fontFamily: {
-        roboto: ["var(--font-roboto)"],
-        lobster: ["var(--font-lobster)"],
-      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

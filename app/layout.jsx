@@ -21,8 +21,8 @@ export default function RootLayout({ children }) {
       <PreloadResources />
       <body
         className={cn(
-          roboto.variable,
-          "min-h-fit min-w-fit overflow-x-hidden font-roboto",
+          roboto.className,
+          "min-h-fit min-w-fit overflow-x-hidden",
         )}
         style={{ width: "calc(100vw - 12px)" }}
       >
