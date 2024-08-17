@@ -1,13 +1,18 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 
-const Typewriter = ({ texts, className }) => {
-  const [displayText, setDisplayText] = useState("");
-  const [currentTextIndex, setCurrentTextIndex] = useState(0);
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [reverseMode, setReverseMode] = useState(false);
+interface TypewriterProps {
+  texts: string[];
+  className?: string;
+}
+
+const Typewriter: FC<TypewriterProps> = ({ texts, className }) => {
+  const [displayText, setDisplayText] = useState<string>("");
+  const [currentTextIndex, setCurrentTextIndex] = useState<number>(0);
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const [reverseMode, setReverseMode] = useState<boolean>(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {

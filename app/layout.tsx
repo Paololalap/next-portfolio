@@ -4,9 +4,11 @@ import { BackgroundBeams } from "@/components/ui/background-beams";
 import { roboto } from "@/fonts/fonts";
 import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
+import { Metadata } from "next";
+import { ReactNode } from "react";
 import { PreloadResources } from "./preload-resources";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: {
     template: "Paolo Lalap - %s",
     absolute: "Paolo Lalap",
@@ -15,7 +17,7 @@ export const metadata = {
     "This is the portfolio website of Paolo Lalap, a Front-end Developer based in the Philippines, with experience in HTML, CSS, React, Next.js, Tailwind CSS, Shadcn UI, Framer Motion, React Native, JavaScript, MongoDB, Firebase, and Git.",
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <PreloadResources />

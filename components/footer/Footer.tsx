@@ -1,6 +1,8 @@
-const Footer = () => {
+import { FC } from "react";
+
+const Footer: FC = () => {
   const currentDate = new Date();
-  const monthYear =
+  const monthYear: string =
     currentDate.toLocaleString("en-US", { month: "long" }) +
     ", " +
     currentDate.getFullYear();

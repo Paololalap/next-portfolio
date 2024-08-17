@@ -1,11 +1,11 @@
 "use client";
 
 import { useEffect } from "react";
-import ReactDOM from "react-dom";
+import { preload } from "react-dom";
 
 const PreloadResources = () => {
   useEffect(() => {
-    ReactDOM.preload("/icons/sprite.svg", {
+    preload("/icons/sprite.svg", {
       as: "image",
     });
   }, []);

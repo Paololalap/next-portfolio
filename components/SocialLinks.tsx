@@ -1,16 +1,23 @@
 import { SocialLinksButton as Button } from "@/components/button/SocialLinks";
 import { SocialLinks as Link } from "@/components/link/SocialLinks";
-import { SOCIAL_LINKS } from "@/constants/SOCIAL_LINKS.js";
+import { SOCIAL_LINKS } from "@/constants/SOCIAL_LINKS";
+import { FC, ReactNode } from "react";
 
-const SocialLinks = () => {
+interface SocialLink {
+  href: string;
+  text: string;
+  icon: ReactNode;
+}
+
+const SocialLinks: FC = () => {
   return (
     <ul>
-      {SOCIAL_LINKS.map((link, index) => (
+      {SOCIAL_LINKS.map((link: SocialLink, index: number) => (
         <li key={index} className="inline-flex">
           <Link
             href={link.href}
             target="_blank"
-            tabIndex="-1"
+            tabIndex={-1}
             className="group space-x-1 text-muted-foreground transition-all after:ml-3 hover:text-primary"
           >
             <Button

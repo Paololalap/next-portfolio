@@ -5,7 +5,19 @@ import { useStore } from "@/stores/toggleAnimation";
 import { useEffect, useMemo, useState } from "react";
 import { Cloud, fetchSimpleIcons, renderSimpleIcon } from "react-icon-cloud";
 
-const renderCustomIcon = (icon, theme) => {
+// Define the type for the icon parameter
+type Icon = {
+  slug: string;
+  // Add any other properties you expect from the icon object
+};
+
+// Define the props interface for IconCloud
+interface IconCloudProps {
+  iconSlugs: string[];
+}
+
+// Function to render a custom icon
+const renderCustomIcon = (icon: Icon, theme: "light" | "dark") => {
   const bgHex = theme === "light" ? "#f3f2ef" : "#080510";
   const fallbackHex = theme === "light" ? "#6e6e73" : "#ffffff";
   const minContrastRatio = theme === "dark" ? 2 : 1.2;
@@ -25,8 +37,10 @@ const renderCustomIcon = (icon, theme) => {
   });
 };
 
-const IconCloud = ({ iconSlugs }) => {
-  const [data, setData] = useState(null);
+const IconCloud: React.FC<IconCloudProps> = ({ iconSlugs }) => {
+  const [data, setData] = useState<{
+    simpleIcons: Record<string, Icon>;
+  } | null>(null);
   const { toggleAnimation } = useStore();
   const isDesktop = useMediaQuery("(min-width: 768px)");
 
@@ -64,8 +78,8 @@ const IconCloud = ({ iconSlugs }) => {
   const renderedIcons = useMemo(() => {
     if (!data) return null;
 
-    return Object.values(data.simpleIcons).map((icon) =>
-      renderCustomIcon(icon || "light"),
+    return Object.values(data.simpleIcons).map(
+      (icon) => renderCustomIcon(icon || { slug: "light" }, "light"), // Defaulting to "light" if icon is undefined
     );
   }, [data]);
 

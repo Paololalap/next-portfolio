@@ -26,18 +26,26 @@ import { cn } from "@/lib/utils";
 import { useStore } from "@/stores/toggleAnimation";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 
-const Header = () => {
+interface HeaderLink {
+  href: string;
+  label: string;
+  icon: string;
+}
+
+export type ActiveButton = "home" | "work" | "projects" | null;
+
+const Header: FC = () => {
   const pathname = usePathname();
-  const [hoveredButton, setHoveredButton] = useState(
+  const [hoveredButton, setHoveredButton] = useState<ActiveButton>(
     pathname === "/" ? "home" : pathname === "/work" ? "work" : "projects",
   );
   const { toggleAnimation, setToggleAnimation } = useStore();
-  const [isDialogOpen, setIsDialogOpen] = useState(false);
-  const [isClient, setIsClient] = useState(false);
+  const [isDialogOpen, setIsDialogOpen] = useState<boolean>(false);
+  const [isClient, setIsClient] = useState<boolean>(false);
   const isDesktop = useMediaQuery("(min-width: 768px)");
-  const [isSheetOpen, setIsSheetOpen] = useState(false);
+  const [isSheetOpen, setIsSheetOpen] = useState<boolean>(false);
 
   useEffect(() => {
     setIsClient(true);
@@ -52,12 +60,12 @@ const Header = () => {
         <div className="flex flex-1 items-center justify-between rounded-full border border-border px-2 py-1 sm:flex-row sm:py-2">
           <nav className="group relative hidden items-center text-base sm:flex">
             <ul className="flex">
-              {HEADER_LINKS.map((item) => (
+              {HEADER_LINKS.map((item: HeaderLink) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
                     onMouseEnter={() =>
-                      setHoveredButton(item.label.toLowerCase())
+                      setHoveredButton(item.label.toLowerCase() as ActiveButton)
                     }
                     className={cn(
                       "group/button focus-within:ring-3 relative inline-flex h-8 items-center px-3 text-sm text-muted-foreground focus-within:rounded-full focus-within:outline-0 hover:no-underline",
@@ -95,12 +103,12 @@ const Header = () => {
             </SheetTrigger>
             <SheetContent className="grid place-items-center">
               <ul className="space-y-3 text-center text-lg text-muted-foreground">
-                {HEADER_LINKS.map((item) => (
+                {HEADER_LINKS.map((item: HeaderLink) => (
                   <li key={item.href}>
                     <Link
                       href={item.href}
                       onClick={() => setIsSheetOpen(false)}
-                      tabIndex="-1"
+                      tabIndex={-1}
                     >
                       {item.label}
                     </Link>
@@ -111,10 +119,8 @@ const Header = () => {
           </Sheet>
 
           <Link
-            href={
-              "https://docs.google.com/document/d/1s-nFidFVqCkBegfErJIRxrgxBYPIETfrEwpMAqsEGoc/edit"
-            }
-            tabIndex={"-1"}
+            href="https://docs.google.com/document/d/1s-nFidFVqCkBegfErJIRxrgxBYPIETfrEwpMAqsEGoc/edit"
+            tabIndex={-1}
             target="_blank"
           >
             <Button
@@ -136,12 +142,12 @@ const Header = () => {
         <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
           <DialogTrigger
             className="hidden sm:block"
-            tabIndex="-1"
+            tabIndex={-1}
             aria-label="Dialog Trigger"
           >
             <TooltipProvider>
               <Tooltip>
-                <TooltipTrigger tabIndex="-1" aria-label="Tooltip Trigger">
+                <TooltipTrigger tabIndex={-1} aria-label="Tooltip Trigger">
                   <Switch
                     checked={toggleAnimation}
                     aria-label="Animation Trigger"

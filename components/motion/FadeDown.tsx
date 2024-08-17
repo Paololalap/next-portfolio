@@ -2,8 +2,14 @@
 
 import { useStore } from "@/stores/toggleAnimation";
 import { motion } from "framer-motion";
+import { FC, ReactNode } from "react";
 
-const FadeDown = ({ children, className }) => {
+interface FadeDownProps {
+  children: ReactNode;
+  className?: string;
+}
+
+const FadeDown: FC<FadeDownProps> = ({ children, className }) => {
   const { toggleAnimation } = useStore();
 
   return toggleAnimation ? (

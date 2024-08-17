@@ -1,9 +1,16 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import { FC } from "react";
+import type { ActiveButton } from "./header/Header";
 
-const HoverLine = ({ className, activeButton }) => {
-  const getPosition = () => {
+interface HoverLineProps {
+  className?: string;
+  activeButton: ActiveButton;
+}
+
+const HoverLine: FC<HoverLineProps> = ({ className, activeButton }) => {
+  const getPosition = (): string => {
     switch (activeButton) {
       case "home":
         return "left-[17%] w-[23%]";

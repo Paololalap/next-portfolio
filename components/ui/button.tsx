@@ -1,7 +1,12 @@
 import { cn } from "@/lib/utils";
 import { Slot, Slottable } from "@radix-ui/react-slot";
-import { cva } from "class-variance-authority";
-import { forwardRef } from "react";
+import { cva, type VariantProps } from "class-variance-authority";
+import {
+  ButtonHTMLAttributes,
+  ComponentType,
+  forwardRef,
+  SVGProps,
+} from "react";
 
 const buttonVariants = cva(
   "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
@@ -46,7 +51,15 @@ const buttonVariants = cva(
   },
 );
 
-const Button = forwardRef(
+interface ButtonProps
+  extends ButtonHTMLAttributes<HTMLButtonElement>,
+    VariantProps<typeof buttonVariants> {
+  asChild?: boolean;
+  Icon?: ComponentType<SVGProps<SVGSVGElement>>;
+  iconPlacement?: "left" | "right";
+}
+
+const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
       className,
@@ -84,3 +97,4 @@ const Button = forwardRef(
 Button.displayName = "Button";
 
 export { Button, buttonVariants };
+export type { ButtonProps };
