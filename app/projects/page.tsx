@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { ChevronLeftRight } from "@/components/ChevronLeftRight";
 import { FadeRight } from "@/components/motion/FadeRight";
 import { ProjectLink } from "@/components/ProjectLink";
@@ -11,7 +13,6 @@ import {
 } from "@/components/ui/card";
 import { ADDITIONAL_PROJECTS } from "@/constants/ADDITIONAL_PROJECTS";
 import { PROJECTS } from "@/constants/PROJECTS";
-import Link from "next/link";
 
 export const metadata = { title: "Projects" };
 

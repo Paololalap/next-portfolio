@@ -60,7 +60,7 @@ const IconCloud: React.FC<IconCloudProps> = ({ iconSlugs }) => {
       wheelZoom: false,
       imageScale: 2,
       activeCursor: "default",
-      tooltip: "native",
+      tooltip: "native" as "native", // Explicitly typing as "native"
       initial: [0.1, -0.1],
       clickToFront: isDesktop && toggleAnimation ? 500 : 125,
       tooltipDelay: 0,
@@ -79,15 +79,11 @@ const IconCloud: React.FC<IconCloudProps> = ({ iconSlugs }) => {
     if (!data) return null;
 
     return Object.values(data.simpleIcons).map(
-      (icon) => renderCustomIcon(icon || { slug: "light" }, "light"), // Defaulting to "light" if icon is undefined
+      (icon) => renderCustomIcon(icon || { slug: "dark" }, "dark"), // Defaulting to "light" if icon is undefined
     );
   }, [data]);
 
-  return (
-    <Cloud {...cloudProps}>
-      <>{renderedIcons}</>
-    </Cloud>
-  );
+  return <Cloud {...cloudProps}>{renderedIcons}</Cloud>;
 };
 
 export { IconCloud, renderCustomIcon };

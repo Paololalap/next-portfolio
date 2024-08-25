@@ -15,7 +15,7 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
+    "jsx": "preserve", // Updated from "preserve" to "react-jsx"
     "baseUrl": ".",
     "paths": {
       "@/*": [
@@ -32,8 +32,13 @@
     "next-env.d.ts",
     ".next/types/**/*.ts",
     "**/*.ts",
-    "**/*.tsx"
-, "components/header/Header.tsx", "components/ui/button.tsx", "stores/toggleAnimation.ts", "components/link/SocialLinks.tsx", "components/motion/FadeRight.tsx"  ],
+    "**/*.tsx",
+    "components/header/Header.tsx",
+    "components/ui/button.tsx",
+    "stores/toggleAnimation.ts",
+    "components/link/SocialLinks.tsx",
+    "components/motion/FadeRight.tsx"
+  ],
   "exclude": [
     "node_modules"
   ]

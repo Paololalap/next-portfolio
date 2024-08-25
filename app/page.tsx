@@ -1,3 +1,6 @@
+import Image from "next/image";
+import { Suspense } from "react";
+
 import { ChevronLeftRight } from "@/components/ChevronLeftRight";
 import { SocialLinks } from "@/components/SocialLinks";
 import { Typewriter } from "@/components/TypeWriter";
@@ -7,8 +10,6 @@ import { Badge } from "@/components/ui/badge";
 import { IconCloud } from "@/components/ui/icon-cloud";
 import { ICON_SLUGS } from "@/constants/ICON_SLUGS";
 import { ROLES } from "@/constants/ROLES";
-import Image from "next/image";
-import { Suspense } from "react";
 
 export default function Homepage() {
   return (
@@ -39,7 +40,7 @@ export default function Homepage() {
       <FadeRight className="mt-10 text-muted-foreground" index={1}>
         <h2 className="mb-2 text-2xl text-foreground">About</h2>
         <p className="mb-8 text-lg">
-          I&apos;ve been a front-end developer for 2 years <ChevronLeftRight />,
+          I&apos;m a front-end Developer/Engineer <ChevronLeftRight />,
           working mainly with Next.js, React, JavaScript, and many others{" "}
           <ChevronLeftRight />. Passionate about what I do <ChevronLeftRight />,
           I get fully involved in every project <ChevronLeftRight />, with a

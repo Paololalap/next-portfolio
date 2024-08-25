@@ -1,13 +1,13 @@
 "use client";
 
-import React from "react";
 import { useStore } from "@/stores/toggleAnimation";
 import {
-  motion,
-  HTMLMotionProps,
-  SVGMotionProps,
   ForwardRefComponent,
+  HTMLMotionProps,
+  motion,
+  SVGMotionProps,
 } from "framer-motion";
+import { createElement, ReactNode } from "react";
 
 type MotionProps = HTMLMotionProps<any> | SVGMotionProps<any>;
 
@@ -16,7 +16,7 @@ type ElementTag = keyof JSX.IntrinsicElements;
 type MotionComponent = ForwardRefComponent<any, any>;
 
 type FadeRightProps<T extends ElementTag> = {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
   tag?: T;
   index?: number;
@@ -59,7 +59,7 @@ const FadeRight = <T extends ElementTag = "div">({
   }
 
   const Comp = tag;
-  return React.createElement(Comp, { className, ...props }, children);
+  return createElement(Comp, { className, ...props }, children);
 };
 
 export { FadeRight };
