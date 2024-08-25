@@ -1,4 +1,3 @@
-import { Metadata } from "next";
 import { ReactNode } from "react";
 
 import { Footer } from "@/components/footer/Footer";
@@ -7,6 +6,7 @@ import { BackgroundBeams } from "@/components/ui/background-beams";
 import { roboto } from "@/fonts/fonts";
 import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
+import { Metadata } from "next";
 import { PreloadResources } from "./preload-resources";
 
 export const metadata: Metadata = {

@@ -1,9 +1,9 @@
 "use client";
 
-import { useStore } from "@/stores/toggleAnimation";
 import { motion } from "framer-motion";
 import { FC, ReactNode } from "react";
 
+import { useStore } from "@/stores/toggleAnimation";
 interface FadeDownProps {
   children: ReactNode;
   className?: string;

@@ -1,8 +1,9 @@
 "use client";
 
-import { cn } from "@/lib/utils";
 import { Root, Thumb } from "@radix-ui/react-switch";
 import { ComponentPropsWithoutRef, ElementRef, forwardRef } from "react";
+
+import { cn } from "@/lib/utils";
 
 interface SwitchProps extends ComponentPropsWithoutRef<typeof Root> {}
 

@@ -1,9 +1,10 @@
 "use client";
 
-import { cn } from "@/lib/utils";
-import { useStore } from "@/stores/toggleAnimation";
 import Link, { LinkProps } from "next/link";
 import { FC, ReactNode } from "react";
+
+import { cn } from "@/lib/utils";
+import { useStore } from "@/stores/toggleAnimation";
 
 interface SocialLinksProps extends LinkProps {
   children: ReactNode;

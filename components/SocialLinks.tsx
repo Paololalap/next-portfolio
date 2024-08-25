@@ -1,7 +1,8 @@
+import { FC, ReactNode } from "react";
+
 import { SocialLinksButton as Button } from "@/components/button/SocialLinks";
 import { SocialLinks as Link } from "@/components/link/SocialLinks";
 import { SOCIAL_LINKS } from "@/constants/SOCIAL_LINKS";
-import { FC, ReactNode } from "react";
 
 interface SocialLink {
   href: string;

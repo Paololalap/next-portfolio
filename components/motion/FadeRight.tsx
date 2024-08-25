@@ -1,6 +1,5 @@
 "use client";
 
-import { useStore } from "@/stores/toggleAnimation";
 import {
   ForwardRefComponent,
   HTMLMotionProps,
@@ -8,6 +7,8 @@ import {
   SVGMotionProps,
 } from "framer-motion";
 import { createElement, ReactNode } from "react";
+
+import { useStore } from "@/stores/toggleAnimation";
 
 type MotionProps = HTMLMotionProps<any> | SVGMotionProps<any>;
 

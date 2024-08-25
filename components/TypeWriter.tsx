@@ -1,7 +1,8 @@
 "use client";
 
-import { cn } from "@/lib/utils";
 import { FC, useEffect, useState } from "react";
+
+import { cn } from "@/lib/utils";
 
 interface TypewriterProps {
   texts: string[];

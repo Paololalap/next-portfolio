@@ -1,5 +1,9 @@
 "use client";
 
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { FC, useEffect, useState } from "react";
+
 import { HoverLine } from "@/components/HoverLine";
 import { FadeDown } from "@/components/motion/FadeDown";
 import { Button } from "@/components/ui/button";
@@ -24,9 +28,6 @@ import { HEADER_LINKS } from "@/constants/HEADER_LINKS";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
 import { cn } from "@/lib/utils";
 import { useStore } from "@/stores/toggleAnimation";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { FC, useEffect, useState } from "react";
 
 interface HeaderLink {
   href: string;

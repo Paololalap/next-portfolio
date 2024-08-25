@@ -1,9 +1,10 @@
 "use client";
 
-import { useMediaQuery } from "@/hooks/useMediaQuery";
-import { useStore } from "@/stores/toggleAnimation";
 import { useEffect, useMemo, useState } from "react";
 import { Cloud, fetchSimpleIcons, renderSimpleIcon } from "react-icon-cloud";
+
+import { useMediaQuery } from "@/hooks/useMediaQuery";
+import { useStore } from "@/stores/toggleAnimation";
 
 // Define the type for the icon parameter
 type Icon = {

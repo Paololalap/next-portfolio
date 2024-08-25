@@ -32,3 +32,4 @@ const Badge: React.FC<BadgeProps> = ({ className, variant, ...props }) => {
 };
 
 export { Badge, badgeVariants };
+
