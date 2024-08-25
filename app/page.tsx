@@ -32,7 +32,7 @@ export default function Homepage() {
           <Typewriter texts={ROLES} />
           <Badge className="mt-1 size-fit justify-self-end border-0 text-primary-foreground">
             <Pulse />
-            Available for work
+            Available for part-time work
           </Badge>
         </div>
       </FadeRight>
