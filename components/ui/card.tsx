@@ -1,4 +1,4 @@
-import { forwardRef, HTMLAttributes } from "react";
+import { forwardRef, HTMLAttributes, useMemo } from "react";
 
 import { cn } from "@/lib/utils";
 
@@ -11,27 +11,39 @@ interface CardContentProps extends HTMLAttributes<HTMLDivElement> {}
 interface CardFooterProps extends HTMLAttributes<HTMLDivElement> {}
 
 const Card = forwardRef<HTMLDivElement, CardProps>(
-  ({ className, ...props }, ref) => (
-    <div
-      ref={ref}
-      className={cn(
-        "rounded-lg border bg-card text-card-foreground shadow-sm",
-        className,
-      )}
-      {...props}
-    />
-  ),
+  ({ className, ...props }, ref) => {
+    // Memoize the computed className
+    const memoizedClassName = useMemo(() => 
+      cn("rounded-lg border bg-card text-card-foreground shadow-sm", className),
+      [className]
+    );
+
+    return (
+      <div
+        ref={ref}
+        className={memoizedClassName}
+        {...props}
+      />
+    );
+  }
 );
 Card.displayName = "Card";
 
 const CardHeader = forwardRef<HTMLDivElement, CardHeaderProps>(
-  ({ className, ...props }, ref) => (
-    <div
-      ref={ref}
-      className={cn("flex flex-col space-y-1.5 p-6", className)}
-      {...props}
-    />
-  ),
+  ({ className, ...props }, ref) => {
+    const memoizedClassName = useMemo(() => 
+      cn("flex flex-col space-y-1.5 p-6", className),
+      [className]
+    );
+
+    return (
+      <div
+        ref={ref}
+        className={memoizedClassName}
+        {...props}
+      />
+    );
+  }
 );
 CardHeader.displayName = "CardHeader";
 

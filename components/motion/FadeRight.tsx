@@ -6,7 +6,7 @@ import {
   motion,
   SVGMotionProps,
 } from "framer-motion";
-import { createElement, ReactNode } from "react";
+import { createElement, ReactNode, useMemo } from "react";
 
 import { useStore } from "@/stores/toggleAnimation";
 
@@ -34,14 +34,14 @@ const FadeRight = <T extends ElementTag = "div">({
 
   const MotionComp = motion[tag as keyof typeof motion] as MotionComponent;
 
-  const variants = {
+  const variants = useMemo(() => ({
     initial: { opacity: 0, x: -500 },
     whileInView: (i: number) => ({
       opacity: 1,
       x: 0,
       transition: { delay: i * 0.3 },
     }),
-  };
+  }), []);
 
   if (toggleAnimation) {
     return (

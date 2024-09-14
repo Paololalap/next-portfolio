@@ -1,6 +1,6 @@
 "use client";
 
-import { FC, useEffect, useState } from "react";
+import { FC, useEffect, useState, useCallback, useMemo } from "react";
 
 import { cn } from "@/lib/utils";
 
@@ -15,49 +15,43 @@ const Typewriter: FC<TypewriterProps> = ({ texts, className }) => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [reverseMode, setReverseMode] = useState<boolean>(false);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      if (!reverseMode && currentIndex < texts[currentTextIndex].length) {
-        // Typing forward
-        setDisplayText(
-          (prevText) => prevText + texts[currentTextIndex][currentIndex],
-        );
-        setCurrentIndex((prevIndex) => prevIndex + 1);
-      } else if (
-        !reverseMode &&
-        currentIndex === texts[currentTextIndex].length
-      ) {
-        // All characters displayed, switch to reverse mode
-        setTimeout(() => {
-          setReverseMode(true);
-          setCurrentIndex((prevIndex) => prevIndex - 1);
-        }, 1000);
-      } else if (reverseMode && currentIndex >= 0) {
-        // Typing in reverse
-        setDisplayText((prevText) => prevText.slice(0, -1));
+  const updateText = useCallback(() => {
+    if (!reverseMode && currentIndex < texts[currentTextIndex].length) {
+      setDisplayText((prevText) => prevText + texts[currentTextIndex][currentIndex]);
+      setCurrentIndex((prevIndex) => prevIndex + 1);
+    } else if (!reverseMode && currentIndex === texts[currentTextIndex].length) {
+      setTimeout(() => {
+        setReverseMode(true);
         setCurrentIndex((prevIndex) => prevIndex - 1);
-      } else {
-        // Move to the next text after a delay and reset
-        setCurrentTextIndex((prevIndex) => (prevIndex + 1) % texts.length);
-        setCurrentIndex(0);
-        setDisplayText("");
-        setReverseMode(false); // Reset reverse mode
-      }
-    }, 100); // Adjust the speed of typing here (milliseconds)
-
-    // Clear timeout on component unmount
-    return () => clearTimeout(timer);
+      }, 1000);
+    } else if (reverseMode && currentIndex >= 0) {
+      setDisplayText((prevText) => prevText.slice(0, -1));
+      setCurrentIndex((prevIndex) => prevIndex - 1);
+    } else {
+      setCurrentTextIndex((prevIndex) => (prevIndex + 1) % texts.length);
+      setCurrentIndex(0);
+      setDisplayText("");
+      setReverseMode(false);
+    }
   }, [texts, currentIndex, currentTextIndex, reverseMode]);
 
+  useEffect(() => {
+    const timer = setTimeout(updateText, 100);
+    return () => clearTimeout(timer);
+  }, [updateText]);
+
+  const displayClass = useMemo(() => 
+    cn(
+      displayText
+        ? "line-clamp-1 text-[18px] text-muted-foreground transition-all"
+        : "text-transparent",
+      className
+    ),
+    [displayText, className]
+  );
+
   return (
-    <span
-      className={cn(
-        displayText
-          ? "line-clamp-1 text-[18px] text-muted-foreground transition-all"
-          : "text-transparent",
-        className,
-      )}
-    >
+    <span className={displayClass}>
       {displayText ? displayText : texts[currentTextIndex].charAt(0)}
     </span>
   );
