@@ -1,6 +1,6 @@
 const ROLES = [
   "Front-end Web Developer",
-  "Data Entry Specialist",
+  "Fullstack Web Developer",
   "Front-end Engineer",
 ];
 
