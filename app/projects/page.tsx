@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { Metadata } from "next";
+import Link from "next/link";
 
 import { ChevronLeftRight } from "@/components/ChevronLeftRight";
 import { FadeRight } from "@/components/motion/FadeRight";
@@ -19,9 +19,9 @@ export const metadata: Metadata = { title: "Projects" };
 
 export default function ProjectsPage() {
   return (
-    <main className="max-w-2xl px-8 mx-auto mt-14 md:px-0">
+    <main className="mx-auto mt-14 max-w-2xl px-8 md:px-0">
       <FadeRight index={0}>
-        <h2 className="pb-2 text-3xl font-semibold tracking-tight scroll-m-20 text-foreground first:mt-0">
+        <h2 className="scroll-m-20 pb-2 text-3xl font-semibold tracking-tight text-foreground first:mt-0">
           <span className="text-muted-foreground">Pro</span>jects
         </h2>
         <p className="mt-5">
@@ -40,7 +40,7 @@ export default function ProjectsPage() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="text-muted-foreground">
-                <p className="line-clamp-4 hover:line-clamp-none">
+                <p className="max-h-24 overflow-hidden transition-all hover:max-h-screen hover:overflow-visible">
                   {project.description
                     .split("<ChevronLeftRight />")
                     .map((text, i) => (
@@ -54,8 +54,8 @@ export default function ProjectsPage() {
                     ))}
                 </p>
               </CardContent>
-              <CardFooter className="flex items-start w-full md:items-center">
-                <ul className="flex flex-wrap w-2/3 gap-y-2">
+              <CardFooter className="flex w-full items-start md:items-center">
+                <ul className="flex w-2/3 flex-wrap gap-y-2">
                   {project.technologies.map((tech) => (
                     <li key={tech}>
                       <Badge
@@ -67,18 +67,18 @@ export default function ProjectsPage() {
                     </li>
                   ))}
                 </ul>
-                <div className="flex flex-col items-end flex-1 gap-2 md:flex-row md:items-center md:justify-end">
+                <div className="flex flex-1 flex-col items-end gap-2 md:flex-row md:items-center md:justify-end">
                   <Link
                     href={project.link}
-                    className="flex group/link gap-x-1"
+                    className="group/link flex gap-x-1"
                     target="_blank"
                   >
-                    <svg className="transition-all size-6 text-muted-foreground group-hover/link:text-foreground">
+                    <svg className="size-6 text-muted-foreground transition-all group-hover/link:text-foreground">
                       <use
                         href={`./icons/sprite.svg#tabler/external-link-outline`}
                       />
                     </svg>
-                    <span className="transition-all whitespace-nowrap text-muted-foreground group-hover/link:text-foreground">
+                    <span className="whitespace-nowrap text-muted-foreground transition-all group-hover/link:text-foreground">
                       Visit Link
                     </span>
                   </Link>
