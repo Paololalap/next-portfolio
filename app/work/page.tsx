@@ -1,3 +1,5 @@
+import { Metadata } from "next";
+
 import { ChevronLeftRight } from "@/components/ChevronLeftRight";
 import { FadeRight } from "@/components/motion/FadeRight";
 import { Badge } from "@/components/ui/badge";
@@ -19,7 +21,7 @@ import {
 } from "@/components/ui/dialog";
 import { WORK_EXPERIENCE } from "@/constants/WORK_EXPERIENCE";
 
-export const metadata = { title: "Work" };
+export const metadata: Metadata = { title: "Work" };
 
 export default function WorkPage() {
   return (
