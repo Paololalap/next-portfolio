@@ -52,7 +52,20 @@ export default function WorkPage() {
                   {experience.title}{" "}
                   {experience.company && (
                     <span className="text-muted-foreground">
-                      {experience.company}
+                      at{" "}
+                      {experience.companyUrl ? (
+                        <a
+                          href={experience.companyUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:underline"
+                        >
+                          {experience.companyName}
+                        </a>
+                      ) : (
+                        experience.companyName ||
+                        experience.company.replace("at ", "")
+                      )}
                     </span>
                   )}
                 </div>

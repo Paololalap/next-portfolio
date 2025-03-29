@@ -1,11 +1,19 @@
+const NORTH_CAROLINA = [
+  "GridPane",
+  "HTML5 & CSS3",
+  "JavaScript",
+  "MySQL",
+  "PHP",
+  "WordPress",
+];
+
 const LAGUNA = [
   "Git",
   "Gitlab",
   "MongoDB",
   "Next-Auth",
-  "NextJs",
-  "NodeJs",
-  "React-hook form",
+  "Next.js",
+  "Node.js",
   "Shadcn",
   "Tailwind",
 ];
@@ -15,12 +23,11 @@ const SYDNEY = [
   "Git",
   "Github",
   "Material UI",
-  "NextJs",
-  "NodeJs",
-  "React-hook-form",
+  "Next.js",
+  "Node.js",
   "Shadcn",
   "MongoDB",
   "Tailwind",
 ];
 
-export { LAGUNA, SYDNEY };
+export { LAGUNA, NORTH_CAROLINA, SYDNEY };
