@@ -30,7 +30,7 @@ const PROJECTS = [
       "Framer Motion",
       "Vercel",
     ],
-    link: "/",
+    link: "https://github.com/Paololalap/next-portfolio",
   },
   {
     title: "Cyberhub",
@@ -46,7 +46,7 @@ const PROJECTS = [
       "Gitlab",
       "Git",
     ],
-    link: "https://cyberhub.upou.edu.ph",
+    link: "https://github.com/Paololalap/next-cyberhub",
   },
   {
     title: "SmartAqua",

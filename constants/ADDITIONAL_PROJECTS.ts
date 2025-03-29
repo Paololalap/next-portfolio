@@ -1,4 +1,8 @@
 const ADDITIONAL_PROJECTS = [
+  {href: "https://mobilelegends-tierlist.vercel.app/",
+    title: "mobile-legends-tier-list",
+    description: "Created a tier list for my favorite mobile game since I couldn't find one on any website, so I made my own."
+  },
   {
     href: "https://paololalap-spotify-player.vercel.app",
     title: "react-spotify-player",
