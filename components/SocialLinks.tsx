@@ -7,7 +7,7 @@ import { SOCIAL_LINKS } from "@/constants/SOCIAL_LINKS";
 interface SocialLink {
   href: string;
   text: string;
-  icon: React.ReactNode;
+  icon?: React.ReactNode;
 }
 
 const SocialLinks = () => {
@@ -27,13 +27,7 @@ const SocialLinks = () => {
                 className="p-0 text-base text-muted-foreground group-hover:text-primary"
                 aria-label={link.text}
               >
-                <svg
-                  className={
-                    "inline size-6 self-center text-muted-foreground group-hover:text-primary"
-                  }
-                >
-                  {link.icon}
-                </svg>
+                {link.icon && link.icon}
                 {link.text}
               </Button>
             </Link>
