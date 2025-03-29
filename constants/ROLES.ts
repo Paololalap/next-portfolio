@@ -1,7 +1,8 @@
 const ROLES = [
-  "Front-end Web Developer",
-  "Fullstack Web Developer",
-  "Front-end Engineer",
+  "Front-End Web Developer",
+  "Full-Stack Web Developer",
+  "Wordpress Developer",
+  "Full-Stack Next.js Web Developer"
 ];
 
 export { ROLES };
