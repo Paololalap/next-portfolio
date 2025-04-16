@@ -15,14 +15,13 @@ export default function Homepage() {
   return (
     <main className="max-w-2xl px-8 mx-auto mt-8 md:px-0">
       <FadeRight className="flex items-center mt-10 gap-x-5" index={0}>
-        <figure className="relative min-h-24 min-w-24">
+        <figure className="relative overflow-hidden rounded-full min-h-24 min-w-24">
           <Image
-            src="https://avatars.githubusercontent.com/u/84236606?v=4"
+            src="/dp.jpg"
             alt="Paolo Lalap"
-            className="rounded-full"
+            className="scale-[200%]"
             priority
             fill
-            sizes="(min-width: 380px) 80px, calc(11.67vw + 38px)"
           />
         </figure>
         <div className="flex flex-col w-full leading-8">
@@ -42,7 +41,7 @@ export default function Homepage() {
         <p className="mb-8 text-lg">
           I&apos;m a full-stack web developer mainly focused on front-end
           development <ChevronLeftRight />, working primarily with Next.js{" "}
-          <ChevronLeftRight />, React, JavaScript, and many other technologies{" "}
+          <ChevronLeftRight />, React, WordPress, and many other technologies{" "}
           <ChevronLeftRight />. Passionate about what I do <ChevronLeftRight />,
           I get fully involved in every project, with a particular focus on
           design. <ChevronLeftRight />.

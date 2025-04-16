@@ -1,4 +1,4 @@
-import { LAGUNA, NORTH_CAROLINA, SYDNEY } from "./WORK";
+import { LAGUNA, NORTH_CAROLINA, SYDNEY, CORAL_GABLES } from "./WORK";
 
 const WORK_EXPERIENCE = [
   {
@@ -24,6 +24,14 @@ const WORK_EXPERIENCE = [
       "I couldn't find an onsite job related to web development, so I have temporarily accepted this position. I didn't want to waste time waiting for the perfect job, so I decided to take this position.",
     description:
       "My responsibilities include filing documents <ChevronLeftRight />, data entry, managing correspondence, scheduling appointments, and assisting with office organization <ChevronLeftRight />. I handle mail distribution <ChevronLeftRight />, photocopying, and other routine office duties, playing a crucial role in ensuring the smooth operation of the office by supporting other staff members and maintaining a tidy and efficient workspace <ChevronLeftRight />.",
+  },
+  {
+    location: "Coral Gables, United States (Remote)",
+    duration: "Jan 2025 - Apr 2025",
+    title: "Full-Stack React Native Developer",
+    description:
+      "Builds mobile apps from front to back <ChevronLeftRight />. I use React Native for cross-platform UIs and handle the backend with tools like Node.js, Express, and Firebase <ChevronLeftRight />. From designing smooth user experiences to setting up APIs and databases, I make sure the whole app runs clean and fast <ChevronLeftRight />.",
+      skills: CORAL_GABLES,
   },
   {
     location: "Sydney, Australia (Remote)",

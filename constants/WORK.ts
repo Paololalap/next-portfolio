@@ -1,10 +1,19 @@
 const NORTH_CAROLINA = [
-  "GridPane",
   "HTML5 & CSS3",
   "JavaScript",
   "MySQL",
   "PHP",
+  "Shopify",
   "WordPress",
+];
+
+const CORAL_GABLES = [
+  "Firebase",
+  "Git",
+  "Gitlab",
+  "Node.js",
+  "React Native",
+  "Zustand",
 ];
 
 const LAGUNA = [
@@ -30,4 +39,4 @@ const SYDNEY = [
   "Tailwind",
 ];
 
-export { LAGUNA, NORTH_CAROLINA, SYDNEY };
+export { LAGUNA, NORTH_CAROLINA, SYDNEY, CORAL_GABLES };
