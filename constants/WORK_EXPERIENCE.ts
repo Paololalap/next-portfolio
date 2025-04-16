@@ -4,7 +4,7 @@ const WORK_EXPERIENCE = [
   {
     location: "North Carolina, United States (Remote)",
     duration: "Mar 2025 - Present",
-    title: "Wordpress Web Developer",
+    title: "Full-Stack Web Developer",
     company: "at Dig Designs",
     companyName: "Dig Designs",
     companyUrl: "https://digdesigns.com",
